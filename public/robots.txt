@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dariusdantzler.com/sitemap.xml
+Sitemap: https://darius-dantzler.vercel.app/sitemap.xml

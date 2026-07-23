@@ -25,7 +25,7 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dariusdantzler.com"),
+  metadataBase: new URL("https://darius-dantzler.vercel.app"),
   title: {
     default: siteMeta.name,
     template: `%s — ${siteMeta.name}`,
