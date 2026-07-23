@@ -1,0 +1,16 @@
+T1D Supply Hub manages the logistics of Type 1 diabetes: supplies, refills, and site rotation. It's a problem space every other diabetes app ignores in favor of glucose and dosing. Its core innovation is a `coverageGap` calculation: the gap between how many days of supply a user has left and the day their insurance actually allows a refill. No existing patient-facing tool surfaces this. The long-term vision is an app that's almost never opened, one that reaches the user proactively before they run out, instead of requiring them to check in.
+
+**Who it's for**
+
+People managing Type 1 diabetes, with particular design attention to the newly diagnosed. The visual language, "Calm Clinical," was a deliberate departure from the dark, alarm-heavy "ER triage" aesthetic common in medical apps: light, calm, with red used sparingly and reserved only for genuine emergencies.
+
+**My role and stack**
+
+Solo developer: product, design, and engineering. Built with Next.js 16, React 19, and TypeScript, on Supabase (Postgres) with row-level security for auth and data, Zustand for state, and Tailwind for styling. Developed in VS Code using the Claude Code extension.
+
+**Worth highlighting**
+
+- **Audit-driven development**: five structured codebase audits tracked in a living project doc, with letter grades across correctness, security, architecture, and accessibility, and a numbered bug tracker (7 critical, 9 medium issues), treated as a real engineering process, not an afterthought.
+- **Real-world data pipeline**: a 103-item medical supply catalog enriched against the FDA's Device UDI API and the EU's EUDAMED database for barcode and GTIN matching, with mandatory human review before any data merges.
+- **A non-negotiable product principle**: no date, status, or number is ever shown unless it's backed by real stored data, a deliberate constraint given the app handles medical logistics.
+- **Honest about stage**: pre-launch, prototype-grade. Current focus is closing known security gaps (a spoofable auth check) and removing compliance language that outpaced reality, the kind of self-audit that matters more in a health-adjacent product than in most software.

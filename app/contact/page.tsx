@@ -38,6 +38,14 @@ export default async function Contact() {
             {siteMeta.email}
           </a>
         </p>
+        <p className="mt-1">
+          <a
+            href={`tel:${siteMeta.phone.replace(/\s/g, "")}`}
+            className="underline decoration-accent decoration-2"
+          >
+            {siteMeta.phone}
+          </a>
+        </p>
 
         <div className="mt-8">
           <ContactForm />

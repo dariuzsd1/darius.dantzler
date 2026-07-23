@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://darius-dantzler.vercel.app"),
   title: {
     default: siteMeta.name,
-    template: `%s — ${siteMeta.name}`,
+    template: `%s · ${siteMeta.name}`,
   },
   description: siteMeta.tagline,
   openGraph: {

@@ -17,7 +17,7 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      {/* Honeypot — Formspree drops any submission where this is filled in */}
+      {/* Honeypot: Formspree drops any submission where this is filled in */}
       <input
         type="text"
         name="_gotcha"

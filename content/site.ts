@@ -5,6 +5,7 @@ export const siteMeta: SiteMeta = {
   tagline: "Space Security, Sustainability & Policy",
   lastUpdated: "July 2026",
   email: "dariuzsd1@yahoo.com",
+  phone: "+49 177 647 1685",
   linkedin: "https://www.linkedin.com/in/darius-dantzler-a44a61196",
   cvPath: "/cv/darius-dantzler-cv.pdf",
   languages: [

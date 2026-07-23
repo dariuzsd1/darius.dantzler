@@ -2,7 +2,7 @@
 @plugin "@tailwindcss/typography";
 
 /* Opt into class-based dark mode now so a future toggle just needs to add
-   the .dark class to <html> — no component changes required. */
+   the .dark class to <html>, no component changes required. */
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {

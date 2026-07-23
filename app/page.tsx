@@ -1,4 +1,5 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
+import Image from "next/image";
 import Link from "next/link";
 import { readMdx } from "@/lib/mdx";
 import { siteMeta } from "@/lib/content";
@@ -8,12 +9,24 @@ export default async function Home() {
 
   return (
     <div className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
-      <h1 className="font-serif text-4xl font-semibold tracking-tight sm:text-6xl">
-        {siteMeta.name}
-      </h1>
-      <p className="mt-3 max-w-xl font-mono text-sm uppercase tracking-wide text-ink/60">
-        {siteMeta.tagline}
-      </p>
+      <div className="flex flex-col-reverse items-start gap-8 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h1 className="font-serif text-4xl font-semibold tracking-tight sm:text-6xl">
+            {siteMeta.name}
+          </h1>
+          <p className="mt-3 max-w-xl font-mono text-sm uppercase tracking-wide text-ink/60">
+            {siteMeta.tagline}
+          </p>
+        </div>
+        <Image
+          src="/images/darius-headshot.jpg"
+          alt={siteMeta.name}
+          width={160}
+          height={213}
+          priority
+          className="w-32 border border-ink/15 object-cover sm:w-40"
+        />
+      </div>
       <div className="mt-8 h-px w-full bg-ink/15" />
 
       <div className="prose prose-lg mt-8 max-w-2xl">
@@ -28,7 +41,7 @@ export default async function Home() {
               key={lang.name}
               className="border border-ink/15 px-3 py-1 font-mono text-xs text-ink/70"
             >
-              {lang.name} — {lang.level}
+              {lang.name} · {lang.level}
             </li>
           ))}
         </ul>

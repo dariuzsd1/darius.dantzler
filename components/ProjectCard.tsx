@@ -21,6 +21,40 @@ export function ProjectCard({ item, children }: { item: CaseworkItem; children?:
           </li>
         ))}
       </ul>
+      {(item.links.site || item.links.video || item.links.report) && (
+        <div className="mt-4 flex flex-wrap gap-4 font-mono text-xs uppercase tracking-wide">
+          {item.links.site && (
+            <a
+              href={item.links.site}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-accent decoration-2"
+            >
+              View Live Site
+            </a>
+          )}
+          {item.links.video && (
+            <a
+              href={item.links.video}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-accent decoration-2"
+            >
+              Watch Video
+            </a>
+          )}
+          {item.links.report && (
+            <a
+              href={item.links.report}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-accent decoration-2"
+            >
+              Read Report
+            </a>
+          )}
+        </div>
+      )}
       {children && <div className="prose mt-6 max-w-2xl">{children}</div>}
     </article>
   );

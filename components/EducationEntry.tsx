@@ -6,7 +6,7 @@ export function EducationEntry({ entry }: { entry: Entry }) {
       <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
         <h2 className="font-serif text-2xl font-semibold">{entry.credential}</h2>
         <p className="font-mono text-xs uppercase tracking-wide text-ink/50">
-          {entry.startDate ? `${entry.startDate} — ` : ""}
+          {entry.startDate ? `${entry.startDate} - ` : ""}
           {entry.endDate}
         </p>
       </div>
@@ -23,6 +23,17 @@ export function EducationEntry({ entry }: { entry: Entry }) {
           <span className="border border-ink/20 bg-accent px-2 py-1 font-mono text-xs uppercase tracking-wide text-ink">
             In Progress
           </span>
+        </p>
+      )}
+      {entry.paper && (
+        <p className="mt-4">
+          <a
+            href={entry.paper.url}
+            download
+            className="underline decoration-accent decoration-2"
+          >
+            Read the paper: {entry.paper.title} (PDF)
+          </a>
         </p>
       )}
     </article>

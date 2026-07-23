@@ -2,16 +2,19 @@
   {
     "id": "isu-space-studies",
     "institution": "International Space University (ISU)",
-    "credential": "M.S., Space Studies — Space Business, Policy & Entrepreneurship",
+    "credential": "M.S., Space Studies: Space Business, Policy & Entrepreneurship",
     "location": "Strasbourg, France",
     "endDate": "Expected 2027",
     "status": "in-progress",
     "highlights": [
-      "Startup Venture Project (NodeSpace) — led a student venture team developing a SaaS concept for ITU radiofrequency spectrum filing and spectrum-rights management, pitching the business case to 300+ investors and space professionals",
-      "Research paper, \"Rhetoric vs. Reality\" — comparative policy analysis of space-sustainability governance frameworks across the U.S., EU, Russia, and China",
-      "Deep Space Communication Roadmap — elected governance lead for a 20-member international team, building governance structure and strategic planning from a zero baseline",
+      "Research paper, \"Rhetoric vs. Reality\": comparative policy analysis of space-sustainability governance frameworks across the U.S., EU, Russia, and China",
+      "Deep Space Communication Roadmap: elected governance lead for a 20-member international team, building governance structure and strategic planning from a zero baseline",
       "Coursework: Market Analytics, ESA/European Space Policy Analysis, Space Situational Awareness & Dual-Use, Space Security & Defense, AI Applications in Space"
-    ]
+    ],
+    "paper": {
+      "title": "Rhetoric vs. Reality: A Comparative Analysis of Global Space Sustainability Definitions and Compliance",
+      "url": "/papers/rhetoric-vs-reality.pdf"
+    }
   },
   {
     "id": "umgc-poli-sci-business-law",
@@ -21,9 +24,13 @@
     "endDate": "2023",
     "status": "completed",
     "highlights": [
-      "Thesis, \"The Militarization and Weaponization of Outer Space\" — assessed anti-satellite (ASAT) weapons development and the erosion of the Outer Space Treaty",
+      "Thesis, \"The Militarization and Weaponization of Outer Space\": assessed anti-satellite (ASAT) weapons development and the erosion of the Outer Space Treaty",
       "Focus: international relations, defense policy, space law, business law, and geopolitical analysis"
-    ]
+    ],
+    "paper": {
+      "title": "The Militarization and Weaponization of Outer Space and How It Will Affect International Relations",
+      "url": "/papers/militarization-and-weaponization-of-outer-space.pdf"
+    }
   },
   {
     "id": "nsliy-russian-immersion",

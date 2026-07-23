@@ -19,6 +19,10 @@ export interface EducationEntry {
   endDate: string;
   status: "in-progress" | "completed";
   highlights: string[];
+  paper?: {
+    title: string;
+    url: string;
+  };
 }
 
 export interface CaseworkLinks {
@@ -49,6 +53,7 @@ export interface SiteMeta {
   tagline: string;
   lastUpdated: string;
   email: string;
+  phone: string;
   linkedin?: string;
   cvPath: string;
   languages: Language[];

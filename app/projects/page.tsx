@@ -7,7 +7,7 @@ import { readMdx } from "@/lib/mdx";
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "SpaceHub and Team VERA — the projects undertaken on nobody's orders.",
+  description: "SpaceHub, NodeSpace, Team VERA, and more, real projects built to solve real problems.",
 };
 
 export default async function Projects() {
@@ -19,7 +19,7 @@ export default async function Projects() {
       <PageHeader
         tag="Projects"
         title="Projects"
-        dek="Two projects taken on without being asked — the clearest evidence of what happens when nobody's assigning the work."
+        dek="Projects taken on without being asked, the clearest evidence of what happens when nobody's assigning the work."
       />
       <div className="space-y-8">
         {items.map((item, i) => (
