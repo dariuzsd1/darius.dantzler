@@ -1,0 +1,24 @@
+[
+  {
+    "slug": "spacehub",
+    "title": "SpaceHub",
+    "tag": "Self-Directed",
+    "role": "Founder & Researcher",
+    "dates": "2025 — Present",
+    "summary": "A self-directed deep dive into the European New Space ecosystem — how ESA BIC incubators, accelerators, and public funding mechanisms actually move a startup from idea to orbit.",
+    "stack": ["ESA BIC", "New Space Funding", "Market Research", "Ecosystem Mapping"],
+    "links": {},
+    "status": "Active"
+  },
+  {
+    "slug": "team-vera",
+    "title": "Team VERA",
+    "tag": "ISU Team Sprint",
+    "role": "Contributor",
+    "dates": "2026",
+    "summary": "An ISU sprint project building an AI-powered platform to automate ITAR/EAR export compliance checks — the kind of paperwork that quietly kills space deals if nobody owns it.",
+    "stack": ["ITAR/EAR Compliance", "Product Strategy", "MVP Development", "Pitch"],
+    "links": {},
+    "status": "Delivered"
+  }
+]

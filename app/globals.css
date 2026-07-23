@@ -1,0 +1,77 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Opt into class-based dark mode now so a future toggle just needs to add
+   the .dark class to <html> — no component changes required. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --color-bone: #f5f3ec;
+  --color-ink: #141414;
+  --color-accent: #f2c230;
+  --color-brief-red: #c1272d;
+
+  --background: var(--color-bone);
+  --foreground: var(--color-ink);
+}
+
+@theme inline {
+  --color-bone: var(--color-bone);
+  --color-ink: var(--color-ink);
+  --color-accent: var(--color-accent);
+  --color-brief-red: var(--color-brief-red);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-serif: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-plex-mono);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Deliberate, on-brand focus ring instead of the browser default */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--color-ink);
+  color: var(--color-bone);
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.875rem;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+.prose {
+  --tw-prose-body: var(--color-ink);
+  --tw-prose-headings: var(--color-ink);
+  --tw-prose-bold: var(--color-ink);
+  --tw-prose-links: var(--color-ink);
+  --tw-prose-bullets: var(--color-ink);
+  --tw-prose-quotes: var(--color-ink);
+}
+
+.prose :where(h1, h2, h3):not(:where([class~="not-prose"] *)) {
+  font-family: var(--font-serif);
+  font-weight: 600;
+}
+
+.prose :where(a):not(:where([class~="not-prose"] *)) {
+  text-decoration-color: var(--color-accent);
+  text-decoration-thickness: 2px;
+}

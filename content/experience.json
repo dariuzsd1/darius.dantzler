@@ -1,0 +1,61 @@
+[
+  {
+    "id": "chiefs-of-mission-planner",
+    "org": "U.S. European Command (USEUCOM)",
+    "role": "Chiefs of Mission Planner",
+    "location": "Stuttgart, Germany",
+    "startDate": "Feb 2024",
+    "endDate": "May 2024",
+    "summary": "Ran logistics and stakeholder liaison for a flagship USEUCOM conference bringing together the U.S. ambassador corps across Europe — the kind of event where a scheduling error becomes a diplomatic incident.",
+    "highlights": [
+      "Coordinated logistics, credentialing, and stakeholder liaison for a 4-star-led conference of 46+ U.S. Ambassadors and Chargés d'Affaires, aligning DoD, State Department, and NATO Allied officials",
+      "Served as liaison across Protocol, the State Department, and Allied embassies on scheduling and program delivery",
+      "Built an automated mail-merge credentialing system for 46+ principals and contributed to the official After Action Report",
+      "Awarded a 4-Star Coin by the Commander, USEUCOM"
+    ]
+  },
+  {
+    "id": "useucom-congressional-affairs",
+    "org": "U.S. European Command (USEUCOM)",
+    "division": "Congressional Affairs",
+    "role": "Congressional Affairs Intern",
+    "location": "Stuttgart, Germany",
+    "startDate": "Jun 2023",
+    "endDate": "Oct 2023",
+    "summary": "Supported the command's engagement with Congress, turning dense legislative text into material a 4-star commander could actually use.",
+    "highlights": [
+      "Condensed 4,000+ pages of the National Defense Authorization Act into 10+ executive briefs used to prepare a 4-star commander for congressional engagements",
+      "Designed and maintained an internal knowledge-management website centralizing legislative analysis, adopted across legal, financial, and operational directorates"
+    ]
+  },
+  {
+    "id": "useucom-sja",
+    "org": "U.S. European Command (USEUCOM)",
+    "division": "Office of the Staff Judge Advocate (SJA)",
+    "role": "Legal Research Intern",
+    "location": "Stuttgart, Germany",
+    "startDate": "Jul 2022",
+    "endDate": "Nov 2022",
+    "summary": "Worked issues at the intersection of operational law and international agreements, where precision in language is the whole job.",
+    "highlights": [
+      "Consolidated 150+ NATO/EUCOM agreements into a compliance-tracking database, saving an estimated 10–15 staff hours per week",
+      "Analyzed UCMJ provisions against U.S. federal law to support active administrative legal cases",
+      "Reviewed and adjudicated 25+ gift submissions to the commanding general against federal ethics thresholds"
+    ]
+  },
+  {
+    "id": "useucom-j9",
+    "org": "U.S. European Command (USEUCOM)",
+    "division": "J9 (Interagency Partnering Directorate)",
+    "role": "Intern Program Coordinator",
+    "location": "Stuttgart, Germany",
+    "startDate": "Jun 2021",
+    "endDate": "Sep 2021",
+    "summary": "Ran interagency coordination, the discipline of getting the State Department, DoD, and partner agencies reading from the same page.",
+    "highlights": [
+      "Managed onboarding, interviews, and scheduling for 50+ interns and U.S. Army Cadets, facilitating 3–5 direct hires into EUCOM roles",
+      "Coordinated across DEA, USAID, and FBI to support cross-departmental collaboration and program continuity",
+      "Redesigned the program's filing infrastructure and authored a continuity guide still in active use"
+    ]
+  }
+]
