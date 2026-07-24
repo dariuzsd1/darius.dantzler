@@ -93,10 +93,13 @@ body {
   animation: flag-wave 1.6s ease-in-out infinite;
   animation-play-state: paused;
   transform-origin: left center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .group:hover .flag-wave {
   animation-play-state: running;
+  opacity: 0.2;
 }
 
 @media (prefers-reduced-motion: reduce) {
