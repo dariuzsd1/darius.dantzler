@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getProjectBySlug, getProjects } from "@/lib/content";
-import { readMdx } from "@/lib/mdx";
+import { readMdx, mdxExternalLinkComponents } from "@/lib/mdx";
 
 export async function generateStaticParams() {
   return getProjects().map((item) => ({ slug: item.slug }));
@@ -103,7 +103,7 @@ export default async function ProjectDetail({
       <div className="mt-8 h-px w-full bg-ink/15" />
 
       <div className="prose prose-lg mt-8 max-w-2xl">
-        <MDXRemote source={source} />
+        <MDXRemote source={source} components={mdxExternalLinkComponents} />
       </div>
     </div>
   );

@@ -8,3 +8,10 @@ export async function readMdx(relativePath: string): Promise<string> {
   const filePath = path.join(CONTENT_DIR, relativePath);
   return readFile(filePath, "utf-8");
 }
+
+/** Pass as `components={mdxExternalLinkComponents}` so inline markdown links open in a new tab. */
+export const mdxExternalLinkComponents = {
+  a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
+    <a {...props} target="_blank" rel="noopener noreferrer" />
+  ),
+};
