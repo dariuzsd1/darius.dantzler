@@ -12,13 +12,13 @@ export default function Education() {
   const entries = getEducation();
 
   return (
-    <div className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
+    <div className="mx-auto max-w-5xl px-6 py-16 sm:py-24">
       <PageHeader
         tag="Education"
         title="Education & Training"
         dek="Space policy on top of a foundation in political science and business law."
       />
-      <div>
+      <div className="grid gap-6 sm:grid-cols-2">
         {entries.map((entry) => (
           <EducationEntry key={entry.id} entry={entry} />
         ))}

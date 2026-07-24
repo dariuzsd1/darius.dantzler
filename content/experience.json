@@ -1,5 +1,19 @@
 [
   {
+    "id": "child-youth-services",
+    "org": "U.S. Army",
+    "division": "Child & Youth Services",
+    "role": "Program Assistant",
+    "location": "Stuttgart, Germany",
+    "startDate": "Oct 2023",
+    "endDate": "Aug 2025",
+    "summary": "Ran programming and operations for a 20-person team, the kind of job where you learn that a good system saves more time than any amount of individual effort.",
+    "highlights": [
+      "Built an Excel/Word mail-merge system for a 20-person team, reclaiming roughly 300 staff hours a year",
+      "Designed standard operating procedures and led STEM enrichment programming, including rocketry, aerodynamics, and chemical reactions"
+    ]
+  },
+  {
     "id": "chiefs-of-mission-planner",
     "org": "U.S. European Command (USEUCOM)",
     "role": "Chiefs of Mission Planner",
@@ -56,6 +70,48 @@
       "Managed onboarding, interviews, and scheduling for 50+ interns and U.S. Army Cadets, facilitating 3–5 direct hires into EUCOM roles",
       "Coordinated across DEA, USAID, and FBI to support cross-departmental collaboration and program continuity",
       "Redesigned the program's filing infrastructure and authored a continuity guide still in active use"
+    ]
+  },
+  {
+    "id": "voice360-ukraine",
+    "org": "Voice360 Ukraine",
+    "role": "Humanitarian Operations Volunteer",
+    "location": "Germany / Poland / Ukraine",
+    "startDate": "May 2021",
+    "endDate": "Sep 2025",
+    "summary": "Ran cross-border aid logistics into an active war zone, the kind of work that teaches you fast how to keep a plan together when conditions change by the hour.",
+    "highlights": [
+      "Coordinated cross-border transport of 20+ Ukrainian refugees and delivery of roughly 12 tons of humanitarian aid across 5+ supply runs",
+      "Served as a trilingual liaison (English, German, Russian) between charter operators, NGOs, drivers, and displaced persons"
+    ]
+  },
+  {
+    "id": "stuttgart-army-lodging",
+    "org": "Stuttgart Army Lodging",
+    "role": "Hotel Desk Clerk",
+    "location": "Stuttgart, Germany",
+    "startDate": "Nov 2021",
+    "endDate": "Jul 2022",
+    "summary": "Handled the front desk across every shift, where being trusted with the money and the guest records is the whole job.",
+    "highlights": [
+      "Calculated and oversaw hundreds of thousands of dollars in guest transactions",
+      "Fielded calls from guests worldwide and maintained the integrity of the hotel filing system",
+      "Worked rotating morning, day, and night shifts while keeping every guest interaction professional"
+    ]
+  },
+  {
+    "id": "dunkin-donuts",
+    "org": "Dunkin' Donuts",
+    "division": "Panzer Exchange",
+    "role": "Barista",
+    "location": "Stuttgart, Germany",
+    "startDate": "Feb 2020",
+    "endDate": "Oct 2020",
+    "summary": "My first job, and where I learned that reliability and a clean system matter as much as speed.",
+    "highlights": [
+      "Prepared and safety-checked all food for store opening and kept stations to health standards",
+      "Wrote a continuity plan for power outages so the store could keep running through them",
+      "Gave customers fast, friendly service and closed the store down properly each night"
     ]
   }
 ]

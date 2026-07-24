@@ -10,6 +10,8 @@ export interface ProfessionalRecordEntry {
   highlights: string[];
 }
 
+export type FlagCountry = "FR" | "US" | "RU";
+
 export interface EducationEntry {
   id: string;
   institution: string;
@@ -23,6 +25,11 @@ export interface EducationEntry {
     title: string;
     url: string;
   };
+  logoUrl?: string;
+  flagCountry?: FlagCountry;
+  // Wide wordmark logos (e.g. UMGC) render in a rectangular pill;
+  // square crests (e.g. ISU) render in a circle.
+  wideLogo?: boolean;
 }
 
 export interface CaseworkLinks {
@@ -34,7 +41,7 @@ export interface CaseworkLinks {
 export interface CaseworkItem {
   slug: string;
   title: string;
-  tag: "Self-Directed" | "ISU Team Sprint";
+  tag: "Self-Directed" | "ISU Team Sprint" | "Team Project";
   role: string;
   dates: string;
   summary: string;

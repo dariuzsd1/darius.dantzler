@@ -14,7 +14,9 @@
     "paper": {
       "title": "Rhetoric vs. Reality: A Comparative Analysis of Global Space Sustainability Definitions and Compliance",
       "url": "/papers/rhetoric-vs-reality.pdf"
-    }
+    },
+    "logoUrl": "/images/isu-logo.png",
+    "flagCountry": "FR"
   },
   {
     "id": "umgc-poli-sci-business-law",
@@ -30,7 +32,10 @@
     "paper": {
       "title": "The Militarization and Weaponization of Outer Space and How It Will Affect International Relations",
       "url": "/papers/militarization-and-weaponization-of-outer-space.pdf"
-    }
+    },
+    "logoUrl": "/images/umgc-logo.svg",
+    "flagCountry": "US",
+    "wideLogo": true
   },
   {
     "id": "nsliy-russian-immersion",
@@ -41,6 +46,7 @@
     "status": "completed",
     "highlights": [
       "Competitively selected through a merit-based national process for a U.S. State Department-funded intensive language immersion program"
-    ]
+    ],
+    "flagCountry": "RU"
   }
 ]

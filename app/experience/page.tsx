@@ -14,13 +14,13 @@ export default function Experience() {
   const honors = getHonors();
 
   return (
-    <div className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
+    <div className="mx-auto max-w-5xl px-6 py-16 sm:py-24">
       <PageHeader
         tag="Experience"
         title="Professional Experience"
-        dek="Time served across three USEUCOM directorates and a Chiefs of Mission planning role."
+        dek="Time served across three USEUCOM directorates, a Chiefs of Mission planning role, and the jobs before all of it."
       />
-      <div>
+      <div className="grid gap-6 sm:grid-cols-2">
         {entries.map((entry) => (
           <ExperienceEntry key={entry.id} entry={entry} />
         ))}

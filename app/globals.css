@@ -75,3 +75,32 @@ body {
   text-decoration-color: var(--color-accent);
   text-decoration-thickness: 2px;
 }
+
+@keyframes flag-wave {
+  0%,
+  100% {
+    transform: skewY(0deg);
+  }
+  25% {
+    transform: skewY(-3deg);
+  }
+  75% {
+    transform: skewY(3deg);
+  }
+}
+
+.flag-wave {
+  animation: flag-wave 1.6s ease-in-out infinite;
+  animation-play-state: paused;
+  transform-origin: left center;
+}
+
+.group:hover .flag-wave {
+  animation-play-state: running;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flag-wave {
+    animation: none;
+  }
+}

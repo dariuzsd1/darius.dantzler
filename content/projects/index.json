@@ -1,12 +1,12 @@
 [
   {
-    "slug": "spacehub",
-    "title": "SpaceHub",
-    "tag": "Self-Directed",
-    "role": "Founder & Researcher",
-    "dates": "2025 - Present",
-    "summary": "A self-directed deep dive into the European New Space ecosystem: how ESA BIC incubators, accelerators, and public funding mechanisms actually move a startup from idea to orbit.",
-    "stack": ["ESA BIC", "New Space Funding", "Market Research", "Ecosystem Mapping"],
+    "slug": "european-space-hub",
+    "title": "European Space Hub",
+    "tag": "Team Project",
+    "role": "Intern",
+    "dates": "Jun 2026 - Present",
+    "summary": "An internship with a European New Space organization where I help coordinate other interns and manage the finances that keep the operation running.",
+    "stack": ["Intern Coordination", "Financial Administration", "New Space", "Operations"],
     "links": {},
     "status": "Active"
   },
