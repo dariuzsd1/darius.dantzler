@@ -1,0 +1,14 @@
+{
+  "projectId": "420af242-bb1b-4ac3-abc6-d0cf251c9539",
+  "pkg": "darius-dantzler-design-system",
+  "globalName": "DDS",
+  "shape": "package",
+  "cssEntry": "dist/index.css",
+  "extraFonts": "src/fonts.css",
+  "tsconfig": "tsconfig.json",
+  "readmeHeader": ".design-sync/conventions.md",
+  "overrides": {
+    "Textarea": { "cardMode": "column" },
+    "TextInput": { "cardMode": "column" }
+  }
+}

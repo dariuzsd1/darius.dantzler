@@ -1,0 +1,13 @@
+:root {
+  --dds-color-bone: #f5f3ec;
+  --dds-color-ink: #141414;
+  --dds-color-accent: #f2c230;
+  --dds-color-brief-red: #c1272d;
+
+  --dds-color-background: var(--dds-color-bone);
+  --dds-color-foreground: var(--dds-color-ink);
+
+  --dds-font-serif: "DDS Fraunces", ui-serif, Georgia, serif;
+  --dds-font-sans: "DDS Inter", ui-sans-serif, system-ui, sans-serif;
+  --dds-font-mono: "DDS IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+}

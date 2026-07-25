@@ -1,0 +1,28 @@
+.dds-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.dds-field__label {
+  font-family: var(--dds-font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(20, 20, 20, 0.6);
+}
+
+.dds-field__control {
+  margin-top: 0.25rem;
+  width: 100%;
+  border: 1px solid rgba(20, 20, 20, 0.2);
+  background: var(--dds-color-bone);
+  color: var(--dds-color-ink);
+  padding: 0.5rem 0.75rem;
+  font-family: var(--dds-font-sans);
+  font-size: 1rem;
+}
+
+.dds-field__control:focus-visible {
+  outline: 2px solid var(--dds-color-accent);
+  outline-offset: 2px;
+}
