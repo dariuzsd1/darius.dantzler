@@ -47,7 +47,7 @@ window.PROJECTS = [
       "Defined the \u201Ccoverage gap\u201D concept — the space between supply on hand and insurance refill eligibility"
     ],
     links: [
-      { label: "Live app", url: "https://t1-d-52t5-d9xu1vuyn-t1-d.vercel.app/" }
+      { label: "Live app", url: "https://t1-d-52t5.vercel.app/" }
     ]
   },
   {
