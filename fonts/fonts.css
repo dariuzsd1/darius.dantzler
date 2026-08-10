@@ -1,0 +1,35 @@
+@font-face{
+  font-family: "DDS Fraunces";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./fraunces-600-5VSMB6GO.woff2") format("woff2");
+}
+@font-face{
+  font-family: "DDS Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./inter-400-55WT6UWF.woff2") format("woff2");
+}
+@font-face{
+  font-family: "DDS Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./inter-500-W62DVTXI.woff2") format("woff2");
+}
+@font-face{
+  font-family: "DDS IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./plexmono-400-A2WATXFY.woff2") format("woff2");
+}
+@font-face{
+  font-family: "DDS IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./plexmono-500-33HAQIPI.woff2") format("woff2");
+}

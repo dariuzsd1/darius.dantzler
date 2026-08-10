@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery · Darius Dantzler</title>
+<meta name="description" content="Darius Dantzler, early-career professional in space security, sustainability, and policy. Master's in Space Studies at ISU Strasbourg. Portfolio, experience, and personal notes.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Darius Dantzler">
+<meta property="og:title" content="Gallery · Darius Dantzler">
+<meta property="og:description" content="Darius Dantzler, early-career professional in space security, sustainability, and policy. Master's in Space Studies at ISU Strasbourg. Portfolio, experience, and personal notes.">
+<meta property="og:image" content="assets/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles.css">
+<script src="./image-slot.js"></script>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--dds-color-bone);color:var(--dds-color-ink);font-family:var(--dds-font-sans);-webkit-font-smoothing:antialiased}
+a{color:var(--dds-color-ink);text-decoration:none}
+a:hover{color:var(--dds-color-ink)}
+.vignette{position:fixed;inset:0;z-index:0;pointer-events:none}
+.vignette::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 0%, rgba(242,194,48,.05), transparent 55%),radial-gradient(140% 120% at 50% 42%, rgba(245,243,236,0) 55%, rgba(20,20,20,.05) 100%)}
+
+.pillbar{position:fixed;top:18px;left:0;right:0;z-index:50;display:flex;justify-content:center;padding:0 20px;pointer-events:none}
+.pill{pointer-events:auto;width:100%;max-width:1120px;display:flex;align-items:center;gap:22px;padding:11px 14px 11px 24px;border-radius:999px;border:1px solid rgba(20,20,20,.12);background:rgba(248,246,240,.82);backdrop-filter:saturate(140%) blur(14px);-webkit-backdrop-filter:saturate(140%) blur(14px);box-shadow:0 1px 1px rgba(20,20,20,.03),0 8px 26px rgba(20,20,20,.09)}
+.brand{font-family:var(--dds-font-serif);font-weight:600;font-size:1.02rem;letter-spacing:-.01em;white-space:nowrap;padding-right:4px}
+.navlinks{display:flex;align-items:center;gap:20px;margin-left:auto}
+.navlink{font-family:var(--dds-font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(20,20,20,.6);border-bottom:2px solid transparent;padding:2px 0;transition:color .15s,border-color .15s;white-space:nowrap}
+.navlink:hover{color:var(--dds-color-ink)}
+.navlink.active{color:var(--dds-color-ink);border-bottom-color:var(--dds-color-accent)}
+@media(max-width:860px){.navlinks{display:none}}
+
+.wrap{position:relative;z-index:1}
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+.gl-head{padding-top:140px}
+.crumb{display:inline-flex;align-items:center;gap:8px;font-family:var(--dds-font-mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.5);margin-bottom:22px}
+.crumb a{color:rgba(20,20,20,.5);border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
+.crumb a:hover{color:var(--dds-color-ink);border-bottom-color:var(--dds-color-accent)}
+
+/* banner */
+.banner{position:relative;height:180px;overflow:hidden;border-radius:14px;border:1px solid rgba(20,20,20,.14);margin-bottom:26px;background:linear-gradient(120deg,color-mix(in srgb,var(--brand) 22%,#f7f4ec),#f7f4ec 72%)}
+.banner::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--brand);z-index:4}
+.banner-watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);height:auto;width:auto;max-height:126%;max-width:80%;opacity:.13;filter:saturate(.85);pointer-events:none}
+.banner-logo{position:absolute;top:18px;right:22px;z-index:2;height:54px;max-width:240px;object-fit:contain;filter:drop-shadow(0 1px 2px rgba(20,20,20,.22))}
+.banner-shimmer{position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.55) 50%,transparent 60%);transform:translateX(-140%)}
+.banner:hover .banner-shimmer{animation:shimmer 1.15s ease}
+@keyframes shimmer{from{transform:translateX(-140%)}to{transform:translateX(140%)}}
+
+.gl-title{font-family:var(--dds-font-serif);font-weight:600;letter-spacing:-.01em;font-size:clamp(2rem,4.5vw,2.9rem);line-height:1.08;margin:0}
+.gl-sub{margin-top:10px;font-size:1.08rem;line-height:1.5;color:rgba(20,20,20,.68);max-width:640px}
+.gl-note{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-family:var(--dds-font-mono);font-size:.64rem;text-transform:uppercase;letter-spacing:.07em;color:rgba(20,20,20,.5);background:rgba(20,20,20,.04);border:1px solid rgba(20,20,20,.12);border-radius:999px;padding:6px 12px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px;margin:34px 0 20px}
+figure.tile{margin:0}
+.tile-slot{position:relative;width:100%;aspect-ratio:4/3;border-radius:12px;overflow:hidden;border:1px solid rgba(20,20,20,.16);box-shadow:0 6px 18px rgba(20,20,20,.07)}
+figcaption{margin-top:9px;font-family:var(--dds-font-mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(20,20,20,.6)}
+
+.gl-foot{border-top:1px solid rgba(20,20,20,.15);margin-top:40px}
+.gl-foot .inner{max-width:1120px;margin:0 auto;padding:34px 24px 60px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:var(--dds-font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(20,20,20,.55)}
+.gl-foot a{color:rgba(20,20,20,.55);border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
+.gl-foot a:hover{color:var(--dds-color-ink);border-bottom-color:var(--dds-color-accent)}
+@media(prefers-reduced-motion:reduce){.banner:hover .banner-shimmer{animation:none}}
+</style>
+</head>
+<body>
+<div class="vignette"></div>
+
+<div class="pillbar">
+  <nav class="pill" aria-label="Main">
+    <a class="brand" href="index.html">Darius Dantzler</a>
+    <div class="navlinks">
+      <a class="navlink" href="index.html">Home</a>
+      <a class="navlink" href="Experience.html">Experience</a>
+      <a class="navlink active" href="Education.html">Education</a>
+      <a class="navlink" href="Projects.html">Projects</a>
+      <a class="navlink" href="Personal.html">Personal</a>
+      <a class="navlink" href="Contact.html">Contact</a>
+    </div>
+  </nav>
+</div>
+
+<div class="wrap">
+  <header class="gl-head container">
+    <div class="crumb"><a href="Education.html">Education</a> <span>/</span> <span id="crumbName">Gallery</span></div>
+    <div class="banner" id="flag"><img class="banner-watermark" id="flagWm" src="" alt="" aria-hidden="true"><span class="banner-shimmer" aria-hidden="true"></span><img class="banner-logo" id="flagLogo" src="" alt=""></div>
+    <h1 class="gl-title" id="glTitle"></h1>
+    <p class="gl-sub" id="glSub"></p>
+    <span class="gl-note"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg><span data-i18n="gl.drop">Drop your photos onto any tile to fill it</span></span>
+  </header>
+
+  <main class="container">
+    <div class="grid" id="grid"></div>
+  </main>
+
+  <footer class="gl-foot">
+    <div class="inner">
+      <span>Darius Dantzler · Gallery</span>
+      <a href="Education.html" data-i18n="gl.backedu">Back to Education</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+const SCHOOLS = {
+  isu: { name:"International Space University", brand:"#14315f", logo:"assets/edu/isu-wordmark-t.png", medallion:"assets/edu/isu-patch.png",
+    sub:"Strasbourg, France — 2025 to 2027.",
+    slots:["Factory 2026 — NodeSpace pitch","NodeSpace team","Robotics competition","Lunar habitat simulation","Intercultural event","'Why Space Matters' podcast"] },
+  umgc: { name:"University of Maryland Global Campus", brand:"#c8102e", logo:"assets/edu/umgc-wordmark-t.png", medallion:"assets/edu/umgc-seal.png",
+    sub:"Stuttgart, Germany — 2019 to 2023.",
+    slots:["Campus in Stuttgart","Commencement","Thesis presentation","Study group","Around campus","Graduation day"] },
+  nsliy: { name:"NSLI for Youth", brand:"#00a3c4", logo:"assets/edu/nsliy-t.png", medallion:"",
+    sub:"U.S. Department of State — Russian immersion, Moscow, 2019.",
+    slots:["Arrival in Moscow","Language class","Host program group","Around the city","Program certificate","Farewell"] },
+  stcharles: { name:"St. Charles High School", brand:"#17693a", logo:"assets/edu/stcharles-crest-t.png", medallion:"",
+    sub:"Waldorf, Maryland — 2015 to 2019.",
+    slots:["Model United Nations","Mock Trial","We the People — Congress visit","Graduation","With classmates","Awards night"] }
+};
+
+const T=(k,d)=>(window.ddsI18n&&window.ddsI18n.t(k))||d;
+const key = (new URLSearchParams(location.search).get('school')||'isu').toLowerCase();
+const s = SCHOOLS[key] || SCHOOLS.isu;
+
+function paintGallery(){
+  const gallery = T('gl.gallery','Gallery');
+  document.title = s.name + " · " + gallery;
+  document.getElementById('crumbName').textContent = s.name;
+  document.getElementById('glTitle').textContent = s.name + " — " + gallery;
+  document.getElementById('glSub').textContent = s.sub;
+}
+paintGallery();
+window.addEventListener('ddslangchange', paintGallery);
+
+const flag = document.getElementById('flag');
+flag.style.setProperty('--brand', s.brand);
+const flagLogo = document.getElementById('flagLogo');
+flagLogo.src = s.medallion || s.logo; flagLogo.alt = s.name + " logo";
+document.getElementById('flagWm').src = s.logo;
+
+const grid = document.getElementById('grid');
+s.slots.forEach((label,i)=>{
+  const fig=document.createElement('figure'); fig.className='tile';
+  fig.innerHTML =
+    '<div class="tile-slot"><image-slot id="'+key+'-'+(i+1)+'" shape="rect" placeholder="'+label.replace(/"/g,'&quot;')+'"></image-slot></div>'+
+    '<figcaption>'+label.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</figcaption>';
+  grid.appendChild(fig);
+});
+</script>
+<script src="i18n.js"></script>
+<script src="site-chrome.js"></script>
+</body>
+</html>

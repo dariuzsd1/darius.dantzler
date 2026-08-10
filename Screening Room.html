@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Screening Room · Darius Dantzler</title>
+<meta name="description" content="Darius Dantzler, early-career professional in space security, sustainability, and policy. Master's in Space Studies at ISU Strasbourg. Portfolio, experience, and personal notes.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Darius Dantzler">
+<meta property="og:title" content="Screening Room · Darius Dantzler">
+<meta property="og:description" content="Darius Dantzler, early-career professional in space security, sustainability, and policy. Master's in Space Studies at ISU Strasbourg. Portfolio, experience, and personal notes.">
+<meta property="og:image" content="assets/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles.css">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--dds-color-bone);color:var(--dds-color-ink);font-family:var(--dds-font-sans);-webkit-font-smoothing:antialiased}
+a{color:var(--dds-color-ink);text-decoration:none}
+a:hover{color:var(--dds-color-ink)}
+
+/* soft warm vignette */
+.vignette{position:fixed;inset:0;z-index:0;pointer-events:none}
+.vignette::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(120% 90% at 50% 0%, rgba(242,194,48,.05), transparent 55%),
+  radial-gradient(140% 120% at 50% 42%, rgba(245,243,236,0) 55%, rgba(20,20,20,.05) 100%),
+  radial-gradient(80% 60% at 85% 15%, rgba(193,39,45,.015), transparent 60%)}
+
+/* floating pill header (shared identity) */
+.pillbar{position:fixed;top:18px;left:0;right:0;z-index:50;display:flex;justify-content:center;padding:0 20px;pointer-events:none}
+.pill{pointer-events:auto;width:100%;max-width:1120px;display:flex;align-items:center;gap:22px;padding:11px 14px 11px 24px;border-radius:999px;border:1px solid rgba(20,20,20,.12);background:rgba(248,246,240,.82);backdrop-filter:saturate(140%) blur(14px);-webkit-backdrop-filter:saturate(140%) blur(14px);box-shadow:0 1px 1px rgba(20,20,20,.03),0 8px 26px rgba(20,20,20,.09)}
+.brand{font-family:var(--dds-font-serif);font-weight:600;font-size:1.02rem;letter-spacing:-.01em;white-space:nowrap;padding-right:4px}
+.navlinks{display:flex;align-items:center;gap:20px;margin-left:auto}
+.navlink{font-family:var(--dds-font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(20,20,20,.6);border-bottom:2px solid transparent;padding:2px 0;transition:color .15s,border-color .15s;white-space:nowrap}
+.navlink:hover{color:var(--dds-color-ink)}
+.navlink.active{color:var(--dds-color-ink);border-bottom-color:var(--dds-color-accent)}
+.pill-tools{display:flex;align-items:center;gap:6px;padding-left:14px;margin-left:2px;border-left:1px solid rgba(20,20,20,.12)}
+.icobtn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:999px;border:1px solid transparent;color:rgba(20,20,20,.7);background:transparent;cursor:pointer;transition:background .15s,color .15s}
+.icobtn:hover{background:rgba(20,20,20,.06);color:var(--dds-color-ink)}
+.icobtn svg{width:18px;height:18px;display:block}
+.lang{position:relative}
+.lang-menu{position:absolute;top:calc(100% + 12px);right:0;min-width:172px;background:var(--dds-color-bone);border:1px solid rgba(20,20,20,.14);border-radius:14px;box-shadow:0 10px 30px rgba(20,20,20,.14);padding:6px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .16s,transform .16s,visibility .16s}
+.lang.open .lang-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.lang-head{font-family:var(--dds-font-mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.45);padding:8px 10px 6px}
+.lang-item{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;text-align:left;background:transparent;border:0;cursor:pointer;padding:9px 10px;border-radius:9px;font-family:var(--dds-font-sans);font-size:.9rem;color:var(--dds-color-ink);transition:background .12s}
+.lang-item:hover{background:rgba(20,20,20,.06)}
+.lang-item .code{font-family:var(--dds-font-mono);font-size:.66rem;color:rgba(20,20,20,.5)}
+.lang-item[aria-checked="true"] .code{color:var(--dds-color-ink)}
+.lang-item .tick{width:14px;height:14px;color:var(--dds-color-accent);opacity:0}
+.lang-item[aria-checked="true"] .tick{opacity:1}
+
+.wrap{position:relative;z-index:1}
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* intro */
+.sr-head{padding-top:148px;padding-bottom:34px}
+.crumb{display:inline-flex;align-items:center;gap:8px;font-family:var(--dds-font-mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.5);margin-bottom:22px}
+.crumb a{color:rgba(20,20,20,.5);border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
+.crumb a:hover{color:var(--dds-color-ink);border-bottom-color:var(--dds-color-accent)}
+.backbtn{display:inline-flex;align-items:center;gap:8px;margin-bottom:22px;font-family:var(--dds-font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(20,20,20,.6);border:1px solid rgba(20,20,20,.18);border-radius:999px;padding:8px 15px 8px 12px;background:rgba(248,246,240,.6);transition:background .15s,color .15s,border-color .15s}
+.backbtn:hover{background:var(--dds-color-ink);color:var(--dds-color-bone);border-color:var(--dds-color-ink)}
+.backbtn svg{width:15px;height:15px}
+.sr-head .kick{display:inline-block;white-space:nowrap;font-family:var(--dds-font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;background:var(--dds-color-accent);color:var(--dds-color-ink);padding:5px 11px;border:1px solid rgba(20,20,20,.2)}
+.sr-head h1{font-family:var(--dds-font-serif);font-weight:600;letter-spacing:-.01em;font-size:clamp(2.6rem,6vw,4rem);line-height:1.05;margin:18px 0 0}
+.sr-head .dek{margin-top:14px;font-size:1.16rem;line-height:1.55;color:rgba(20,20,20,.7);max-width:600px}
+.hint{margin-top:18px;display:inline-flex;align-items:center;gap:9px;font-family:var(--dds-font-mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(20,20,20,.45)}
+.hint svg{width:15px;height:15px}
+
+/* flip-card grid */
+.group{padding-bottom:26px}
+.group + .group{margin-top:30px}
+.group-head{display:flex;align-items:baseline;gap:14px;padding-bottom:22px;margin-bottom:6px;border-bottom:1px solid rgba(20,20,20,.14)}
+.grp-label{font-family:var(--dds-font-serif);font-weight:600;font-size:1.5rem;letter-spacing:-.01em}
+.grp-count{font-family:var(--dds-font-mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.45)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(212px,1fr));gap:38px 30px;padding:6px 0 40px}
+.item{display:flex;flex-direction:column;gap:9px}
+.item .title{box-sizing:border-box;height:63px;font-family:var(--dds-font-serif);font-weight:600;font-size:1.02rem;line-height:1.22;letter-spacing:-.01em;color:var(--dds-color-ink);background:rgba(20,20,20,.05);border:1.5px solid rgba(20,20,20,.82);border-radius:5px;padding:9px 12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.item .meta{align-self:flex-start;white-space:nowrap;font-family:var(--dds-font-mono);font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.62);background:rgba(20,20,20,.03);border:1px solid rgba(20,20,20,.3);border-radius:999px;padding:3px 11px}
+.card{position:relative;width:100%;aspect-ratio:2/3;perspective:1400px;cursor:pointer;background:transparent;border:0;padding:0;text-align:left;font:inherit;color:inherit}
+.card-face-wrap{position:relative;width:100%;height:100%;transition:transform .6s cubic-bezier(.4,.15,.2,1);transform-style:preserve-3d}
+.card:hover .card-face-wrap,.card.flipped .card-face-wrap{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;border:1px solid rgba(20,20,20,.16);border-radius:4px}
+.face.front{background:repeating-linear-gradient(135deg,rgba(20,20,20,.06) 0 12px,rgba(20,20,20,.02) 12px 24px)}
+.face.front img{width:100%;height:100%;object-fit:cover;display:block}
+.face.front .drop{position:absolute;inset:0;display:none;align-items:center;justify-content:center}
+.face.front .drop span{font-family:var(--dds-font-mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;color:rgba(20,20,20,.42);border:1px dashed rgba(20,20,20,.24);padding:5px 11px;border-radius:4px;background:rgba(245,243,236,.7)}
+.face.front::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);pointer-events:none}
+.corner{position:absolute;top:9px;right:9px;z-index:2;width:26px;height:26px;border-radius:999px;background:rgba(245,243,236,.85);border:1px solid rgba(20,20,20,.18);display:flex;align-items:center;justify-content:center;color:rgba(20,20,20,.6);transition:opacity .2s}
+.corner svg{width:13px;height:13px}
+.card.flipped .corner,.card:hover .corner{opacity:0}
+.face.back{transform:rotateY(180deg);background:var(--dds-color-ink);color:var(--dds-color-bone);padding:18px 16px;display:flex;flex-direction:column}
+.face.back .bk-kick{flex:0 0 auto;font-family:var(--dds-font-mono);font-size:.58rem;text-transform:uppercase;letter-spacing:.09em;color:var(--dds-color-accent)}
+.face.back p{flex:1 1 auto;min-height:0;overflow-y:auto;margin:10px 0 0;font-size:.9rem;line-height:1.52;color:rgba(245,243,236,.9);scrollbar-width:thin;scrollbar-color:rgba(245,243,236,.4) transparent;-webkit-overflow-scrolling:touch}
+.face.back p::-webkit-scrollbar{width:5px}
+.face.back p::-webkit-scrollbar-thumb{background:rgba(245,243,236,.32);border-radius:3px}
+.face.back .bk-foot{flex:0 0 auto;margin-top:12px;padding-top:12px;border-top:1px solid rgba(245,243,236,.16);font-family:var(--dds-font-mono);font-size:.58rem;text-transform:uppercase;letter-spacing:.07em;color:rgba(245,243,236,.5)}
+
+.sr-foot{border-top:1px solid rgba(20,20,20,.15)}
+.sr-foot .inner{max-width:1120px;margin:0 auto;padding:34px 24px 60px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:var(--dds-font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(20,20,20,.55)}
+.sr-foot a{color:rgba(20,20,20,.55);border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
+.sr-foot a:hover{color:var(--dds-color-ink);border-bottom-color:var(--dds-color-accent)}
+
+@media(max-width:860px){.navlinks{display:none}}
+@media(max-width:560px){
+  .sr-head{padding-top:120px}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:30px 20px}
+}
+@media (prefers-reduced-motion:reduce){.card-face-wrap{transition:none}}
+</style>
+</head>
+<body>
+<div class="vignette"></div>
+
+<div class="pillbar">
+  <nav class="pill" aria-label="Main">
+    <a class="brand" href="index.html">Darius Dantzler</a>
+    <div class="navlinks">
+      <a class="navlink" href="index.html">Home</a>
+      <a class="navlink" href="Experience.html">Experience</a>
+      <a class="navlink" href="Education.html">Education</a>
+      <a class="navlink" href="Projects.html">Projects</a>
+      <a class="navlink active" href="Personal.html">Personal</a>
+      <a class="navlink" href="Contact.html">Contact</a>
+    </div>
+    <div class="pill-tools">
+      <a class="icobtn" href="https://github.com/dariuzsd1" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.2.8-.5v-1.8c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5Z"/></svg>
+      </a>
+      <div class="lang" id="lang">
+        <button class="icobtn" id="langBtn" aria-label="Language" aria-haspopup="true" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3Z"/></svg>
+        </button>
+        <div class="lang-menu" role="menu" aria-label="Language">
+          <div class="lang-head">Language</div>
+          <button class="lang-item" role="menuitemradio" aria-checked="true" data-lang="en"><span>English</span><span class="code">EN</span><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></button>
+          <button class="lang-item" role="menuitemradio" aria-checked="false" data-lang="de"><span>Deutsch</span><span class="code">DE</span><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></button>
+          <button class="lang-item" role="menuitemradio" aria-checked="false" data-lang="it"><span>Italiano</span><span class="code">IT</span><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></button>
+          <button class="lang-item" role="menuitemradio" aria-checked="false" data-lang="fr"><span>Français</span><span class="code">FR</span><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<div class="wrap">
+  <header class="sr-head container">
+    <div class="crumb"><a href="Personal.html" data-i18n="crumb.personal">Personal</a> <span>/</span> <span class="kick" data-i18n="card.screening.title">Screening Room</span></div>
+    <a class="backbtn" href="Personal.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg><span data-i18n="back.personal">Back to Personal</span></a>
+    <h1 data-i18n="sr.title">Films and shows worth your time</h1>
+    <p class="dek" data-i18n="sr.dek">A running shelf of what I keep coming back to, favorites first within each group. Flip any poster for a line or two on why it made the list.</p>
+    <div class="hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg><span data-i18n="sr.hint">Hover to flip · tap on touch</span></div>
+  </header>
+
+  <main class="container">
+    <section class="group">
+      <div class="group-head">
+        <span class="grp-label" data-i18n="sr.films">Films</span>
+        <span class="grp-count">19 <span data-i18n="sr.titles">titles</span></span>
+      </div>
+      <div class="grid">
+      <div class="item">
+        <div class="title">Three Billboards Outside Ebbing, Missouri</div>
+        <div class="meta">Film · 2017</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/three-billboards-outside-ebbing-missouri.jpg" alt="Three Billboards Outside Ebbing, Missouri poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>A grieving mother, furious that her daughter's murder remains unsolved, rents three billboards to publicly shame the local police chief. What starts as a single act of protest spirals through a small town already full of rage, guilt, and unexpected tenderness. Frances McDormand anchors a story that keeps refusing easy heroes or villains.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Guardians of the Galaxy Vol. 3</div>
+        <div class="meta">Film · 2023</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/guardians-of-the-galaxy-vol-3.jpg" alt="Guardians of the Galaxy Vol. 3 poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>The ragtag crew of misfits faces its most personal mission yet when Rocket's traumatic origin comes back to threaten his life. The film digs into where he came from and what was done to him, giving the trilogy an emotional weight underneath the space opera. It closes out the group's story on a note of loss, loyalty, and hard-won peace.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Treasure Planet</div>
+        <div class="meta">Film · 2002</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/treasure-planet.jpg" alt="Treasure Planet poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>Robert Louis Stevenson's pirate classic is reimagined among the stars, following a restless young man who finds a map to a legendary trove of treasure. On the voyage he is mentored by a cyborg cook whose loyalties are far from simple. It pairs old-fashioned adventure with a coming-of-age story about a kid looking for something to believe in.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Beasts of No Nation</div>
+        <div class="meta">Film · 2015</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/beasts-of-no-nation.jpg" alt="Beasts of No Nation poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>A young boy in an unnamed West African country is torn from his family by civil war and pulled into an armed group as a child soldier. Under a charismatic and monstrous commandant, he is shaped into a fighter while trying to hold on to any part of himself. It is an unflinching look at how war consumes the young.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Mudbound</div>
+        <div class="meta">Film · 2017</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/mudbound.jpg" alt="Mudbound poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>Two families, one Black and one white, work the same stretch of Mississippi farmland in the years around World War II. When two of their men return from the war changed, an unlikely friendship forms and collides with the violent racism of the place they came home to. It is a sweeping, novelistic drama about land, labor, and the cost of the color line.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">First They Killed My Father</div>
+        <div class="meta">Film · 2017</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/first-they-killed-my-father.jpg" alt="First They Killed My Father poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>Told through the eyes of a young girl, the film follows a Cambodian family torn apart when the Khmer Rouge seizes power. Based on a survivor's memoir, it captures genocide not as statistics but as the slow, bewildering loss experienced by one child. The result is intimate, harrowing, and hard to shake.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Interstellar</div>
+        <div class="meta">Film · 2014</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/interstellar.jpg" alt="Interstellar poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>With Earth slowly dying, a former pilot leaves his family to fly through a wormhole in search of a new home for humanity. The mission forces impossible choices about time, distance, and what a person will sacrifice for the people they love. It blends hard science with an emotional core about a father and daughter separated by the physics of survival.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">City of God</div>
+        <div class="meta">Film · 2002</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/city-of-god.jpg" alt="City of God poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>Growing up in a violent Rio de Janeiro favela, two boys take very different paths: one drifts toward photography, the other toward the drug trade. Spanning years and a sprawling cast, the film traces how poverty and crime feed each other across a generation. It is kinetic, brutal, and unforgettable.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Spider-Man: Across the Spider-Verse</div>
+        <div class="meta">Film · 2023</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/spider-man-across-the-spider-verse.jpg" alt="Spider-Man: Across the Spider-Verse poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>Miles Morales is pulled across the multiverse and into a vast society of Spider-People who disagree about what being a hero has to cost. As he pushes back against their rules to save someone he loves, he learns that the web he is caught in is larger than he imagined. Visually it reinvents what animation can look like, ending on a cliffhanger that raises the stakes for everyone.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">WALL-E</div>
+        <div class="meta">Film · 2008</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/wall-e.jpg" alt="WALL-E poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>Long after humanity has abandoned a garbage-choked Earth, a small waste-collecting robot spends his days alone until a sleek probe named EVE arrives. His quiet devotion sends him chasing her into space, where the remnants of humanity drift in comfortable neglect. The nearly wordless opening is among the most tender stretches Pixar has ever made.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Jojo Rabbit</div>
+        <div class="meta">Film · 2019</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/jojo-rabbit.jpg" alt="Jojo Rabbit poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>A lonely boy in Nazi Germany, whose imaginary friend is a buffoonish version of Hitler, discovers his mother is hiding a Jewish girl in their home. What begins as satire becomes a story about how a child unlearns hatred. It walks a razor's edge between comedy and heartbreak.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Good Will Hunting</div>
+        <div class="meta">Film · 1997</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/good-will-hunting.jpg" alt="Good Will Hunting poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>A young janitor at a prestigious university turns out to be a self-taught mathematical genius, though his real problem is everything he refuses to feel. Pushed into therapy, he slowly lets down his guard with a counselor carrying grief of his own. It is a warm, sharply written film about talent, trauma, and letting people in.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Toy Story 3</div>
+        <div class="meta">Film · 2010</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/toy-story-3.jpg" alt="Toy Story 3 poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>With their owner grown up and leaving for college, Andy's toys end up mistakenly donated to a daycare that is not what it seems. Their escape becomes a story about loyalty, obsolescence, and knowing when to let go. It gave the trilogy a surprisingly moving meditation on endings.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Coco</div>
+        <div class="meta">Film · 2017</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/coco.jpg" alt="Coco poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>A boy who dreams of being a musician, in a family that has banned music, is swept into the colorful Land of the Dead on Dia de los Muertos. There he searches for the truth about his ancestors and what really happened to the great-great-grandfather he idolizes. It is a celebration of memory, family, and the idea that we live on as long as we are remembered.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Project Hail Mary</div>
+        <div class="meta">Film · 2026</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/project-hail-mary.jpg" alt="Project Hail Mary poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>A science teacher wakes alone on a spaceship light years from home with no memory of who he is or why he is there. As his memory returns, he realizes he is humanity's last chance to stop a mysterious phenomenon killing the sun, and that he may not have to face it alone. Adapted from Andy Weir's novel, it pairs real scientific problem-solving with an unexpected friendship at the edge of the solar system.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Come and See</div>
+        <div class="meta">Film · 1985</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/come-and-see.jpg" alt="Come and See poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>A Belarusian boy eagerly joins the partisan resistance during the Nazi occupation, only to witness atrocities that strip away every trace of his innocence. The film follows his face as much as the events, charting the horror through what it does to him. It is widely regarded as one of the most devastating war films ever made.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">No Country for Old Men</div>
+        <div class="meta">Film · 2007</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/no-country-for-old-men.jpg" alt="No Country for Old Men poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>A man stumbles on the aftermath of a drug deal in the Texas desert and walks away with a case of cash, unaware of the relentless killer now hunting him. As the bodies pile up, an aging sheriff trails behind, struggling to make sense of a violence he no longer recognizes. Adapted from Cormac McCarthy, it is spare, tense, and quietly philosophical.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">The Wild Robot</div>
+        <div class="meta">Film · 2024</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/the-wild-robot.jpg" alt="The Wild Robot poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>A robot is shipwrecked on a remote island and must learn to survive among wild animals that want nothing to do with her. When she ends up caring for an orphaned gosling, she slowly becomes part of a world she was never built for. It is a gorgeously animated story about adaptation, motherhood, and belonging.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Pirates of the Caribbean: The Curse of the Black Pearl</div>
+        <div class="meta">Film · 2003</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/pirates-of-the-caribbean-the-curse-of-the-black-pearl.jpg" alt="Pirates of the Caribbean: The Curse of the Black Pearl poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>A blacksmith teams up with the eccentric Captain Jack Sparrow to rescue a governor's daughter from a crew of pirates cursed to live as the undead. Their chase across the Caribbean is full of double-crosses, sword fights, and buried gold. Johnny Depp's performance turned a theme park ride into a genuine swashbuckling adventure.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      </div>
+    </section>
+
+    <section class="group">
+      <div class="group-head">
+        <span class="grp-label" data-i18n="sr.tv">TV &amp; Series</span>
+        <span class="grp-count">26 <span data-i18n="sr.titles">titles</span></span>
+      </div>
+      <div class="grid">
+      <div class="item">
+        <div class="title">Breaking Bad</div>
+        <div class="meta">Series · 2008</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/breaking-bad.jpg" alt="Breaking Bad poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>A mild-mannered high school chemistry teacher, diagnosed with terminal cancer, starts cooking methamphetamine to secure his family's future. What begins as desperation curdles into ambition as he transforms into a ruthless drug kingpin. It is a slow, meticulous study of a decent man becoming something monstrous.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Chernobyl</div>
+        <div class="meta">Series · 2019</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/chernobyl.jpg" alt="Chernobyl poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>A dramatization of the 1986 nuclear disaster and the frantic, dangerous effort to contain it. It follows the scientists, officials, and workers who confronted the meltdown while a state apparatus worked to bury the truth. The result is a tense, sobering look at what happens when lies collide with physics.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Avatar: The Last Airbender</div>
+        <div class="meta">Series · 2005</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/avatar-the-last-airbender.jpg" alt="Avatar: The Last Airbender poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>In a world where some people can control the four elements, a war has raged for a century while the one person destined to stop it slept frozen in ice. A young boy named Aang wakes to find he is that person, and he sets out with new friends to master the elements before it is too late. It balances real stakes and grief with humor, growth, and one of animation's great redemption arcs.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Game of Thrones</div>
+        <div class="meta">Series · 2011</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/game-of-thrones.jpg" alt="Game of Thrones poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>Noble families scheme, betray, and go to war for control of a divided kingdom, while older and stranger threats stir beyond its borders. Loyalty is currency and almost no one is safe. It is a sprawling, brutal fantasy epic about power and the people it destroys.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Rick and Morty</div>
+        <div class="meta">Series · 2013</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/rick-and-morty.jpg" alt="Rick and Morty poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>A nihilistic genius scientist drags his anxious grandson across dimensions on increasingly reckless adventures. Beneath the sci-fi absurdity sits a surprisingly bleak examination of family, meaning, and self-destruction. It is as clever as it is chaotic.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Better Call Saul</div>
+        <div class="meta">Series · 2015</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/better-call-saul.jpg" alt="Better Call Saul poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>This prequel to Breaking Bad traces how a striving, small-time lawyer becomes the morally slippery Saul Goodman. It is a slower, sadder story about ambition, family, and the compromises that harden into a person. Many argue it surpasses the show it came from.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">The Office</div>
+        <div class="meta">Series · 2005</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/the-office.jpg" alt="The Office poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>A mockumentary about the employees of a mundane paper company, led by a well-meaning but cringe-inducing boss. Across years of small humiliations and quiet romances, it finds real warmth in ordinary working life. It became a comfort-watch touchstone for a generation.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Arcane</div>
+        <div class="meta">Series · 2021</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/arcane.jpg" alt="Arcane poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>Set in a divided city of gleaming privilege and an oppressed underbelly, it follows two sisters pulled onto opposite sides of a coming conflict. Stunningly animated, it turns a video game world into a story about class, loyalty, and the wounds families inflict. It earned acclaim far beyond its source.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">BoJack Horseman</div>
+        <div class="meta">Series · 2014</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/bojack-horseman.jpg" alt="BoJack Horseman poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>A washed-up sitcom star, who happens to be a horse, stumbles through Hollywood trying to matter again. What looks like an absurd animal comedy becomes one of television's most honest portraits of depression, addiction, and self-sabotage. It is very funny and quietly devastating.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Vinland Saga</div>
+        <div class="meta">Series · 2019</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/vinland-saga.jpg" alt="Vinland Saga poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>A young Viking, consumed by revenge for his murdered father, comes of age amid the brutality of medieval war. Over time his story bends toward a harder question: whether a life can be built on something other than violence. It is a sweeping, thoughtful epic.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Narcos</div>
+        <div class="meta">Series · 2015</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/narcos.jpg" alt="Narcos poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>A dramatized account of the rise of the Colombian cocaine trade and the hunt for Pablo Escobar. It follows both the traffickers and the agents chasing them across a war with no clean sides. The result is a tense, sprawling crime saga rooted in real history.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">South Park</div>
+        <div class="meta">Series · 1997</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/south-park.jpg" alt="South Park poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>Four foul-mouthed kids in a small Colorado town anchor a satire that turns current events into absurd, biting comedy. For decades it has skewered politics, culture, and celebrity with near-total fearlessness. Crude on the surface, it is often sharper than it looks.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Ted Lasso</div>
+        <div class="meta">Series · 2020</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/ted-lasso.jpg" alt="Ted Lasso poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>A relentlessly optimistic American football coach is hired to lead an English soccer team he knows nothing about. His kindness is treated first as a joke and then as a quiet kind of strength. It became a warm, hopeful show about decency in a cynical world.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Black Mirror</div>
+        <div class="meta">Series · 2011</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/black-mirror.jpg" alt="Black Mirror poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>An anthology series in which each standalone episode imagines how technology could warp human life, usually for the worse. From social media to memory to artificial intelligence, it holds a dark mirror to the near future. The best episodes linger uncomfortably.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Invincible</div>
+        <div class="meta">Series · 2021</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/invincible.jpg" alt="Invincible poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>A teenager whose father is the world's most powerful superhero begins to develop powers of his own, right as a devastating secret surfaces. Beneath the coming-of-age setup lies a shockingly violent, morally complicated story. It uses the superhero genre to ask what that power really costs.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Blue Eye Samurai</div>
+        <div class="meta">Series · 2023</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/blue-eye-samurai.jpg" alt="Blue Eye Samurai poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>In Edo-period Japan, a mixed-race outcast disguised as a man cuts a bloody path toward revenge against those who made her an outsider. Beautifully animated and unflinchingly violent, it is a story about identity, shame, and singular purpose. Its craft is remarkable.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">The Marvelous Mrs. Maisel</div>
+        <div class="meta">Series · 2017</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/the-marvelous-mrs-maisel.jpg" alt="The Marvelous Mrs. Maisel poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>A polished 1950s housewife discovers a talent for stand-up comedy after her marriage falls apart. She fights her way into a male-dominated scene while juggling family, class, and reinvention. It is fast-talking, gorgeously staged, and genuinely funny.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Severance</div>
+        <div class="meta">Series · 2022</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/severance.jpg" alt="Severance poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>Employees at a mysterious company agree to a procedure that surgically splits their work memories from their personal ones. As one worker begins to sense something deeply wrong, the wall between his two selves starts to crack. It is an eerie, precise thriller about labor, identity, and control.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Parks and Recreation</div>
+        <div class="meta">Series · 2009</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/parks-and-recreation.jpg" alt="Parks and Recreation poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>A mockumentary following a tirelessly earnest mid-level bureaucrat trying to improve her small Indiana town. Her optimism drives a warm ensemble comedy about public service and friendship. It is one of the most good-hearted sitcoms ever made.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">House of Cards</div>
+        <div class="meta">Series · 2013</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/house-of-cards.jpg" alt="House of Cards poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>A ruthlessly ambitious congressman claws his way toward the presidency, breaking anyone in his path. Told with cold precision and direct addresses to the audience, it is a study of raw political appetite. It made Netflix a serious player in prestige drama.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Mindhunter</div>
+        <div class="meta">Series · 2017</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/mindhunter.jpg" alt="Mindhunter poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>In the late 1970s, two FBI agents begin interviewing imprisoned serial killers to understand how they think. Their work helps invent modern criminal profiling while slowly seeping into their own lives. It is a patient, chilling procedural about staring into darkness.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Regular Show</div>
+        <div class="meta">Series · 2010</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/regular-show.jpg" alt="Regular Show poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>Two slacker friends, a blue jay and a raccoon, turn ordinary park maintenance jobs into surreal, cosmic misadventures. Its deadpan humor and 80s references made it a cult favorite for older viewers as much as kids. It is stranger and funnier than its premise suggests.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">The Boys</div>
+        <div class="meta">Series · 2019</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/the-boys.jpg" alt="The Boys poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>In a world where superheroes are corporate celebrities protected by a ruthless conglomerate, a band of vigilantes sets out to expose them. It is a savage, bloody satire of fame, power, and American myth-making. Beneath the shock value is a genuinely angry story.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">The Boondocks</div>
+        <div class="meta">Series · 2005</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/the-boondocks.jpg" alt="The Boondocks poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>Adapted from the comic strip, it follows a Black family that moves from Chicago to a mostly white suburb, seen largely through two sharp-tongued kids. It uses biting satire to take on race, politics, and culture in America. Provocative and often prophetic, it pulls no punches.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">The Expanse</div>
+        <div class="meta">Series · 2015</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/the-expanse.jpg" alt="The Expanse poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>Two centuries from now, a fragile peace between Earth, Mars, and the exploited outer colonies begins to unravel around a vast conspiracy. A mismatched crew finds itself at the center of a discovery that could reshape humanity. It is grounded, politically rich science fiction.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="item">
+        <div class="title">Shogun</div>
+        <div class="meta">Series · 2024</div>
+        <button class="card" type="button" aria-pressed="false">
+          <div class="card-face-wrap">
+            <div class="face front"><img src="assets/posters/shogun.jpg" alt="Shogun poster" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="drop"><span>Poster · drop</span></div>
+              <span class="corner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg></span>
+            </div>
+            <div class="face back">
+              <span class="bk-kick" data-i18n="sr.whyhere">Why it’s here</span>
+              <p>In the year 1600, an English navigator shipwrecked in feudal Japan becomes entangled in a deadly power struggle among rival warlords. Caught between cultures, he becomes both a pawn and a player in a game he barely understands. It is a lavish, meticulous historical epic.</p>
+              <div class="bk-foot" data-i18n="sr.flipback">Tap or hover to flip back</div>
+            </div>
+          </div>
+        </button>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="sr-foot">
+    <div class="inner">
+      <span>Darius Dantzler · Screening Room</span>
+      <a href="Personal.html" data-i18n="back.personal">Back to Personal</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+// language dropdown
+const lang=document.getElementById('lang'), langBtn=document.getElementById('langBtn');
+langBtn.addEventListener('click',e=>{e.stopPropagation();const open=lang.classList.toggle('open');langBtn.setAttribute('aria-expanded',open);});
+document.addEventListener('click',()=>{lang.classList.remove('open');langBtn.setAttribute('aria-expanded','false');});
+lang.querySelectorAll('.lang-item').forEach(it=>it.addEventListener('click',e=>{e.stopPropagation();lang.querySelectorAll('.lang-item').forEach(x=>x.setAttribute('aria-checked','false'));it.setAttribute('aria-checked','true');lang.classList.remove('open');langBtn.setAttribute('aria-expanded','false');}));
+
+// tap-to-flip fallback for touch (hover handles the rest)
+const canHover=window.matchMedia('(hover:hover)').matches;
+document.querySelectorAll('.card').forEach(card=>{
+  card.addEventListener('click',()=>{
+    if(canHover) return; // hover already flips on pointer devices
+    const on=card.classList.toggle('flipped');
+    card.setAttribute('aria-pressed',on);
+  });
+});
+</script>
+<script src="i18n.js"></script>
+<script src="site-chrome.js"></script>
+</body>
+</html>

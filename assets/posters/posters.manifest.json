@@ -1,0 +1,324 @@
+{
+  "note": "Poster fetch task for Claude Code. For each entry: TMDB search (media_type per group) by title+year, take the top match's poster_path, download https://image.tmdb.org/t/p/w500<poster_path>, and save it to assets/posters/<slug>.jpg . The Screening Room cards already reference these exact paths and will show the poster automatically once the file exists.",
+  "image_base": "https://image.tmdb.org/t/p/w500",
+  "poster_dir": "assets/posters",
+  "films": [
+    {
+      "title": "Three Billboards Outside Ebbing, Missouri",
+      "year": 2017,
+      "media_type": "movie",
+      "file": "assets/posters/three-billboards-outside-ebbing-missouri.jpg",
+      "slug": "three-billboards-outside-ebbing-missouri"
+    },
+    {
+      "title": "Guardians of the Galaxy Vol. 3",
+      "year": 2023,
+      "media_type": "movie",
+      "file": "assets/posters/guardians-of-the-galaxy-vol-3.jpg",
+      "slug": "guardians-of-the-galaxy-vol-3"
+    },
+    {
+      "title": "Treasure Planet",
+      "year": 2002,
+      "media_type": "movie",
+      "file": "assets/posters/treasure-planet.jpg",
+      "slug": "treasure-planet"
+    },
+    {
+      "title": "Beasts of No Nation",
+      "year": 2015,
+      "media_type": "movie",
+      "file": "assets/posters/beasts-of-no-nation.jpg",
+      "slug": "beasts-of-no-nation"
+    },
+    {
+      "title": "Mudbound",
+      "year": 2017,
+      "media_type": "movie",
+      "file": "assets/posters/mudbound.jpg",
+      "slug": "mudbound"
+    },
+    {
+      "title": "First They Killed My Father",
+      "year": 2017,
+      "media_type": "movie",
+      "file": "assets/posters/first-they-killed-my-father.jpg",
+      "slug": "first-they-killed-my-father"
+    },
+    {
+      "title": "Interstellar",
+      "year": 2014,
+      "media_type": "movie",
+      "file": "assets/posters/interstellar.jpg",
+      "slug": "interstellar"
+    },
+    {
+      "title": "City of God",
+      "year": 2002,
+      "media_type": "movie",
+      "file": "assets/posters/city-of-god.jpg",
+      "slug": "city-of-god"
+    },
+    {
+      "title": "Spider-Man: Across the Spider-Verse",
+      "year": 2023,
+      "media_type": "movie",
+      "file": "assets/posters/spider-man-across-the-spider-verse.jpg",
+      "slug": "spider-man-across-the-spider-verse"
+    },
+    {
+      "title": "WALL-E",
+      "year": 2008,
+      "media_type": "movie",
+      "file": "assets/posters/wall-e.jpg",
+      "slug": "wall-e"
+    },
+    {
+      "title": "Jojo Rabbit",
+      "year": 2019,
+      "media_type": "movie",
+      "file": "assets/posters/jojo-rabbit.jpg",
+      "slug": "jojo-rabbit"
+    },
+    {
+      "title": "Good Will Hunting",
+      "year": 1997,
+      "media_type": "movie",
+      "file": "assets/posters/good-will-hunting.jpg",
+      "slug": "good-will-hunting"
+    },
+    {
+      "title": "Toy Story 3",
+      "year": 2010,
+      "media_type": "movie",
+      "file": "assets/posters/toy-story-3.jpg",
+      "slug": "toy-story-3"
+    },
+    {
+      "title": "Coco",
+      "year": 2017,
+      "media_type": "movie",
+      "file": "assets/posters/coco.jpg",
+      "slug": "coco"
+    },
+    {
+      "title": "Project Hail Mary",
+      "year": 2026,
+      "media_type": "movie",
+      "file": "assets/posters/project-hail-mary.jpg",
+      "slug": "project-hail-mary"
+    },
+    {
+      "title": "Come and See",
+      "year": 1985,
+      "media_type": "movie",
+      "file": "assets/posters/come-and-see.jpg",
+      "slug": "come-and-see"
+    },
+    {
+      "title": "No Country for Old Men",
+      "year": 2007,
+      "media_type": "movie",
+      "file": "assets/posters/no-country-for-old-men.jpg",
+      "slug": "no-country-for-old-men"
+    },
+    {
+      "title": "The Wild Robot",
+      "year": 2024,
+      "media_type": "movie",
+      "file": "assets/posters/the-wild-robot.jpg",
+      "slug": "the-wild-robot"
+    },
+    {
+      "title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+      "year": 2003,
+      "media_type": "movie",
+      "file": "assets/posters/pirates-of-the-caribbean-the-curse-of-the-black-pearl.jpg",
+      "slug": "pirates-of-the-caribbean-the-curse-of-the-black-pearl"
+    }
+  ],
+  "tv": [
+    {
+      "title": "Breaking Bad",
+      "year": 2008,
+      "media_type": "tv",
+      "file": "assets/posters/breaking-bad.jpg",
+      "slug": "breaking-bad"
+    },
+    {
+      "title": "Chernobyl",
+      "year": 2019,
+      "media_type": "tv",
+      "file": "assets/posters/chernobyl.jpg",
+      "slug": "chernobyl"
+    },
+    {
+      "title": "Avatar: The Last Airbender",
+      "year": 2005,
+      "media_type": "tv",
+      "file": "assets/posters/avatar-the-last-airbender.jpg",
+      "slug": "avatar-the-last-airbender"
+    },
+    {
+      "title": "Game of Thrones",
+      "year": 2011,
+      "media_type": "tv",
+      "file": "assets/posters/game-of-thrones.jpg",
+      "slug": "game-of-thrones"
+    },
+    {
+      "title": "Rick and Morty",
+      "year": 2013,
+      "media_type": "tv",
+      "file": "assets/posters/rick-and-morty.jpg",
+      "slug": "rick-and-morty"
+    },
+    {
+      "title": "Better Call Saul",
+      "year": 2015,
+      "media_type": "tv",
+      "file": "assets/posters/better-call-saul.jpg",
+      "slug": "better-call-saul"
+    },
+    {
+      "title": "The Office",
+      "year": 2005,
+      "media_type": "tv",
+      "file": "assets/posters/the-office.jpg",
+      "slug": "the-office"
+    },
+    {
+      "title": "Arcane",
+      "year": 2021,
+      "media_type": "tv",
+      "file": "assets/posters/arcane.jpg",
+      "slug": "arcane"
+    },
+    {
+      "title": "BoJack Horseman",
+      "year": 2014,
+      "media_type": "tv",
+      "file": "assets/posters/bojack-horseman.jpg",
+      "slug": "bojack-horseman"
+    },
+    {
+      "title": "Vinland Saga",
+      "year": 2019,
+      "media_type": "tv",
+      "file": "assets/posters/vinland-saga.jpg",
+      "slug": "vinland-saga"
+    },
+    {
+      "title": "Narcos",
+      "year": 2015,
+      "media_type": "tv",
+      "file": "assets/posters/narcos.jpg",
+      "slug": "narcos"
+    },
+    {
+      "title": "South Park",
+      "year": 1997,
+      "media_type": "tv",
+      "file": "assets/posters/south-park.jpg",
+      "slug": "south-park"
+    },
+    {
+      "title": "Ted Lasso",
+      "year": 2020,
+      "media_type": "tv",
+      "file": "assets/posters/ted-lasso.jpg",
+      "slug": "ted-lasso"
+    },
+    {
+      "title": "Black Mirror",
+      "year": 2011,
+      "media_type": "tv",
+      "file": "assets/posters/black-mirror.jpg",
+      "slug": "black-mirror"
+    },
+    {
+      "title": "Invincible",
+      "year": 2021,
+      "media_type": "tv",
+      "file": "assets/posters/invincible.jpg",
+      "slug": "invincible"
+    },
+    {
+      "title": "Blue Eye Samurai",
+      "year": 2023,
+      "media_type": "tv",
+      "file": "assets/posters/blue-eye-samurai.jpg",
+      "slug": "blue-eye-samurai"
+    },
+    {
+      "title": "The Marvelous Mrs. Maisel",
+      "year": 2017,
+      "media_type": "tv",
+      "file": "assets/posters/the-marvelous-mrs-maisel.jpg",
+      "slug": "the-marvelous-mrs-maisel"
+    },
+    {
+      "title": "Severance",
+      "year": 2022,
+      "media_type": "tv",
+      "file": "assets/posters/severance.jpg",
+      "slug": "severance"
+    },
+    {
+      "title": "Parks and Recreation",
+      "year": 2009,
+      "media_type": "tv",
+      "file": "assets/posters/parks-and-recreation.jpg",
+      "slug": "parks-and-recreation"
+    },
+    {
+      "title": "House of Cards",
+      "year": 2013,
+      "media_type": "tv",
+      "file": "assets/posters/house-of-cards.jpg",
+      "slug": "house-of-cards"
+    },
+    {
+      "title": "Mindhunter",
+      "year": 2017,
+      "media_type": "tv",
+      "file": "assets/posters/mindhunter.jpg",
+      "slug": "mindhunter"
+    },
+    {
+      "title": "Regular Show",
+      "year": 2010,
+      "media_type": "tv",
+      "file": "assets/posters/regular-show.jpg",
+      "slug": "regular-show"
+    },
+    {
+      "title": "The Boys",
+      "year": 2019,
+      "media_type": "tv",
+      "file": "assets/posters/the-boys.jpg",
+      "slug": "the-boys"
+    },
+    {
+      "title": "The Boondocks",
+      "year": 2005,
+      "media_type": "tv",
+      "file": "assets/posters/the-boondocks.jpg",
+      "slug": "the-boondocks"
+    },
+    {
+      "title": "The Expanse",
+      "year": 2015,
+      "media_type": "tv",
+      "file": "assets/posters/the-expanse.jpg",
+      "slug": "the-expanse"
+    },
+    {
+      "title": "Shogun",
+      "year": 2024,
+      "media_type": "tv",
+      "file": "assets/posters/shogun.jpg",
+      "slug": "shogun"
+    }
+  ]
+}

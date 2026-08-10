@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact · Darius Dantzler</title>
+<meta name="description" content="Darius Dantzler, early-career professional in space security, sustainability, and policy. Master's in Space Studies at ISU Strasbourg. Portfolio, experience, and personal notes.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Darius Dantzler">
+<meta property="og:title" content="Contact · Darius Dantzler">
+<meta property="og:description" content="Darius Dantzler, early-career professional in space security, sustainability, and policy. Master's in Space Studies at ISU Strasbourg. Portfolio, experience, and personal notes.">
+<meta property="og:image" content="assets/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles.css">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--dds-color-bone);color:var(--dds-color-ink);font-family:var(--dds-font-sans);-webkit-font-smoothing:antialiased;min-height:100vh}
+a{color:var(--dds-color-ink);text-decoration:none}
+a:hover{color:var(--dds-color-ink)}
+
+.vignette{position:fixed;inset:0;z-index:0;pointer-events:none}
+.vignette::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(120% 90% at 50% 0%, rgba(242,194,48,.06), transparent 55%),
+  radial-gradient(140% 120% at 50% 42%, rgba(245,243,236,0) 55%, rgba(20,20,20,.05) 100%)}
+
+/* floating pill header (shared identity) */
+.pillbar{position:fixed;top:18px;left:0;right:0;z-index:50;display:flex;justify-content:center;padding:0 20px;pointer-events:none}
+.pill{pointer-events:auto;width:100%;max-width:1120px;display:flex;align-items:center;gap:22px;padding:11px 14px 11px 24px;border-radius:999px;border:1px solid rgba(20,20,20,.12);background:rgba(248,246,240,.82);backdrop-filter:saturate(140%) blur(14px);-webkit-backdrop-filter:saturate(140%) blur(14px);box-shadow:0 1px 1px rgba(20,20,20,.03),0 8px 26px rgba(20,20,20,.09)}
+.brand{font-family:var(--dds-font-serif);font-weight:600;font-size:1.02rem;letter-spacing:-.01em;white-space:nowrap;padding-right:4px}
+.navlinks{display:flex;align-items:center;gap:20px;margin-left:auto}
+.navlink{font-family:var(--dds-font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(20,20,20,.6);border-bottom:2px solid transparent;padding:2px 0;transition:color .15s,border-color .15s;white-space:nowrap}
+.navlink:hover{color:var(--dds-color-ink)}
+.navlink.active{color:var(--dds-color-ink);border-bottom-color:var(--dds-color-accent)}
+.pill-tools{display:flex;align-items:center;gap:6px;padding-left:14px;margin-left:2px;border-left:1px solid rgba(20,20,20,.12)}
+.icobtn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:999px;border:1px solid transparent;color:rgba(20,20,20,.7);background:transparent;cursor:pointer;transition:background .15s,color .15s}
+.icobtn:hover{background:rgba(20,20,20,.06);color:var(--dds-color-ink)}
+.icobtn:focus-visible{outline:2px solid var(--dds-color-accent);outline-offset:2px}
+.icobtn svg{width:18px;height:18px;display:block}
+.lang{position:relative}
+.lang-menu{position:absolute;top:calc(100% + 12px);right:0;min-width:172px;background:var(--dds-color-bone);border:1px solid rgba(20,20,20,.14);border-radius:14px;box-shadow:0 10px 30px rgba(20,20,20,.14);padding:6px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .16s,transform .16s,visibility .16s}
+.lang.open .lang-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.lang-head{font-family:var(--dds-font-mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.45);padding:8px 10px 6px}
+.lang-item{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;text-align:left;background:transparent;border:0;cursor:pointer;padding:9px 10px;border-radius:9px;font-family:var(--dds-font-sans);font-size:.9rem;color:var(--dds-color-ink);transition:background .12s}
+.lang-item:hover{background:rgba(20,20,20,.06)}
+.lang-item:focus-visible{outline:2px solid var(--dds-color-accent);outline-offset:-2px}
+.lang-item .code{font-family:var(--dds-font-mono);font-size:.66rem;color:rgba(20,20,20,.5)}
+.lang-item[aria-checked="true"] .code{color:var(--dds-color-ink)}
+.lang-item .tick{width:14px;height:14px;color:var(--dds-color-accent);opacity:0}
+.lang-item[aria-checked="true"] .tick{opacity:1}
+
+.wrap{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column}
+
+/* centered contact stage */
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+.ct-crumbrow{width:100%;align-self:stretch;padding-top:140px}
+.ct-crumbrow .crumb{display:inline-flex;align-items:center;gap:8px;font-family:var(--dds-font-mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.5)}
+.ct-crumbrow .crumb a{color:rgba(20,20,20,.5);border-bottom:1px solid transparent;text-decoration:none}
+.ct-crumbrow .crumb a:hover{color:var(--dds-color-ink);border-bottom-color:var(--dds-color-accent)}
+.ct-crumbrow .kick{display:inline-block;white-space:nowrap;background:var(--dds-color-accent);color:var(--dds-color-ink);padding:3px 9px;border:1px solid rgba(20,20,20,.2)}
+.stage{flex:1 1 auto;display:flex;align-items:center;justify-content:center;padding:24px 24px 80px}
+.card{width:100%;max-width:620px;text-align:center}
+.card .kick{display:inline-block;font-family:var(--dds-font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;background:var(--dds-color-accent);color:var(--dds-color-ink);padding:5px 11px;border:1px solid rgba(20,20,20,.2)}
+.card .crumb{display:flex;align-items:center;gap:8px;justify-content:flex-start;font-family:var(--dds-font-mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.5);margin-bottom:18px}
+.card .crumb a{color:rgba(20,20,20,.5);border-bottom:1px solid transparent;text-decoration:none}
+.card .crumb a:hover{color:var(--dds-color-ink);border-bottom-color:var(--dds-color-accent)}
+.card h1{font-family:var(--dds-font-serif);font-weight:600;letter-spacing:-.015em;font-size:clamp(2.6rem,6vw,3.8rem);line-height:1.04;margin:20px 0 0}
+.card .intro{margin:18px auto 0;font-size:1.18rem;line-height:1.6;color:rgba(20,20,20,.72);max-width:500px;text-wrap:pretty}
+
+/* three equal-weight actions */
+.actions{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:38px}
+.action{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:26px 18px;border:1px solid var(--dds-color-ink);border-radius:14px;background:#faf8f1;color:var(--dds-color-ink);font:inherit;cursor:pointer;transition:transform .16s ease,box-shadow .16s ease,background .16s ease}
+.action:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(20,20,20,.13);background:var(--dds-color-ink);color:var(--dds-color-bone)}
+.action:focus-visible{outline:2px solid var(--dds-color-accent);outline-offset:3px}
+.action .ic{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--dds-color-accent);color:var(--dds-color-ink);border:1px solid rgba(20,20,20,.2);transition:transform .16s ease}
+.action:hover .ic{transform:scale(1.06)}
+.action .ic svg{width:21px;height:21px}
+.action .lbl{font-family:var(--dds-font-serif);font-weight:600;font-size:1.08rem;letter-spacing:-.01em;line-height:1.15}
+.action .sub{font-family:var(--dds-font-mono);font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.5);transition:color .16s}
+.action:hover .sub{color:rgba(245,243,236,.7)}
+
+/* social row (mirrors header icon styling) */
+.social{margin-top:40px;padding-top:30px;border-top:1px solid rgba(20,20,20,.15);display:flex;flex-direction:column;align-items:center;gap:16px}
+.social-label{font-family:var(--dds-font-mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.09em;color:rgba(20,20,20,.42)}
+.social-row{display:flex;align-items:center;gap:10px}
+.social-btn{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:999px;border:1px solid rgba(20,20,20,.16);color:rgba(20,20,20,.7);background:transparent;transition:background .15s,color .15s,border-color .15s}
+.social-btn:hover{background:var(--dds-color-ink);color:var(--dds-color-bone);border-color:var(--dds-color-ink)}
+.social-btn:focus-visible{outline:2px solid var(--dds-color-accent);outline-offset:2px}
+.social-btn svg{width:19px;height:19px;display:block}
+
+@media(max-width:560px){
+  .stage{padding-top:120px}
+  .actions{grid-template-columns:1fr;gap:12px}
+  .action{flex-direction:row;justify-content:flex-start;text-align:left;gap:16px;padding:18px 20px}
+  .action .lbl{font-size:1.14rem}
+}
+@media(max-width:860px){.navlinks{display:none}}
+
+.ct-foot{border-top:1px solid rgba(20,20,20,.15)}
+.ct-foot .inner{max-width:1120px;margin:0 auto;padding:26px 24px 34px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:var(--dds-font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(20,20,20,.55)}
+.ct-foot a{color:rgba(20,20,20,.55);border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
+.ct-foot a:hover{color:var(--dds-color-ink);border-bottom-color:var(--dds-color-accent)}
+.cv-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:40px 20px}
+.cv-modal.open{display:flex}
+.cv-modal-backdrop{position:absolute;inset:0;background:rgba(20,20,20,.6);backdrop-filter:blur(3px)}
+.cv-modal-panel{position:relative;z-index:1;width:100%;max-width:880px;height:100%;max-height:860px;background:var(--dds-color-bone);border:1px solid rgba(20,20,20,.2);border-radius:14px;box-shadow:0 30px 80px rgba(20,20,20,.35);display:flex;flex-direction:column;overflow:hidden}
+.cv-modal-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;row-gap:10px;padding:14px 18px;border-bottom:1px solid rgba(20,20,20,.15);flex-shrink:0}
+.cv-modal-title{font-family:var(--dds-font-serif);font-weight:600;font-size:1rem;letter-spacing:-.01em}
+.cv-modal-actions{display:flex;align-items:center;gap:8px}
+.cv-modal-actions .dds-button{padding:.5rem .9rem}
+.cv-modal-close{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:999px;border:1px solid rgba(20,20,20,.2);background:transparent;color:var(--dds-color-ink);cursor:pointer;transition:background .15s,color .15s;flex-shrink:0}
+.cv-modal-close:hover{background:var(--dds-color-ink);color:var(--dds-color-bone)}
+.cv-modal-close svg{width:15px;height:15px;display:block}
+.cv-modal-frame{flex:1;width:100%;border:0;background:#fff}
+.cv-modal-fallback{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:40px;text-align:center;color:rgba(20,20,20,.7)}
+@media(max-width:600px){.cv-modal{padding:0}.cv-modal-panel{max-width:100%;max-height:100%;border-radius:0}}
+</style>
+</head>
+<body>
+<div class="vignette"></div>
+
+<div class="pillbar">
+  <nav class="pill" aria-label="Main">
+    <a class="brand" href="index.html">Darius Dantzler</a>
+    <div class="navlinks">
+      <a class="navlink" href="index.html">Home</a>
+      <a class="navlink" href="Experience.html">Experience</a>
+      <a class="navlink" href="Education.html">Education</a>
+      <a class="navlink" href="Projects.html">Projects</a>
+      <a class="navlink" href="Personal.html">Personal</a>
+      <a class="navlink active" href="Contact.html">Contact</a>
+    </div>
+    <div class="pill-tools">
+      <a class="icobtn" href="https://github.com/dariuzsd1" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.2.8-.5v-1.8c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5Z"/></svg>
+      </a>
+      <div class="lang" id="lang">
+        <button class="icobtn" id="langBtn" aria-label="Language" aria-haspopup="true" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3Z"/></svg>
+        </button>
+        <div class="lang-menu" role="menu" aria-label="Language">
+          <div class="lang-head">Language</div>
+          <button class="lang-item" role="menuitemradio" aria-checked="true" data-lang="en"><span>English</span><span class="code">EN</span><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></button>
+          <button class="lang-item" role="menuitemradio" aria-checked="false" data-lang="de"><span>Deutsch</span><span class="code">DE</span><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></button>
+          <button class="lang-item" role="menuitemradio" aria-checked="false" data-lang="it"><span>Italiano</span><span class="code">IT</span><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></button>
+          <button class="lang-item" role="menuitemradio" aria-checked="false" data-lang="fr"><span>Français</span><span class="code">FR</span><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<div class="wrap">
+  <div class="container ct-crumbrow"><div class="crumb"><a href="index.html" data-i18n="crumb.home">Home</a> <span>/</span> <span class="kick" data-i18n="crumb.contact">Contact</span></div></div>
+  <main class="stage">
+    <div class="card">
+      <h1 data-i18n="contact.title">Let’s talk</h1>
+      <p class="intro" data-i18n="contact.intro">If you're working on something in space policy, security, or sustainability, I'd like to hear about it. A role, a project, or just a good conversation, the fastest ways to reach me are right here.</p>
+
+      <div class="actions" id="actions"></div>
+
+      <div class="social">
+        <div class="social-label" data-i18n="footer.elsewhere">Elsewhere</div>
+        <div class="social-row" id="social"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="ct-foot">
+    <div class="inner">
+      <span>Darius Dantzler · Contact</span>
+      <a href="index.html">Back home</a>
+    </div>
+  </footer>
+</div>
+
+<div class="cv-modal" id="cvModal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Darius Dantzler — CV">
+  <div class="cv-modal-backdrop" data-cv-close></div>
+  <div class="cv-modal-panel">
+    <div class="cv-modal-bar">
+      <span class="cv-modal-title">Darius Dantzler · CV</span>
+      <div class="cv-modal-actions">
+        <a class="dds-button dds-button--outline" href="assets/darius-dantzler-cv.pdf" target="_blank" rel="noopener" data-i18n="cv.opentab">Open in tab</a>
+        <a class="dds-button dds-button--outline" href="assets/darius-dantzler-cv.pdf" download data-i18n="cv.download">Download</a>
+        <button class="cv-modal-close" type="button" data-cv-close aria-label="Close CV viewer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+    </div>
+    <object class="cv-modal-frame" data="assets/darius-dantzler-cv.pdf" type="application/pdf">
+      <div class="cv-modal-fallback">
+        <p>Your browser can't preview PDFs inline.</p>
+        <a class="dds-button dds-button--solid" href="assets/darius-dantzler-cv.pdf" download>Download the CV</a>
+      </div>
+    </object>
+  </div>
+</div>
+
+<script>
+/* ---------- language dropdown (shared) ---------- */
+const lang=document.getElementById('lang'), langBtn=document.getElementById('langBtn');
+langBtn.addEventListener('click',e=>{e.stopPropagation();const open=lang.classList.toggle('open');langBtn.setAttribute('aria-expanded',open);});
+document.addEventListener('click',()=>{lang.classList.remove('open');langBtn.setAttribute('aria-expanded','false');});
+lang.querySelectorAll('.lang-item').forEach(it=>it.addEventListener('click',e=>{e.stopPropagation();lang.querySelectorAll('.lang-item').forEach(x=>x.setAttribute('aria-checked','false'));it.setAttribute('aria-checked','true');lang.classList.remove('open');langBtn.setAttribute('aria-expanded','false');}));
+
+/* ================= DATA (the whole interface — swap the real details in later) ================= */
+const contact = {
+  email: "dariuzsd1@yahoo.com",
+  schedulingUrl: "https://cal.com/darius-dantzler-dario-l9szue",
+  resumeUrl: "assets/darius-dantzler-cv.pdf",
+  social: [
+    { label: "LinkedIn", url: "https://www.linkedin.com/in/darius-dantzler" },
+    { label: "GitHub", url: "https://github.com/dariuzsd1" }
+  ]
+};
+
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+/* ---------- icon set ---------- */
+const ICONS = {
+  email:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>',
+  calendar:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M9 14l2 2 4-4"/></svg>',
+  resume:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>',
+  LinkedIn:'<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>',
+  GitHub:'<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.2.8-.5v-1.8c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5Z"/></svg>',
+  link:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"/></svg>'
+};
+
+/* ---------- three actions ---------- */
+const ACTIONS = [
+  { key:"email", label:"Email me", i18n:"contact.email", sub:contact.email, href:"mailto:"+contact.email, newTab:false, aria:"Email me at "+contact.email },
+  { key:"calendar", label:"Schedule a call", i18n:"contact.schedule", sub:"Pick a time", i18nSub:"contact.schedule.sub", href:contact.schedulingUrl, newTab:true, aria:"Schedule a call (opens in a new tab)" },
+  { key:"resume", label:"View CV", i18n:"contact.cv", sub:"Preview & download", i18nSub:"contact.cv.sub", openModal:true, aria:"View my CV" }
+];
+
+const actionsEl=document.getElementById('actions');
+ACTIONS.forEach(a=>{
+  const el=document.createElement(a.openModal?'button':'a');
+  el.className='action';
+  el.setAttribute('aria-label',a.aria);
+  if(a.openModal){
+    el.type='button';
+    el.addEventListener('click',()=>{ if(window.openCV) window.openCV(); });
+  } else {
+    el.href=a.href;
+    if(a.newTab){ el.target="_blank"; el.rel="noopener"; }
+    if(a.download){ el.setAttribute('download',''); }
+  }
+  el.innerHTML=
+    '<span class="ic" aria-hidden="true">'+ICONS[a.key]+'</span>'+
+    '<span class="lbl"'+(a.i18n?' data-i18n="'+a.i18n+'"':'')+'>'+esc(a.label)+'</span>'+
+    '<span class="sub"'+(a.i18nSub?' data-i18n="'+a.i18nSub+'"':'')+'>'+esc(a.sub)+'</span>';
+  actionsEl.appendChild(el);
+});
+
+/* ---------- social row (header-consistent icon buttons) ---------- */
+const socialEl=document.getElementById('social');
+contact.social.forEach(s=>{
+  const el=document.createElement('a');
+  el.className='social-btn';
+  el.href=s.url;
+  el.target="_blank"; el.rel="noopener";
+  el.setAttribute('aria-label',s.label);
+  el.setAttribute('title',s.label);
+  el.innerHTML=ICONS[s.label] || ICONS.link;
+  socialEl.appendChild(el);
+});
+const cvModal=document.getElementById('cvModal');
+function openCV(){cvModal.classList.add('open');cvModal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+function closeCV(){cvModal.classList.remove('open');cvModal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+document.querySelectorAll('[data-cv-open]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();openCV();}));
+document.querySelectorAll('[data-cv-close]').forEach(el=>el.addEventListener('click',closeCV));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCV();});
+</script>
+<script src="i18n.js"></script>
+<script src="site-chrome.js"></script>
+</body>
+</html>

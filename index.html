@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Darius Dantzler · Space Security, Sustainability & Policy</title>
+<meta name="description" content="Darius Dantzler, early-career professional in space security, sustainability, and policy. Master's in Space Studies at ISU Strasbourg. Portfolio, experience, and personal notes.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Darius Dantzler">
+<meta property="og:title" content="Darius Dantzler · Space Security, Sustainability & Policy">
+<meta property="og:description" content="Early-career professional in space security, sustainability, and policy. Master's in Space Studies at ISU Strasbourg.">
+<meta property="og:image" content="assets/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles.css">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--dds-color-bone);color:var(--dds-color-ink);font-family:var(--dds-font-sans);-webkit-font-smoothing:antialiased}
+a{color:var(--dds-color-ink);text-decoration:none}
+a:hover{color:var(--dds-color-ink)}
+.vignette{position:fixed;inset:0;z-index:0;pointer-events:none}
+.vignette::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 0%, rgba(242,194,48,.05), transparent 55%),radial-gradient(140% 120% at 50% 42%, rgba(245,243,236,0) 55%, rgba(20,20,20,.05) 100%),radial-gradient(80% 60% at 85% 15%, rgba(193,39,45,.015), transparent 60%)}
+.wrap{position:relative;z-index:1}
+.container{max-width:820px;margin:0 auto;padding:0 24px}
+.rule{height:1px;width:100%;background:rgba(20,20,20,.15)}
+
+.hero{position:relative;padding-top:150px;padding-bottom:64px}
+.shimmer{position:absolute;top:60px;left:50%;transform:translateX(-50%);width:min(1180px,120vw);height:560px;z-index:0;pointer-events:none;filter:blur(46px);opacity:.55;background:radial-gradient(38% 60% at 22% 40%, rgba(242,194,48,.30), transparent 70%),radial-gradient(34% 55% at 74% 30%, rgba(193,39,45,.10), transparent 72%),radial-gradient(40% 60% at 50% 78%, rgba(242,194,48,.14), transparent 72%);background-size:180% 180%;animation:drift 18s ease-in-out infinite}
+@keyframes drift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@media (prefers-reduced-motion:reduce){.shimmer{animation:none}}
+.hero-inner{position:relative;z-index:1}
+.hero-top{display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:36px}
+.hero-name{font-family:var(--dds-font-serif);font-weight:600;letter-spacing:-.02em;font-size:clamp(2.6rem,6vw,4.4rem);line-height:1.02;margin:0}
+.hero-tag{margin-top:14px;font-family:var(--dds-font-mono);font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(20,20,20,.6)}
+.hero-photo{width:200px;height:260px;flex-shrink:0;object-fit:cover;border:1px solid rgba(20,20,20,.15);border-radius:4px}
+.hero-rule{margin:34px 0}
+.lede{font-size:1.24rem;line-height:1.62;max-width:640px;margin:0 0 22px}
+.body-copy{font-size:1.06rem;line-height:1.68;color:rgba(20,20,20,.85);max-width:640px;margin:0 0 18px}
+.hero-cta{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
+.hero-cta .dds-button{white-space:nowrap}
+
+.pullquote{margin:48px 0;padding:8px 0 8px 30px;border-left:3px solid var(--dds-color-accent);max-width:760px}
+.pullquote p{font-family:var(--dds-font-serif);font-weight:600;font-size:clamp(1.6rem,3.2vw,2.3rem);line-height:1.28;letter-spacing:-.01em;margin:0}
+.pullquote .attr{margin-top:16px;font-family:var(--dds-font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(20,20,20,.5)}
+
+.tweaks{position:fixed;right:20px;bottom:20px;z-index:80;font-family:var(--dds-font-sans)}
+.tw-gear{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:999px;border:1px solid rgba(20,20,20,.15);background:rgba(248,246,240,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--dds-color-ink);cursor:pointer;box-shadow:0 6px 20px rgba(20,20,20,.12);transition:transform .15s}
+.tw-gear:hover{transform:rotate(12deg)}
+.tw-gear svg{width:20px;height:20px}
+.tw-panel{position:absolute;right:0;bottom:56px;width:250px;background:var(--dds-color-bone);border:1px solid rgba(20,20,20,.14);border-radius:16px;box-shadow:0 14px 40px rgba(20,20,20,.16);padding:16px;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .16s,transform .16s,visibility .16s}
+.tweaks.open .tw-panel{opacity:1;visibility:visible;transform:translateY(0)}
+.tw-title{font-family:var(--dds-font-mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.5);margin-bottom:14px}
+.tw-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.tw-label{font-family:var(--dds-font-mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(20,20,20,.6)}
+.tw-switch{position:relative;width:40px;height:22px;border-radius:999px;border:1px solid rgba(20,20,20,.2);background:rgba(20,20,20,.1);cursor:pointer;transition:background .15s;flex-shrink:0}
+.tw-switch::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:999px;background:var(--dds-color-bone);box-shadow:0 1px 2px rgba(20,20,20,.3);transition:transform .16s}
+.tw-switch.on{background:var(--dds-color-accent);border-color:rgba(20,20,20,.25)}
+.tw-switch.on::after{transform:translateX(18px)}
+body.no-shimmer .shimmer{display:none}
+
+.cv-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:40px 20px}
+.cv-modal.open{display:flex}
+.cv-modal-backdrop{position:absolute;inset:0;background:rgba(20,20,20,.6);backdrop-filter:blur(3px)}
+.cv-modal-panel{position:relative;z-index:1;width:100%;max-width:880px;height:100%;max-height:860px;background:var(--dds-color-bone);border:1px solid rgba(20,20,20,.2);border-radius:14px;box-shadow:0 30px 80px rgba(20,20,20,.35);display:flex;flex-direction:column;overflow:hidden}
+.cv-modal-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;row-gap:10px;padding:14px 18px;border-bottom:1px solid rgba(20,20,20,.15);flex-shrink:0}
+.cv-modal-title{font-family:var(--dds-font-serif);font-weight:600;font-size:1rem;letter-spacing:-.01em}
+.cv-modal-actions{display:flex;align-items:center;gap:8px}
+.cv-modal-actions .dds-button{padding:.5rem .9rem}
+.cv-modal-close{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:999px;border:1px solid rgba(20,20,20,.2);background:transparent;color:var(--dds-color-ink);cursor:pointer;transition:background .15s,color .15s;flex-shrink:0}
+.cv-modal-close:hover{background:var(--dds-color-ink);color:var(--dds-color-bone)}
+.cv-modal-close svg{width:15px;height:15px;display:block}
+.cv-modal-frame{flex:1;width:100%;border:0;background:#fff}
+.cv-modal-fallback{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:40px;text-align:center;color:rgba(20,20,20,.7)}
+@media(max-width:600px){.cv-modal{padding:0}.cv-modal-panel{max-width:100%;max-height:100%;border-radius:0}.hero-top{flex-direction:column-reverse;align-items:flex-start}.hero{padding-top:120px}}
+</style>
+</head>
+<body>
+<div class="vignette"></div>
+<div id="site-header"></div>
+
+<div class="wrap">
+  <section class="hero">
+    <div class="shimmer"></div>
+    <div class="container hero-inner">
+      <div class="hero-top">
+        <div>
+          <h1 class="hero-name">Darius<br>Dantzler</h1>
+          <div class="hero-tag" data-i18n="tagline">Space Security, Sustainability &amp; Policy</div>
+          <div class="hero-cta"><button class="dds-button dds-button--solid" type="button" data-cv-open data-i18n="home.viewcv">View CV</button></div>
+        </div>
+        <img class="hero-photo" src="assets/darius-headshot.jpg" alt="Darius Dantzler">
+      </div>
+      <div class="rule hero-rule"></div>
+
+      <p class="lede" data-i18n="home.lede">I'm working toward a career at the intersection of space security, sustainability, and policy, the work that decides which capabilities get built, who gets to use them, and under what rules.</p>
+      <p class="body-copy" data-i18n="home.body">I'm completing a Master's in Space Studies (Space Business, Policy &amp; Entrepreneurship) at the International Space University in Strasbourg, building on a background in political science and business law. Four internships across the U.S. European Command gave me high-level working knowledge of policy, security, and international relations.</p>
+
+      <div class="pullquote">
+        <p data-i18n="home.quote">&ldquo;I want to make space more accessible, enabling those who <em>can</em> do in space to be <em>able</em> to do in space.&rdquo;</p>
+        <div class="attr">Darius Dantzler</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div id="site-footer"></div>
+
+<div class="tweaks" id="tweaks">
+  <button class="tw-gear" id="twGear" aria-label="Tweaks">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></svg>
+  </button>
+  <div class="tw-panel">
+    <div class="tw-title">Tweaks</div>
+    <div class="tw-row">
+      <span class="tw-label">Shimmer motion</span>
+      <button class="tw-switch on" data-tw="shimmer" role="switch" aria-checked="true"></button>
+    </div>
+  </div>
+</div>
+
+<div class="cv-modal" id="cvModal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Darius Dantzler — CV">
+  <div class="cv-modal-backdrop" data-cv-close></div>
+  <div class="cv-modal-panel">
+    <div class="cv-modal-bar">
+      <span class="cv-modal-title">Darius Dantzler · CV</span>
+      <div class="cv-modal-actions">
+        <a class="dds-button dds-button--outline" href="assets/darius-dantzler-cv.pdf" target="_blank" rel="noopener">Open in tab</a>
+        <a class="dds-button dds-button--outline" href="assets/darius-dantzler-cv.pdf" download>Download</a>
+        <button class="cv-modal-close" type="button" data-cv-close aria-label="Close CV viewer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+    </div>
+    <object class="cv-modal-frame" data="assets/darius-dantzler-cv.pdf" type="application/pdf">
+      <div class="cv-modal-fallback">
+        <p>Your browser can't preview PDFs inline.</p>
+        <a class="dds-button dds-button--solid" href="assets/darius-dantzler-cv.pdf" download>Download the CV</a>
+      </div>
+    </object>
+  </div>
+</div>
+
+<script>
+// tweaks
+const tweaks=document.getElementById('tweaks'), twGear=document.getElementById('twGear');
+const twState=Object.assign({shimmer:true}, JSON.parse(localStorage.getItem('ddsTweaks')||'{}'));
+function applyTweaks(){
+  document.body.classList.toggle('no-shimmer', !twState.shimmer);
+  const sw=tweaks.querySelector('.tw-switch[data-tw=shimmer]');
+  sw.classList.toggle('on', twState.shimmer); sw.setAttribute('aria-checked', twState.shimmer);
+  localStorage.setItem('ddsTweaks', JSON.stringify(twState));
+}
+twGear.addEventListener('click',e=>{e.stopPropagation();tweaks.classList.toggle('open');});
+document.addEventListener('click',e=>{if(!tweaks.contains(e.target)) tweaks.classList.remove('open');});
+tweaks.querySelector('.tw-switch[data-tw=shimmer]').addEventListener('click',()=>{twState.shimmer=!twState.shimmer;applyTweaks();});
+applyTweaks();
+// cv modal
+const cvModal=document.getElementById('cvModal');
+function openCV(){cvModal.classList.add('open');cvModal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+function closeCV(){cvModal.classList.remove('open');cvModal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+document.querySelectorAll('[data-cv-open]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();openCV();}));
+document.querySelectorAll('[data-cv-close]').forEach(el=>el.addEventListener('click',closeCV));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCV();});
+</script>
+<script src="i18n.js"></script>
+<script src="site-chrome.js"></script>
+</body>
+</html>

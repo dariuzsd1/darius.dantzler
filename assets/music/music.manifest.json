@@ -1,0 +1,303 @@
+{
+  "songs": [
+    {
+      "slug": "africaryan-logic",
+      "title": "AfricAryaN",
+      "artist": "Logic",
+      "preview": "assets/music/previews/africaryan-logic.m4a",
+      "cover": "assets/music/covers/africaryan-logic.jpg",
+      "spotify_url": "https://open.spotify.com/track/76ZrqdtkKxhMl42xAQTnFm",
+      "spotify_code": "assets/music/codes/africaryan-logic.jpg"
+    },
+    {
+      "slug": "lithonia-childish-gambino",
+      "title": "Lithonia",
+      "artist": "Childish Gambino",
+      "preview": "assets/music/previews/lithonia-childish-gambino.mp3",
+      "cover": "assets/music/covers/lithonia-childish-gambino.jpg",
+      "spotify_url": "https://open.spotify.com/track/4JfpJrrGNXRj2yXm1fYV23",
+      "spotify_code": "assets/music/codes/lithonia-childish-gambino.jpg"
+    },
+    {
+      "slug": "tap-dance-octave-minds",
+      "title": "Tap Dance",
+      "artist": "Octave Minds, Chance the Rapper",
+      "preview": "assets/music/previews/tap-dance-octave-minds.m4a",
+      "cover": "assets/music/covers/tap-dance-octave-minds.jpg",
+      "spotify_url": "https://open.spotify.com/track/5lvOPh9NXRCIqvDuORC3Hn",
+      "spotify_code": "assets/music/codes/tap-dance-octave-minds.jpg"
+    },
+    {
+      "slug": "gangstas-paradise-coolio",
+      "title": "Gangsta's Paradise",
+      "artist": "Coolio",
+      "preview": "assets/music/previews/gangstas-paradise-coolio.m4a",
+      "cover": "assets/music/covers/gangstas-paradise-coolio.jpg",
+      "spotify_url": "https://open.spotify.com/track/1DIXPcTDzTj8ZMHt3PDt8p",
+      "spotify_code": "assets/music/codes/gangstas-paradise-coolio.jpg"
+    },
+    {
+      "slug": "leaves-from-the-vine",
+      "title": "Leaves from the Vine",
+      "artist": "Jeremy Zuckerman",
+      "preview": "assets/music/previews/leaves-from-the-vine.m4a",
+      "cover": "assets/music/covers/leaves-from-the-vine.jpg",
+      "spotify_url": "https://open.spotify.com/track/2ogAu2P0u0BP7zGbKUotyO",
+      "spotify_code": "assets/music/codes/leaves-from-the-vine.jpg"
+    },
+    {
+      "slug": "mr-blue-sky-elo",
+      "title": "Mr. Blue Sky",
+      "artist": "Electric Light Orchestra",
+      "preview": "assets/music/previews/mr-blue-sky-elo.m4a",
+      "cover": "assets/music/covers/mr-blue-sky-elo.jpg",
+      "spotify_url": "https://open.spotify.com/track/2RlgNHKcydI9sayD2Df2xp",
+      "spotify_code": "assets/music/codes/mr-blue-sky-elo.jpg"
+    },
+    {
+      "slug": "this-is-america",
+      "title": "This Is America",
+      "artist": "Childish Gambino",
+      "preview": "assets/music/previews/this-is-america.m4a",
+      "cover": "assets/music/covers/this-is-america.jpg",
+      "spotify_url": "https://open.spotify.com/track/0b9oOr2ZgvyQu88wzixux9",
+      "spotify_code": "assets/music/codes/this-is-america.jpg"
+    },
+    {
+      "slug": "nur-ein-wort",
+      "title": "Nur ein Wort",
+      "artist": "Wir sind Helden",
+      "preview": "assets/music/previews/nur-ein-wort.m4a",
+      "cover": "assets/music/covers/nur-ein-wort.jpg",
+      "spotify_url": "https://open.spotify.com/track/4hYinIaRxdaoEFSQni6K6I",
+      "spotify_code": "assets/music/codes/nur-ein-wort.jpg"
+    },
+    {
+      "slug": "not-like-us",
+      "title": "Not Like Us",
+      "artist": "Kendrick Lamar",
+      "preview": "assets/music/previews/not-like-us.m4a",
+      "cover": "assets/music/covers/not-like-us.jpg",
+      "spotify_url": "https://open.spotify.com/track/6AI3ezQ4o3HUoP6Dhudph3",
+      "spotify_code": "assets/music/codes/not-like-us.jpg"
+    },
+    {
+      "slug": "a-bar-song-tipsy",
+      "title": "A Bar Song (Tipsy)",
+      "artist": "Shaboozey",
+      "preview": "assets/music/previews/a-bar-song-tipsy.m4a",
+      "cover": "assets/music/covers/a-bar-song-tipsy.jpg",
+      "spotify_url": "https://open.spotify.com/track/2FQrifJ1N335Ljm3TjTVVf",
+      "spotify_code": "assets/music/codes/a-bar-song-tipsy.jpg"
+    },
+    {
+      "slug": "break-shit-jasiah",
+      "title": "Break Shit",
+      "artist": "Jasiah",
+      "preview": "assets/music/previews/break-shit-jasiah.mp3",
+      "cover": "assets/music/covers/break-shit-jasiah.jpg",
+      "spotify_url": "https://open.spotify.com/track/46PndWC5iW7JpdmaY2Jswq",
+      "spotify_code": "assets/music/codes/break-shit-jasiah.jpg"
+    },
+    {
+      "slug": "literal-assassins-creed-revelations",
+      "title": "Literal Assassin's Creed Revelations Trailer",
+      "artist": "Tobuscus",
+      "preview": "assets/music/previews/literal-assassins-creed-revelations.m4a",
+      "cover": "assets/music/covers/literal-assassins-creed-revelations.jpg",
+      "spotify_url": "https://open.spotify.com/track/3d2rTzYiA9ilfUrSvJszJU",
+      "spotify_code": "assets/music/codes/literal-assassins-creed-revelations.jpg"
+    },
+    {
+      "slug": "monsters-verum",
+      "title": "Monsters",
+      "artist": "Verum",
+      "preview": "assets/music/previews/monsters-verum.mp3",
+      "cover": "assets/music/covers/monsters-verum.jpg",
+      "spotify_url": "https://open.spotify.com/track/0buva0OhFszh2dG57OTypP",
+      "spotify_code": "assets/music/codes/monsters-verum.jpg"
+    },
+    {
+      "slug": "love-nat-king-cole",
+      "title": "L-O-V-E",
+      "artist": "Nat King Cole",
+      "preview": "assets/music/previews/love-nat-king-cole.m4a",
+      "cover": "assets/music/covers/love-nat-king-cole.jpg",
+      "spotify_url": "https://open.spotify.com/track/4QxDOjgpYtQDxxbWPuEJOy",
+      "spotify_code": "assets/music/codes/love-nat-king-cole.jpg"
+    },
+    {
+      "slug": "vai-me-dando-corda",
+      "title": "Vai Me Dando Corda (Ao Vivo)",
+      "artist": "Grupo Menos É Mais",
+      "preview": "assets/music/previews/vai-me-dando-corda.m4a",
+      "cover": "assets/music/covers/vai-me-dando-corda.jpg",
+      "spotify_url": "https://open.spotify.com/track/4rGZaAoBrEvfLGMDZapBKL",
+      "spotify_code": "assets/music/codes/vai-me-dando-corda.jpg"
+    }
+  ],
+  "albums": [
+    {
+      "slug": "chromakopia",
+      "title": "CHROMAKOPIA",
+      "artist": "Tyler, the Creator",
+      "cover": "assets/music/covers/chromakopia.jpg",
+      "spotify_url": "https://open.spotify.com/album/0U28P0QVB1QRxpqp5IHOlH",
+      "spotify_code": "assets/music/codes/chromakopia.jpg"
+    },
+    {
+      "slug": "all-eyez-on-me",
+      "title": "All Eyez on Me",
+      "artist": "2Pac",
+      "cover": "assets/music/covers/all-eyez-on-me.jpg",
+      "spotify_url": "https://open.spotify.com/album/78iX7tMceN0FsnmabAtlOC",
+      "spotify_code": "assets/music/codes/all-eyez-on-me.jpg"
+    },
+    {
+      "slug": "straight-outta-compton",
+      "title": "Straight Outta Compton",
+      "artist": "N.W.A",
+      "cover": "assets/music/covers/straight-outta-compton.jpg",
+      "spotify_url": "https://open.spotify.com/album/0Y7qkJVZ06tS2GUCDptzyW",
+      "spotify_code": "assets/music/codes/straight-outta-compton.jpg"
+    },
+    {
+      "slug": "random-access-memories",
+      "title": "Random Access Memories",
+      "artist": "Daft Punk",
+      "cover": "assets/music/covers/random-access-memories.jpg",
+      "spotify_url": "https://open.spotify.com/album/4m2880jivSbbyEGAKfITCa",
+      "spotify_code": "assets/music/codes/random-access-memories.jpg"
+    },
+    {
+      "slug": "the-marshall-mathers-lp2",
+      "title": "The Marshall Mathers LP2",
+      "artist": "Eminem",
+      "cover": "assets/music/covers/the-marshall-mathers-lp2.jpg",
+      "spotify_url": "https://open.spotify.com/album/3vOgbDjgsZBAPwV2M3bNOj",
+      "spotify_code": "assets/music/codes/the-marshall-mathers-lp2.jpg"
+    }
+  ],
+  "artists": [
+    {
+      "slug": "childish-gambino",
+      "name": "Childish Gambino",
+      "portrait": "assets/music/artists/childish-gambino.jpg",
+      "age": "42",
+      "birthplace": "Edwards Air Force Base, California, USA",
+      "bio": "Donald Glover's music alias, spanning rap, funk, and soul. A true multi-hyphenate who also acts, writes, and created Atlanta, he broke into the mainstream with the genre-blending Awaken, My Love and the viral This Is America.",
+      "top_songs": [
+        "This Is America",
+        "Redbone",
+        "Feels Like Summer"
+      ],
+      "spotify_url": "https://open.spotify.com/artist/73sIBHcqh3Z3NyqHKZ7FOL",
+      "spotify_code": "assets/music/codes/childish-gambino.jpg"
+    },
+    {
+      "slug": "chance-the-rapper",
+      "name": "Chance the Rapper",
+      "portrait": "assets/music/artists/chance-the-rapper.jpg",
+      "age": "33",
+      "birthplace": "Chicago, Illinois, USA",
+      "bio": "A Chicago rapper who built his career independently, never signing to a major label. His mixtapes Acid Rap and the Grammy-winning Coloring Book made him one of the defining voices of 2010s hip hop.",
+      "top_songs": [
+        "No Problem",
+        "Cocoa Butter Kisses",
+        "Angels"
+      ],
+      "spotify_url": "https://open.spotify.com/artist/1anyVhU62p31KFi8MEzkbf",
+      "spotify_code": "assets/music/codes/chance-the-rapper.jpg"
+    },
+    {
+      "slug": "daft-punk",
+      "name": "Daft Punk",
+      "portrait": "assets/music/artists/daft-punk.jpg",
+      "age": "Duo, active 1993 to 2021",
+      "birthplace": "Paris, France",
+      "bio": "The French electronic duo of Thomas Bangalter and Guy-Manuel de Homem-Christo, famous for their robot personas. Across Homework, Discovery, and Random Access Memories they shaped modern dance music before splitting in 2021.",
+      "top_songs": [
+        "Get Lucky",
+        "One More Time",
+        "Harder, Better, Faster, Stronger"
+      ],
+      "spotify_url": "https://open.spotify.com/artist/4tZwfgrHOc3mvqYlEYSvVi",
+      "spotify_code": "assets/music/codes/daft-punk.jpg"
+    },
+    {
+      "slug": "logic",
+      "name": "Logic",
+      "portrait": "assets/music/artists/logic.jpg",
+      "age": "36",
+      "birthplace": "Rockville, Maryland, USA",
+      "bio": "A Maryland rapper and producer, raised in Gaithersburg, known for rapid-fire, technical verses and ambitious concept albums. His mental-health anthem 1-800-273-8255 became one of the most impactful rap songs of its era.",
+      "top_songs": [
+        "1-800-273-8255",
+        "Homicide",
+        "Everyday"
+      ],
+      "spotify_url": "https://open.spotify.com/artist/4xRYI6VqpkE3UwrDrAZL8L",
+      "spotify_code": "assets/music/codes/logic.jpg"
+    },
+    {
+      "slug": "2pac",
+      "name": "2Pac",
+      "portrait": "assets/music/artists/2pac.jpg",
+      "age": "25 (1971 to 1996)",
+      "birthplace": "East Harlem, New York City, USA",
+      "bio": "One of the most influential rappers of all time, a poet and actor who fused raw storytelling with social conscience. Albums like Me Against the World and All Eyez on Me defined 90s hip hop before his death at 25.",
+      "top_songs": [
+        "California Love",
+        "Changes",
+        "Dear Mama"
+      ],
+      "spotify_url": "https://open.spotify.com/artist/1ZwdS5xdxEREPySFridCfh",
+      "spotify_code": "assets/music/codes/2pac.jpg"
+    },
+    {
+      "slug": "tyler-the-creator",
+      "name": "Tyler, the Creator",
+      "portrait": "assets/music/artists/tyler-the-creator.jpg",
+      "age": "35",
+      "birthplace": "Hawthorne, California, USA",
+      "bio": "A Los Angeles rapper, producer, and designer who rose from the chaos of Odd Future into one of his generation's most acclaimed artists. Igor, Call Me If You Get Lost, and Chromakopia show his constant reinvention.",
+      "top_songs": [
+        "EARFQUAKE",
+        "See You Again",
+        "Yonkers"
+      ],
+      "spotify_url": "https://open.spotify.com/artist/4V8LLVI7PbaPR0K2TGSxFF",
+      "spotify_code": "assets/music/codes/tyler-the-creator.jpg"
+    },
+    {
+      "slug": "bbno",
+      "name": "bbno$",
+      "portrait": "assets/music/artists/bbno.jpg",
+      "age": "30",
+      "birthplace": "Vancouver, British Columbia, Canada",
+      "bio": "A Canadian rapper and internet-era hitmaker whose playful, meme-savvy tracks turn into viral hits. He broke through with Lalala and has built a loyal following on relentless independent output.",
+      "top_songs": [
+        "Lalala",
+        "edamame",
+        "it boy"
+      ],
+      "spotify_url": "https://open.spotify.com/artist/41X1TR6hrK8Q2ZCpp2EqCz",
+      "spotify_code": "assets/music/codes/bbno.jpg"
+    },
+    {
+      "slug": "eminem",
+      "name": "Eminem",
+      "portrait": "assets/music/artists/eminem.jpg",
+      "age": "53",
+      "birthplace": "St. Joseph, Missouri, USA",
+      "bio": "The Detroit rapper who became one of the best-selling artists in history. His technical skill and provocative alter ego Slim Shady reshaped hip hop across The Marshall Mathers LP, The Eminem Show, and beyond.",
+      "top_songs": [
+        "Lose Yourself",
+        "Without Me",
+        "Stan"
+      ],
+      "spotify_url": "https://open.spotify.com/artist/7dGJo4pcD2V6oG8kP0tJRR",
+      "spotify_code": "assets/music/codes/eminem.jpg"
+    }
+  ]
+}

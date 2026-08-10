@@ -1,0 +1,230 @@
+/* src/tokens.css */
+:root {
+  --dds-color-bone: #f5f3ec;
+  --dds-color-ink: #141414;
+  --dds-color-accent: #f2c230;
+  --dds-color-brief-red: #c1272d;
+  --dds-color-background: var(--dds-color-bone);
+  --dds-color-foreground: var(--dds-color-ink);
+  --dds-font-serif:
+    "DDS Fraunces",
+    ui-serif,
+    Georgia,
+    serif;
+  --dds-font-sans:
+    "DDS Inter",
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+  --dds-font-mono:
+    "DDS IBM Plex Mono",
+    ui-monospace,
+    "SFMono-Regular",
+    monospace;
+}
+
+/* src/fonts.css */
+/* @ds-font-face-dropped: unresolvable src */
+/* @ds-font-face-dropped: unresolvable src */
+/* @ds-font-face-dropped: unresolvable src */
+/* @ds-font-face-dropped: unresolvable src */
+/* @ds-font-face-dropped: unresolvable src */
+
+/* src/Tag.css */
+.dds-tag {
+  display: inline-block;
+  font-family: var(--dds-font-mono);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(20, 20, 20, 0.2);
+  color: var(--dds-color-ink);
+}
+.dds-tag--accent {
+  padding: 0.25rem 0.75rem;
+  background: var(--dds-color-accent);
+}
+.dds-tag--outline {
+  padding: 0.25rem 0.5rem;
+  background: transparent;
+  color: rgba(20, 20, 20, 0.6);
+}
+
+/* src/Button.css */
+.dds-button {
+  display: inline-block;
+  font-family: var(--dds-font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--dds-color-ink);
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    opacity 0.15s ease,
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+.dds-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.dds-button--solid {
+  background: var(--dds-color-ink);
+  color: var(--dds-color-bone);
+}
+.dds-button--solid:hover:not(:disabled) {
+  opacity: 0.9;
+}
+.dds-button--outline {
+  background: transparent;
+  color: var(--dds-color-ink);
+}
+.dds-button--outline:hover:not(:disabled) {
+  background: var(--dds-color-ink);
+  color: var(--dds-color-bone);
+}
+
+/* src/Card.css */
+.dds-card {
+  border-radius: 1rem;
+  border: 1px solid rgba(20, 20, 20, 0.15);
+  background: var(--dds-color-bone);
+  color: var(--dds-color-ink);
+}
+.dds-card--default {
+  padding: 1.5rem;
+}
+.dds-card--compact {
+  padding: 1rem;
+}
+
+/* src/PageHeader.css */
+.dds-page-header {
+  margin-bottom: 2.5rem;
+}
+.dds-page-header__title {
+  margin-top: 1rem;
+  font-family: var(--dds-font-serif);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  font-size: 2.25rem;
+  line-height: 1.15;
+  color: var(--dds-color-ink);
+}
+@media (min-width: 640px) {
+  .dds-page-header__title {
+    font-size: 3rem;
+  }
+}
+.dds-page-header__dek {
+  margin-top: 0.75rem;
+  max-width: 42rem;
+  font-size: 1.125rem;
+  color: rgba(20, 20, 20, 0.7);
+}
+.dds-page-header__rule {
+  margin-top: 1.5rem;
+  height: 1px;
+  width: 100%;
+  background: rgba(20, 20, 20, 0.15);
+}
+
+/* src/InfoCard.css */
+.dds-info-card__label {
+  font-family: var(--dds-font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(20, 20, 20, 0.5);
+}
+.dds-info-card__value {
+  margin-top: 0.5rem;
+  font-family: var(--dds-font-serif);
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--dds-color-ink);
+}
+.dds-info-card__detail {
+  margin-top: 0.25rem;
+  color: rgba(20, 20, 20, 0.7);
+}
+
+/* src/TextInput.css */
+.dds-field {
+  display: flex;
+  flex-direction: column;
+}
+.dds-field__label {
+  font-family: var(--dds-font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(20, 20, 20, 0.6);
+}
+.dds-field__control {
+  margin-top: 0.25rem;
+  width: 100%;
+  border: 1px solid rgba(20, 20, 20, 0.2);
+  background: var(--dds-color-bone);
+  color: var(--dds-color-ink);
+  padding: 0.5rem 0.75rem;
+  font-family: var(--dds-font-sans);
+  font-size: 1rem;
+}
+.dds-field__control:focus-visible {
+  outline: 2px solid var(--dds-color-accent);
+  outline-offset: 2px;
+}
+
+/* src/Tabs.css */
+.dds-tabs {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+@media (min-width: 640px) {
+  .dds-tabs {
+    gap: 1.5rem;
+  }
+}
+.dds-tabs__item {
+  flex-shrink: 0;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+  font-family: var(--dds-font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(20, 20, 20, 0.6);
+  text-decoration: none;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.dds-tabs__item:hover {
+  color: var(--dds-color-ink);
+}
+.dds-tabs__item--active {
+  border-bottom-color: var(--dds-color-accent);
+  color: var(--dds-color-ink);
+}
+
+/* src/Footer.css */
+.dds-footer {
+  border-top: 1px solid rgba(20, 20, 20, 0.15);
+}
+.dds-footer__inner {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  font-family: var(--dds-font-mono);
+  font-size: 0.75rem;
+  color: rgba(20, 20, 20, 0.6);
+}
+.dds-footer__closing {
+  margin-top: 0.5rem;
+  color: rgba(20, 20, 20, 0.8);
+}

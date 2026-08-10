@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal · Darius Dantzler</title>
+<meta name="description" content="The person behind the work: the timeline, the hobbies, the music, the films, and the lines Darius Dantzler keeps coming back to.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Darius Dantzler">
+<meta property="og:title" content="Personal · Darius Dantzler">
+<meta property="og:description" content="The person behind the work: the timeline, the hobbies, the music, the films, and the lines Darius keeps coming back to.">
+<meta property="og:image" content="assets/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles.css">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--dds-color-bone);color:var(--dds-color-ink);font-family:var(--dds-font-sans);-webkit-font-smoothing:antialiased}
+a{color:var(--dds-color-ink);text-decoration:none}
+a:hover{color:var(--dds-color-ink)}
+.vignette{position:fixed;inset:0;z-index:0;pointer-events:none}
+.vignette::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 0%, rgba(242,194,48,.05), transparent 55%),radial-gradient(140% 120% at 50% 42%, rgba(245,243,236,0) 55%, rgba(20,20,20,.05) 100%),radial-gradient(80% 60% at 85% 15%, rgba(193,39,45,.015), transparent 60%)}
+.wrap{position:relative;z-index:1}
+.container-wide{max-width:1120px;margin:0 auto;padding:0 24px}
+.rule{height:1px;width:100%;background:rgba(20,20,20,.15)}
+
+.personal{padding-top:150px;padding-bottom:20px}
+.ph-head{margin-bottom:40px}
+.ph-head .crumb{display:inline-flex;align-items:center;gap:8px;font-family:var(--dds-font-mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.5);margin-bottom:16px}
+.ph-head .crumb a{color:rgba(20,20,20,.5);border-bottom:1px solid transparent;text-decoration:none}
+.ph-head .crumb a:hover{color:var(--dds-color-ink);border-bottom-color:var(--dds-color-accent)}
+.ph-head .kick{display:inline-block;font-family:var(--dds-font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;background:var(--dds-color-accent);color:var(--dds-color-ink);padding:5px 11px;border:1px solid rgba(20,20,20,.2)}
+.ph-head h1{font-family:var(--dds-font-serif);font-weight:600;letter-spacing:-.01em;font-size:clamp(2.4rem,5vw,3.1rem);line-height:1.12;margin:18px 0 0}
+.ph-head .dek{margin-top:14px;font-size:1.16rem;line-height:1.55;color:rgba(20,20,20,.7);max-width:640px}
+.ph-head .rule{margin-top:26px}
+.personal-intro{max-width:660px;font-size:1.08rem;line-height:1.68;color:rgba(20,20,20,.85);margin:0 0 44px}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pcard{display:flex;flex-direction:column;border:1px solid rgba(20,20,20,.15);border-radius:16px;overflow:hidden;background:var(--dds-color-bone);cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,border-color .18s}
+.pcard:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(20,20,20,.10);border-color:rgba(20,20,20,.28)}
+.pcard .thumb{height:172px;border:0;border-bottom:1px solid rgba(20,20,20,.12);position:relative;overflow:hidden;background:var(--dds-color-bone)}
+.pcard .thumb .art{position:absolute;inset:0;width:100%;height:100%;display:block;transition:transform .4s ease}
+.pcard:hover .thumb .art{transform:scale(1.03)}
+.pcard .pc-body{padding:18px 20px 22px;display:flex;flex-direction:column;flex:1}
+.pcard .num{font-family:var(--dds-font-mono);font-size:.66rem;letter-spacing:.08em;color:rgba(20,20,20,.4)}
+.pcard h3{font-family:var(--dds-font-serif);font-weight:600;font-size:1.34rem;letter-spacing:-.01em;margin:8px 0 0}
+.pcard p{font-size:.96rem;line-height:1.55;color:rgba(20,20,20,.72);margin:9px 0 0}
+.pcard .open{margin-top:auto;padding-top:16px;font-family:var(--dds-font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(20,20,20,.55);display:flex;align-items:center;gap:7px;transition:gap .18s,color .18s}
+.pcard:hover .open{color:var(--dds-color-ink);gap:11px}
+.pcard .open .arw{border-bottom:2px solid var(--dds-color-accent);width:16px}
+.pcard.wide{grid-column:span 3;flex-direction:row}
+.pcard.wide .thumb{width:44%;height:auto;min-height:220px;border-bottom:0;border-right:1px solid rgba(20,20,20,.12)}
+.pcard.wide .pc-body{padding:30px 34px}
+.pcard.wide h3{font-size:1.7rem}
+.pcard.wide p{font-size:1.02rem;max-width:440px}
+.pcard.pre-reveal{opacity:0;transform:translateY(18px)}
+.pcard.revealed{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease}
+
+@media(max-width:860px){.grid{grid-template-columns:repeat(2,1fr)}.pcard.wide{grid-column:span 2;flex-direction:column}.pcard.wide .thumb{width:100%;min-height:172px;height:172px;border-right:0;border-bottom:1px solid rgba(20,20,20,.12)}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.pcard.wide{grid-column:span 1}.personal{padding-top:120px}}
+</style>
+</head>
+<body>
+<div class="vignette"></div>
+<div id="site-header"></div>
+
+<div class="wrap">
+  <div class="personal">
+    <div class="container-wide">
+      <div class="ph-head">
+        <div class="crumb"><a href="index.html" data-i18n="crumb.home">Home</a> <span>/</span> <span class="kick" data-i18n="crumb.personal">Personal</span></div>
+        <h1 data-i18n="personal.title">The person behind the work</h1>
+        <p class="dek" data-i18n="personal.dek">A slower read. The timeline, the hobbies, the music, the films, and the lines I keep coming back to. Same me, off the clock.</p>
+        <div class="rule"></div>
+      </div>
+      <p class="personal-intro" data-i18n="personal.intro">The rest of this site is the record of what I've built. This part is context: where I come from, what I do on my own time, and the things that shaped how I think. Pick a door.</p>
+
+      <div class="grid">
+        <a class="pcard wide" href="Chronology.html">
+          <div class="thumb"><svg class="art" viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="400" height="260" fill="#f5f3ec"></rect><line x1="36" y1="130" x2="364" y2="130" stroke="#141414" stroke-width="2"></line><line x1="96" y1="130" x2="96" y2="78" stroke="#141414" stroke-width="2"></line><line x1="176" y1="130" x2="176" y2="182" stroke="#141414" stroke-width="2"></line><line x1="248" y1="130" x2="248" y2="84" stroke="#141414" stroke-width="2"></line><line x1="312" y1="130" x2="312" y2="172" stroke="#141414" stroke-width="2"></line><circle cx="36" cy="130" r="5" fill="#141414"></circle><circle cx="364" cy="130" r="5" fill="#141414"></circle><circle cx="96" cy="78" r="10" fill="#f2c230" stroke="#141414" stroke-width="2"></circle><circle cx="176" cy="182" r="7" fill="#f5f3ec" stroke="#141414" stroke-width="2"></circle><circle cx="248" cy="84" r="7" fill="#f5f3ec" stroke="#141414" stroke-width="2"></circle><circle cx="312" cy="172" r="10" fill="#f2c230" stroke="#141414" stroke-width="2"></circle></svg></div>
+          <div class="pc-body">
+            <div class="num" data-i18n="card.chrono.num">01 · Life so far</div>
+            <h3 data-i18n="card.chrono.title">Chronology</h3>
+            <p data-i18n="card.chrono.desc">A scrolling walk through the milestones (where I've lived, studied, and worked) set against the places they happened.</p>
+            <div class="open"><span class="arw"></span><span data-i18n="open">Open</span></div>
+          </div>
+        </a>
+
+        <a class="pcard" href="Personal Effects.html">
+          <div class="thumb"><svg class="art" viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="400" height="220" fill="#f5f3ec"></rect><rect x="118" y="54" width="150" height="116" rx="6" fill="none" stroke="#141414" stroke-width="2" transform="rotate(-8 193 112)"></rect><rect x="150" y="58" width="150" height="112" rx="6" fill="none" stroke="#141414" stroke-width="2" transform="rotate(7 225 114)"></rect><circle cx="224" cy="112" r="28" fill="none" stroke="#f2c230" stroke-width="6"></circle><circle cx="224" cy="112" r="6" fill="#141414"></circle></svg></div>
+          <div class="pc-body">
+            <div class="num" data-i18n="card.effects.num">02 · Off the clock</div>
+            <h3 data-i18n="card.effects.title">Personal Effects</h3>
+            <p data-i18n="card.effects.desc">The hobbies and small obsessions, told in pictures.</p>
+            <div class="open"><span class="arw"></span><span data-i18n="open">Open</span></div>
+          </div>
+        </a>
+
+        <a class="pcard" href="Music Room.html">
+          <div class="thumb"><svg class="art" viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="400" height="220" fill="#f5f3ec"></rect><g transform="translate(200 110)"><circle r="92" fill="#141414"></circle><circle r="76" fill="none" stroke="#f5f3ec" stroke-width="1" opacity=".18"></circle><circle r="60" fill="none" stroke="#f5f3ec" stroke-width="1" opacity=".18"></circle><circle r="44" fill="none" stroke="#f5f3ec" stroke-width="1" opacity=".18"></circle><circle r="30" fill="#f2c230"></circle><circle r="5" fill="#f5f3ec"></circle></g></svg></div>
+          <div class="pc-body">
+            <div class="num" data-i18n="card.music.num">03 · On repeat</div>
+            <h3 data-i18n="card.music.title">Music Room</h3>
+            <p data-i18n="card.music.desc">Favorite songs, albums, and artists, three ways. Spin a record, slide one from its sleeve, or read the liner notes.</p>
+            <div class="open"><span class="arw"></span><span data-i18n="open">Open</span></div>
+          </div>
+        </a>
+
+        <a class="pcard" href="Screening Room.html">
+          <div class="thumb"><svg class="art" viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="400" height="220" fill="#f5f3ec"></rect><rect x="40" y="60" width="320" height="100" fill="#141414"></rect><g fill="#f5f3ec"><rect x="48" y="66" width="12" height="9" rx="2"></rect><rect x="88" y="66" width="12" height="9" rx="2"></rect><rect x="128" y="66" width="12" height="9" rx="2"></rect><rect x="168" y="66" width="12" height="9" rx="2"></rect><rect x="208" y="66" width="12" height="9" rx="2"></rect><rect x="248" y="66" width="12" height="9" rx="2"></rect><rect x="288" y="66" width="12" height="9" rx="2"></rect><rect x="328" y="66" width="12" height="9" rx="2"></rect><rect x="48" y="145" width="12" height="9" rx="2"></rect><rect x="88" y="145" width="12" height="9" rx="2"></rect><rect x="128" y="145" width="12" height="9" rx="2"></rect><rect x="168" y="145" width="12" height="9" rx="2"></rect><rect x="208" y="145" width="12" height="9" rx="2"></rect><rect x="248" y="145" width="12" height="9" rx="2"></rect><rect x="288" y="145" width="12" height="9" rx="2"></rect><rect x="328" y="145" width="12" height="9" rx="2"></rect></g><g stroke="#f5f3ec" stroke-width="3"><line x1="120" y1="80" x2="120" y2="140"></line><line x1="280" y1="80" x2="280" y2="140"></line></g><path d="M188 90 L226 110 L188 130 Z" fill="#f2c230"></path></svg></div>
+          <div class="pc-body">
+            <div class="num" data-i18n="card.screening.num">04 · Watching</div>
+            <h3 data-i18n="card.screening.title">Screening Room</h3>
+            <p data-i18n="card.screening.desc">Films and shows worth your time, in a line or two.</p>
+            <div class="open"><span class="arw"></span><span data-i18n="open">Open</span></div>
+          </div>
+        </a>
+
+        <a class="pcard" href="Quotes.html">
+          <div class="thumb"><svg class="art" viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="400" height="220" fill="#f5f3ec"></rect><text x="52" y="172" font-family="Georgia, serif" font-size="190" font-weight="700" fill="#f2c230">&#8220;</text><g stroke="#141414" stroke-width="3" stroke-linecap="round" opacity=".82"><line x1="186" y1="92" x2="330" y2="92"></line><line x1="186" y1="116" x2="320" y2="116"></line><line x1="186" y1="140" x2="288" y2="140"></line></g></svg></div>
+          <div class="pc-body">
+            <div class="num" data-i18n="card.quotes.num">05 · Words that stuck</div>
+            <h3 data-i18n="card.quotes.title">Quotes</h3>
+            <p data-i18n="card.quotes.desc">Lines I hold close, and the people I keep learning from.</p>
+            <div class="open"><span class="arw"></span><span data-i18n="open">Open</span></div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+
+<script>
+(function(){
+  var cards=[].slice.call(document.querySelectorAll('.pcard'));
+  if(!cards.length) return;
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  cards.forEach(function(c,i){c.classList.add('pre-reveal');c.style.transitionDelay=(i*70)+'ms';});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('revealed');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:0.08});
+  cards.forEach(function(c){io.observe(c);});
+})();
+</script>
+<script src="i18n.js"></script>
+<script src="site-chrome.js"></script>
+</body>
+</html>

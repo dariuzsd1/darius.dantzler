@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Education · Darius Dantzler</title>
+<meta name="description" content="Darius Dantzler, early-career professional in space security, sustainability, and policy. Master's in Space Studies at ISU Strasbourg. Portfolio, experience, and personal notes.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Darius Dantzler">
+<meta property="og:title" content="Education · Darius Dantzler">
+<meta property="og:description" content="Darius Dantzler, early-career professional in space security, sustainability, and policy. Master's in Space Studies at ISU Strasbourg. Portfolio, experience, and personal notes.">
+<meta property="og:image" content="assets/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles.css">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--dds-color-bone);color:var(--dds-color-ink);font-family:var(--dds-font-sans);-webkit-font-smoothing:antialiased}
+a{color:var(--dds-color-ink);text-decoration:none}
+a:hover{color:var(--dds-color-ink)}
+
+.vignette{position:fixed;inset:0;z-index:0;pointer-events:none}
+.vignette::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(120% 90% at 50% 0%, rgba(242,194,48,.05), transparent 55%),
+  radial-gradient(140% 120% at 50% 42%, rgba(245,243,236,0) 55%, rgba(20,20,20,.05) 100%)}
+
+/* floating pill header (shared identity) */
+.pillbar{position:fixed;top:18px;left:0;right:0;z-index:50;display:flex;justify-content:center;padding:0 20px;pointer-events:none}
+.pill{pointer-events:auto;width:100%;max-width:1120px;display:flex;align-items:center;gap:22px;padding:11px 14px 11px 24px;border-radius:999px;border:1px solid rgba(20,20,20,.12);background:rgba(248,246,240,.82);backdrop-filter:saturate(140%) blur(14px);-webkit-backdrop-filter:saturate(140%) blur(14px);box-shadow:0 1px 1px rgba(20,20,20,.03),0 8px 26px rgba(20,20,20,.09)}
+.brand{font-family:var(--dds-font-serif);font-weight:600;font-size:1.02rem;letter-spacing:-.01em;white-space:nowrap;padding-right:4px}
+.navlinks{display:flex;align-items:center;gap:20px;margin-left:auto}
+.navlink{font-family:var(--dds-font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(20,20,20,.6);border-bottom:2px solid transparent;padding:2px 0;transition:color .15s,border-color .15s;white-space:nowrap}
+.navlink:hover{color:var(--dds-color-ink)}
+.navlink.active{color:var(--dds-color-ink);border-bottom-color:var(--dds-color-accent)}
+.pill-tools{display:flex;align-items:center;gap:6px;padding-left:14px;margin-left:2px;border-left:1px solid rgba(20,20,20,.12)}
+.icobtn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:999px;border:1px solid transparent;color:rgba(20,20,20,.7);background:transparent;cursor:pointer;transition:background .15s,color .15s}
+.icobtn:hover{background:rgba(20,20,20,.06);color:var(--dds-color-ink)}
+.icobtn:focus-visible{outline:2px solid var(--dds-color-accent);outline-offset:2px}
+.icobtn svg{width:18px;height:18px;display:block}
+.lang{position:relative}
+.lang-menu{position:absolute;top:calc(100% + 12px);right:0;min-width:172px;background:var(--dds-color-bone);border:1px solid rgba(20,20,20,.14);border-radius:14px;box-shadow:0 10px 30px rgba(20,20,20,.14);padding:6px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .16s,transform .16s,visibility .16s}
+.lang.open .lang-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.lang-head{font-family:var(--dds-font-mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.45);padding:8px 10px 6px}
+.lang-item{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;text-align:left;background:transparent;border:0;cursor:pointer;padding:9px 10px;border-radius:9px;font-family:var(--dds-font-sans);font-size:.9rem;color:var(--dds-color-ink);transition:background .12s}
+.lang-item:hover{background:rgba(20,20,20,.06)}
+.lang-item:focus-visible{outline:2px solid var(--dds-color-accent);outline-offset:-2px}
+.lang-item .code{font-family:var(--dds-font-mono);font-size:.66rem;color:rgba(20,20,20,.5)}
+.lang-item[aria-checked="true"] .code{color:var(--dds-color-ink)}
+.lang-item .tick{width:14px;height:14px;color:var(--dds-color-accent);opacity:0}
+.lang-item[aria-checked="true"] .tick{opacity:1}
+
+.wrap{position:relative;z-index:1}
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* intro */
+.ed-head{padding-top:148px;padding-bottom:8px}
+.crumb{display:inline-flex;align-items:center;gap:8px;font-family:var(--dds-font-mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.5);margin-bottom:22px}
+.crumb a{color:rgba(20,20,20,.5);border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
+.crumb a:hover{color:var(--dds-color-ink);border-bottom-color:var(--dds-color-accent)}
+.ed-head .kick{display:inline-block;font-family:var(--dds-font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;background:var(--dds-color-accent);color:var(--dds-color-ink);padding:5px 11px;border:1px solid rgba(20,20,20,.2)}
+.ed-head h1{font-family:var(--dds-font-serif);font-weight:600;letter-spacing:-.01em;font-size:clamp(2.6rem,6vw,4rem);line-height:1.05;margin:18px 0 0}
+.ed-head .dek{margin-top:14px;font-size:1.16rem;line-height:1.55;color:rgba(20,20,20,.7);max-width:600px}
+
+/* ===== credential plaques ===== */
+.plaques{display:flex;flex-direction:column;gap:26px;max-width:860px;margin:40px 0 20px}
+.plaque{position:relative;border:1px solid rgba(20,20,20,.7);border-radius:14px;background:#faf8f1;box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 10px 26px rgba(20,20,20,.07);overflow:hidden}
+.plaque::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--brand,var(--dds-color-ink));z-index:5}
+
+/* --- banner: faded logo watermark + crisp corner logo + hover shimmer --- */
+.banner{position:relative;height:150px;overflow:hidden;border-bottom:1px solid rgba(20,20,20,.1);background:linear-gradient(120deg,color-mix(in srgb,var(--brand) 22%,#f7f4ec),#f7f4ec 72%)}
+.banner-watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);height:auto;width:auto;max-height:118%;max-width:82%;opacity:.13;filter:saturate(.85);pointer-events:none;user-select:none}
+.banner-logo{position:absolute;top:16px;right:20px;z-index:2;height:46px;max-width:210px;object-fit:contain;filter:drop-shadow(0 1px 2px rgba(20,20,20,.22))}
+.banner-shimmer{position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.55) 50%,transparent 60%);transform:translateX(-140%)}
+.banner:hover .banner-shimmer{animation:shimmer 1.15s ease}
+@keyframes shimmer{from{transform:translateX(-140%)}to{transform:translateX(140%)}}
+
+.pl-body{padding:22px 26px 24px}
+.pl-dates{display:flex;align-items:center;gap:11px;flex-wrap:wrap;font-family:var(--dds-font-mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(20,20,20,.5)}
+.pl-badge{font-family:var(--dds-font-mono);font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;color:var(--dds-color-ink);background:var(--dds-color-accent);border:1px solid rgba(20,20,20,.2);padding:2px 8px;border-radius:999px}
+.pl-inst{font-family:var(--dds-font-serif);font-weight:600;font-size:1.62rem;letter-spacing:-.01em;line-height:1.12;margin:11px 0 0}
+.pl-prog{font-family:var(--dds-font-serif);font-weight:500;font-size:1.1rem;color:rgba(20,20,20,.7);margin-top:5px;letter-spacing:-.005em}
+.pl-intro{font-size:1.02rem;line-height:1.55;color:rgba(20,20,20,.78);margin:13px 0 0;max-width:640px;text-wrap:pretty}
+.fig{font-weight:650;color:var(--dds-color-ink);background:linear-gradient(transparent 58%,rgba(242,194,48,.55) 58%);padding:0 1px}
+
+.pl-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:16px}
+.more-toggle{display:inline-flex;align-items:center;gap:8px;background:transparent;border:0;padding:0;cursor:pointer;font-family:var(--dds-font-mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.6);transition:color .15s}
+.more-toggle:hover{color:var(--dds-color-ink)}
+.more-toggle:focus-visible{outline:2px solid var(--dds-color-accent);outline-offset:3px;border-radius:3px}
+.more-toggle .chev{width:12px;height:12px;transition:transform .2s ease}
+.more-toggle[aria-expanded="true"] .chev{transform:rotate(180deg)}
+.more-toggle .txt-less{display:none}
+.more-toggle[aria-expanded="true"] .txt-more{display:none}
+.more-toggle[aria-expanded="true"] .txt-less{display:inline}
+.gallery-btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--dds-font-mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.07em;color:var(--dds-color-ink);background:transparent;border:1px solid rgba(20,20,20,.28);border-radius:999px;padding:7px 14px;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.gallery-btn:hover{background:var(--dds-color-ink);color:var(--dds-color-bone);border-color:var(--dds-color-ink)}
+.gallery-btn svg{width:15px;height:15px}
+
+.pl-detail{overflow:hidden;max-height:0;transition:max-height .3s ease}
+.sec{margin-top:18px}
+.sec:first-child{margin-top:20px}
+.sec-h{font-family:var(--dds-font-mono);font-size:.63rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(20,20,20,.5);padding-bottom:7px;border-bottom:1px solid rgba(20,20,20,.12)}
+.sec ul{list-style:none;margin:10px 0 0;padding:0;max-width:660px}
+.sec li{position:relative;padding:0 0 0 20px;margin:0 0 9px;font-size:.98rem;line-height:1.55;color:rgba(20,20,20,.82);text-wrap:pretty}
+.sec li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:1px;background:var(--dds-color-accent)}
+
+@media(max-width:560px){.ed-head{padding-top:120px}.pl-body{padding:20px 20px}.pl-inst{font-size:1.4rem}.banner{height:120px}.banner-logo{height:38px}}
+@media(max-width:860px){.navlinks{display:none}}
+@media(prefers-reduced-motion:reduce){.banner:hover .banner-shimmer{animation:none}.pl-detail{transition:none}.more-toggle .chev{transition:none}}
+
+.ed-foot{border-top:1px solid rgba(20,20,20,.15);margin-top:30px}
+.ed-foot .inner{max-width:1120px;margin:0 auto;padding:34px 24px 60px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:var(--dds-font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(20,20,20,.55)}
+.ed-foot a{color:rgba(20,20,20,.55);border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
+.ed-foot a:hover{color:var(--dds-color-ink);border-bottom-color:var(--dds-color-accent)}
+</style>
+</head>
+<body>
+<div class="vignette"></div>
+
+<div class="pillbar">
+  <nav class="pill" aria-label="Main">
+    <a class="brand" href="index.html">Darius Dantzler</a>
+    <div class="navlinks">
+      <a class="navlink" href="index.html">Home</a>
+      <a class="navlink" href="Experience.html">Experience</a>
+      <a class="navlink active" href="Education.html">Education</a>
+      <a class="navlink" href="Projects.html">Projects</a>
+      <a class="navlink" href="Personal.html">Personal</a>
+      <a class="navlink" href="Contact.html">Contact</a>
+    </div>
+    <div class="pill-tools">
+      <a class="icobtn" href="https://github.com/dariuzsd1" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.2.8-.5v-1.8c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5Z"/></svg>
+      </a>
+      <div class="lang" id="lang">
+        <button class="icobtn" id="langBtn" aria-label="Language" aria-haspopup="true" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3Z"/></svg>
+        </button>
+        <div class="lang-menu" role="menu" aria-label="Language">
+          <div class="lang-head">Language</div>
+          <button class="lang-item" role="menuitemradio" aria-checked="true" data-lang="en"><span>English</span><span class="code">EN</span><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></button>
+          <button class="lang-item" role="menuitemradio" aria-checked="false" data-lang="de"><span>Deutsch</span><span class="code">DE</span><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></button>
+          <button class="lang-item" role="menuitemradio" aria-checked="false" data-lang="it"><span>Italiano</span><span class="code">IT</span><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></button>
+          <button class="lang-item" role="menuitemradio" aria-checked="false" data-lang="fr"><span>Français</span><span class="code">FR</span><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<div class="wrap">
+  <header class="ed-head container">
+    <div class="crumb"><a href="index.html" data-i18n="crumb.home">Home</a> <span>/</span> <span class="kick" data-i18n="nav.education">Education</span></div>
+    <h1 data-i18n="ed.title">My academic career</h1>
+    <p class="dek" data-i18n="ed.dek">Degrees, programs, and research.</p>
+  </header>
+
+  <main class="container">
+    <div class="plaques" id="plaques"></div>
+  </main>
+
+  <footer class="ed-foot">
+    <div class="inner">
+      <span>Darius Dantzler · Education</span>
+      <a href="index.html" data-i18n="ex.backhome">Back home</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+/* ---------- language dropdown (shared) ---------- */
+const lang=document.getElementById('lang'), langBtn=document.getElementById('langBtn');
+langBtn.addEventListener('click',e=>{e.stopPropagation();const open=lang.classList.toggle('open');langBtn.setAttribute('aria-expanded',open);});
+document.addEventListener('click',()=>{lang.classList.remove('open');langBtn.setAttribute('aria-expanded','false');});
+lang.querySelectorAll('.lang-item').forEach(it=>it.addEventListener('click',e=>{e.stopPropagation();lang.querySelectorAll('.lang-item').forEach(x=>x.setAttribute('aria-checked','false'));it.setAttribute('aria-checked','true');lang.classList.remove('open');langBtn.setAttribute('aria-expanded','false');}));
+
+/* ================= DATA =================
+   { id, brand(hoist color), status, start, end, institution, program, logo, medallion, gallery, intro, sections:[{h,items:[]}] }
+   Wrap impressive figures in [[ ]] to highlight them. */
+const education = [
+  { id:"ed1", brand:"#14315f", status:"In progress", start:"2025", end:"Expected 2027",
+    institution:"International Space University", program:"M.S. Space Studies: Space Business, Policy & Entrepreneurship",
+    logo:"assets/edu/isu-wordmark-t.png", medallion:"assets/edu/isu-patch.png", gallery:"isu", wm:"left: 227px; top: 73px; width: 301px; height: 157px; position: absolute",
+    intro:"A graduate program in space business, policy, and entrepreneurship, split across hands-on ventures, policy research, and technical projects.",
+    sections:[
+      { h:"Ventures & leadership", items:[
+        "Founded [[NodeSpace]], a student venture for ITU radiofrequency spectrum rights, and pitched it to [[300+ investors]] and space professionals at Factory 2026.",
+        "Governance lead and moderator for a [[20-member]] international Deep Space Communication roadmap.",
+        "Facilitated [[five]] intercultural events for the student body." ] },
+      { h:"Research & media", items:[
+        "Wrote \u201CRhetoric vs. Reality,\u201D a comparative analysis of space sustainability rules across the U.S., EU, Russia, and China.",
+        "Co-created and co-hosted the \u201CWhy Space Matters\u201D podcast, interviewing [[Dr. Pascale Ehrenfreund]] and [[Dr. Walter Peeters]]." ] },
+      { h:"Technical projects", items:[
+        "Robotics: built autonomous navigation and object detection in Python, winning [[2nd Place]] and Special Recognition.",
+        "Lunar habitat simulation: wrote protocols for spacesuit docking, hydroponics, and crew safety." ] },
+      { h:"Coursework", items:[
+        "Space policy and security, AI in space, space situational awareness, market analytics, and robotics." ] }
+    ] },
+  { id:"ed2", brand:"#c8102e", status:"Complete", start:"2019", end:"2023",
+    institution:"University of Maryland Global Campus", program:"B.S. Political Science & Business Law",
+    logo:"assets/edu/umgc-wordmark-t.png", medallion:"assets/edu/umgc-seal.png", gallery:"umgc",
+    intro:"An in-person degree in Stuttgart, Germany focused on international relations, defense policy, and space law. Graduated with a [[3.24 GPA]].",
+    sections:[
+      { h:"Thesis", items:[
+        "\u201CThe Militarization and Weaponization of Outer Space\u201D analyzed U.S., Russian, and Chinese anti-satellite programs and the erosion of the Outer Space Treaty." ] },
+      { h:"Focus areas", items:[
+        "International relations, defense policy, and business law.",
+        "European security architecture and NATO burden-sharing." ] }
+    ] },
+  { id:"ed3", brand:"#00a3c4", status:"Complete", start:"2019", end:"2019",
+    institution:"National Security Language Initiative for Youth", program:"Russian Language Immersion · Moscow",
+    logo:"assets/edu/nsliy-t.png", medallion:"", gallery:"nsliy", wm:"left: 196px; top: 75px; position: absolute",
+    intro:"A U.S. Department of State scholarship for an intensive Russian language immersion in Moscow.",
+    sections:[
+      { h:"Highlights", items:[
+        "Selected through a competitive, merit-based national process.",
+        "Roughly [[six weeks]] of full language immersion in Moscow." ] }
+    ] },
+  { id:"ed4", brand:"#17693a", status:"Complete", start:"2015", end:"2019",
+    institution:"St. Charles High School", program:"High School Diploma",
+    logo:"assets/edu/stcharles-crest-t.png", medallion:"", gallery:"stcharles", wm:"left: 193px; top: 74px; position: absolute",
+    intro:"Waldorf, Maryland. Heavy on civics, debate, and public speaking.",
+    sections:[
+      { h:"Activities", items:[
+        "Head Chair of Model United Nations (grades 9\u201312).",
+        "Mock Trial (grades 11\u201312).",
+        "We the People \u2014 met with state representatives in Congress." ] }
+    ] }
+];
+
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+const T=(k,d)=>(window.ddsI18n&&window.ddsI18n.t(k))||d;
+function fig(s){ return esc(s).replace(/\[\[(.+?)\]\]/g,'<span class="fig">$1</span>'); }
+
+const holder=document.getElementById('plaques');
+
+education.forEach(e=>{
+  const inProgress = /progress|current|ongoing/i.test(e.status||"");
+  const art=document.createElement('article');
+  art.className='plaque'+(inProgress?' in-progress':'');
+  art.style.setProperty('--brand', e.brand);
+
+  const badge = inProgress ? '<span class="pl-badge" data-i18n="ed.inprogress">'+T('ed.inprogress','In progress')+'</span>' : '';
+  const secs = e.sections.map(s=>
+    '<div class="sec"><div class="sec-h">'+esc(s.h)+'</div><ul>'+
+      s.items.map(i=>'<li>'+fig(i)+'</li>').join('')+
+    '</ul></div>').join('');
+
+  art.innerHTML=
+    '<div class="banner">'+
+      '<img class="banner-watermark" src="'+e.logo+'" alt="" aria-hidden="true"'+(e.wm?' style="'+e.wm+'"':'')+'>'+
+      '<span class="banner-shimmer" aria-hidden="true"></span>'+
+      '<img class="banner-logo" src="'+(e.medallion||e.logo)+'" alt="'+esc(e.institution)+' logo">'+
+    '</div>'+
+    '<div class="pl-body">'+
+      '<div class="pl-dates"><span>'+esc(e.start)+' &ndash; '+esc(e.end)+'</span>'+badge+'</div>'+
+      '<h2 class="pl-inst">'+esc(e.institution)+'</h2>'+
+      '<div class="pl-prog">'+esc(e.program)+'</div>'+
+      '<p class="pl-intro">'+fig(e.intro)+'</p>'+
+      '<div class="pl-actions">'+
+        '<button class="more-toggle" type="button" aria-expanded="false" aria-controls="d-'+e.id+'">'+
+          '<span class="txt-more" data-i18n="ed.moredetail">'+T('ed.moredetail','More detail')+'</span><span class="txt-less" data-i18n="ed.less">'+T('ed.less','Less')+'</span>'+
+          '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>'+
+        '</button>'+
+        '<a class="gallery-btn" href="Education-Gallery.html?school='+e.gallery+'">'+
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="15" rx="2"/><circle cx="8.5" cy="9" r="1.4" fill="currentColor" stroke="none"/><path d="M4 18l5-5 4 4 3-3 4 4"/></svg>'+
+          '<span data-i18n="ed.gallery">'+T('ed.gallery','Photo gallery')+'</span>'+
+        '</a>'+
+      '</div>'+
+      '<div class="pl-detail" id="d-'+e.id+'">'+secs+'</div>'+
+    '</div>';
+
+  holder.appendChild(art);
+
+  const btn=art.querySelector('.more-toggle');
+  const panel=art.querySelector('.pl-detail');
+  btn.addEventListener('click',()=>{
+    const open = btn.getAttribute('aria-expanded')==='true';
+    btn.setAttribute('aria-expanded', open?'false':'true');
+    panel.style.maxHeight = open ? '0px' : panel.scrollHeight+'px';
+  });
+});
+</script>
+<script src="i18n.js"></script>
+<script src="site-chrome.js"></script>
+</body>
+</html>
