@@ -230,17 +230,18 @@ const experience = [
     ] },
   { id:"e2", role:"Chiefs of Mission Conference Planner", org:"U.S. European Command (USEUCOM)", location:"Stuttgart, DE",
     start:"2024", end:"2024", feat:true,
-    summary:"Ran planning for a four-star conference of [[46+ U.S. Ambassadors]] and Chargés d'Affaires, lining up DoD, State Department, and NATO officials on European security.",
+    summary:"Ran planning for a four-star conference of [[46+ U.S. Ambassadors]] and Chargés d'Affaires, lining up DoD, State Department, and NATO officials on European security. Earned a [[4-Star Coin]] from the Commander, USEUCOM.",
     highlights:[
       "Was the liaison across Protocol, the State Department, and Allied embassies for senior principals.",
       "Built an Excel and Word mail merge that generated credentials for [[46+ principals]] with no manual entry.",
       "Ran [[60+ microphones]] and breakout rooms live through the whole event.",
-      "Earned a [[4-Star Coin]] from [[General Christopher Cavoli]], Commander USEUCOM and SACEUR."
+      "The coin came from [[General Christopher Cavoli]], Commander USEUCOM and Supreme Allied Commander Europe."
     ] },
   { id:"e3", role:"Child & Youth Program Assistant", org:"U.S. Army Child & Youth Services", location:"Stuttgart, DE",
     start:"2023", end:"2025",
-    summary:"Ran a toddler classroom of [[12]] and wrote the automation that gave the team back about [[300 hours]] a year.",
+    summary:"Ran a class of [[20 children]] in a facility that saw [[100+]] through its doors, and wrote the automation that gave the team back about [[300 hours]] a year.",
     highlights:[
+      "Worked across a [[20-person]] daycare team and a [[10-person]] youth center team.",
       "Built an Excel and Word mail merge for daily reporting that saved roughly [[6 hours a week]].",
       "Wrote the SOPs for reporting and workshops so the work held up after I left.",
       "Started a STEM club: rocketry, aerodynamics, and chemical reactions.",
@@ -251,15 +252,15 @@ const experience = [
     start:"2023", end:"2023", feat:true,
     summary:"Read [[4,000+ pages]] of the National Defense Authorization Act and pulled out the funding and policy shifts senior staff had missed.",
     highlights:[
-      "Wrote [[10+ executive briefs]] to prep a four-star commander (GEN Cavoli) for HASC and SASC hearings.",
+      "Wrote [[10+ executive briefs]] to prep a four-star commander (General Cavoli) for HASC and SASC hearings.",
       "Built the command-wide legislative knowledge platform that legal, finance, and operations all adopted.",
       "Sat in on hearings and meetings with members of Congress, Public Affairs, and Protocol."
     ] },
   { id:"e5", role:"Legal Research Intern, Staff Judge Advocate", org:"USEUCOM, Office of the Staff Judge Advocate", location:"Stuttgart, DE",
     start:"2022", end:"2022", feat:true,
-    summary:"Researched military and federal law and rebuilt how the command tracked its international agreements.",
+    summary:"Consolidated [[150+ NATO and EUCOM agreements]] into a single compliance-tracking database, saving an estimated [[10 to 15 attorney hours]] a week.",
     highlights:[
-      "Consolidated [[150+ NATO and EUCOM agreements]] into one database, saving an estimated [[10 to 15 attorney hours]] a week.",
+      "Analyzed UCMJ provisions against U.S. federal law to support active administrative cases.",
       "Reviewed [[25+ gift submissions]] to the commanding general against federal ethics limits.",
       "Handled sensitive material under secure destruction and records-retention rules."
     ] },
@@ -295,7 +296,19 @@ function fig(s){ return esc(s).replace(/\[\[(.+?)\]\]/g,'<span class="fig">$1</s
 
 const tl=document.getElementById('timeline');
 
-experience.forEach(e=>{
+/* A role still running sorts above every finished one. Everything else
+   orders by when it ended, then by when it started, so a long-running
+   entry cannot jump ahead of a more recent short one. */
+function yr(v){
+  if(/present|current|now/i.test(v||'')) return 9999;
+  const m=String(v||'').match(/\d{4}/);
+  return m ? +m[0] : 0;
+}
+const ordered = experience.slice().sort((a,b)=>
+  yr(b.end)-yr(a.end) || yr(b.start)-yr(a.start)
+);
+
+ordered.forEach(e=>{
   const isCurrent = /present|current|now/i.test(e.end||"");
   const hasHl = Array.isArray(e.highlights) && e.highlights.length>0;
   const entry=document.createElement('article');
