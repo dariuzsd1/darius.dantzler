@@ -35,6 +35,7 @@
   var LI_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>';
   var GLOBE_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3Z"/></svg>';
   var TICK = '<svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>';
+  var BURGER_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="bg-bars" d="M4 7h16M4 12h16M4 17h16"/><path class="bg-x" d="M6 6l12 12M18 6L6 18"/></svg>';
   var LANGS = [["English", "EN", "en"], ["Deutsch", "DE", "de"], ["Français", "FR", "fr"], ["Español", "ES", "es"]];
 
   function T(key, def) { return (window.ddsI18n && window.ddsI18n.t(key)) || def; }
@@ -42,7 +43,7 @@
 
   var CSS = ''
     + '.pillbar{position:fixed;top:18px;left:0;right:0;z-index:50;display:flex;justify-content:center;padding:0 20px;pointer-events:none}'
-    + '.pill{pointer-events:auto;width:100%;max-width:1120px;display:flex;align-items:center;gap:22px;padding:11px 14px 11px 24px;border-radius:999px;border:1px solid rgba(20,20,20,.12);background:rgba(248,246,240,.82);backdrop-filter:saturate(140%) blur(14px);-webkit-backdrop-filter:saturate(140%) blur(14px);box-shadow:0 1px 1px rgba(20,20,20,.03),0 8px 26px rgba(20,20,20,.09)}'
+    + '.pill{position:relative;pointer-events:auto;width:100%;max-width:1120px;display:flex;align-items:center;gap:22px;padding:11px 14px 11px 24px;border-radius:999px;border:1px solid rgba(20,20,20,.12);background:rgba(248,246,240,.82);backdrop-filter:saturate(140%) blur(14px);-webkit-backdrop-filter:saturate(140%) blur(14px);box-shadow:0 1px 1px rgba(20,20,20,.03),0 8px 26px rgba(20,20,20,.09)}'
     + '.pill .brand{font-family:var(--dds-font-serif);font-weight:600;font-size:1.02rem;letter-spacing:-.01em;white-space:nowrap;padding-right:4px}'
     + '.pill .navlinks{display:flex;align-items:center;gap:20px;margin-left:auto}'
     + '.pill .navlink{font-family:var(--dds-font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(20,20,20,.6);border-bottom:2px solid transparent;padding:2px 0;transition:color .15s,border-color .15s;white-space:nowrap;cursor:pointer}'
@@ -80,7 +81,18 @@
     + '.sf-social a:focus-visible{outline:2px solid var(--dds-color-accent);outline-offset:2px}'
     + '.sf-social svg{width:18px;height:18px;display:block}'
     + '.site-foot-meta{max-width:1120px;margin:0 auto;padding:14px 24px 46px;font-family:var(--dds-font-mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(20,20,20,.42);border-top:1px solid rgba(20,20,20,.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}'
-    + '@media(max-width:860px){.pill .navlinks{display:none}}'
+    + '.pill .burger{display:none}'
+    + '.pill .burger .bg-x{display:none}'
+    + '.pill.menu-open .burger .bg-bars{display:none}'
+    + '.pill.menu-open .burger .bg-x{display:block}'
+    + '.pill .navmenu{position:absolute;top:calc(100% + 12px);left:0;right:0;background:var(--dds-color-bone);border:1px solid rgba(20,20,20,.14);border-radius:16px;box-shadow:0 14px 40px rgba(20,20,20,.16);padding:8px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .16s,transform .16s,visibility .16s;z-index:60}'
+    + '.pill.menu-open .navmenu{opacity:1;visibility:visible;transform:translateY(0)}'
+    + '.pill .navmenu a{display:block;padding:12px 14px;border-radius:10px;font-family:var(--dds-font-mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(20,20,20,.7);transition:background .12s,color .12s}'
+    + '.pill .navmenu a:hover{background:rgba(20,20,20,.06);color:var(--dds-color-ink)}'
+    + '.pill .navmenu a:focus-visible{outline:2px solid var(--dds-color-accent);outline-offset:-2px}'
+    + '.pill .navmenu a.active{color:var(--dds-color-ink);background:rgba(242,194,48,.22)}'
+    + '@media(max-width:860px){.pill .navlinks{display:none}.pill .burger{display:inline-flex}.pill .pill-tools{margin-left:auto}.pill .icobtn{width:42px;height:42px}}'
+    + '@media(min-width:861px){.pill .navmenu{display:none}}'
     + '@media(max-width:620px){.site-foot-inner{flex-direction:column;gap:24px}}';
 
   function currentGroup() {
@@ -94,6 +106,10 @@
       return '<a class="navlink' + (n.group === g ? " active" : "") + '" href="' + n.href + '"'
         + (n.group === g ? ' aria-current="page"' : "") + ' data-i18n="nav.' + n.group + '">' + T("nav." + n.group, n.label) + "</a>";
     }).join("");
+    var menuLinks = NAV.map(function (n) {
+      return '<a class="' + (n.group === g ? "active" : "") + '" href="' + n.href + '"'
+        + (n.group === g ? ' aria-current="page"' : "") + ' data-i18n="nav.' + n.group + '">' + T("nav." + n.group, n.label) + "</a>";
+    }).join("");
     var langItems = LANGS.map(function (l) {
       return '<button class="lang-item" role="menuitemradio" aria-checked="' + (l[2] === cur ? "true" : "false")
         + '" data-lang="' + l[2] + '"><span>' + l[0] + '</span><span class="code">' + l[1] + "</span>" + TICK + "</button>";
@@ -105,7 +121,10 @@
       + '<a class="icobtn" href="' + GITHUB + '" target="_blank" rel="noopener" aria-label="GitHub">' + GH_SVG + "</a>"
       + '<div class="lang"><button class="icobtn" data-lang-btn aria-label="Language" aria-haspopup="true" aria-expanded="false">' + GLOBE_SVG + "</button>"
       + '<div class="lang-menu" role="menu" aria-label="Language"><div class="lang-head">Language</div>' + langItems + "</div></div>"
-      + "</div></nav></div>";
+      + '<button class="icobtn burger" type="button" data-menu-btn aria-label="Menu" aria-haspopup="true" aria-expanded="false" aria-controls="dds-navmenu">' + BURGER_SVG + "</button>"
+      + "</div>"
+      + '<div class="navmenu" id="dds-navmenu">' + menuLinks + "</div>"
+      + "</nav></div>";
   }
 
   function footerHTML() {
@@ -154,10 +173,38 @@
     });
   }
 
+  function closeMenu() {
+    var p = document.querySelector(".pill.menu-open");
+    if (!p) return;
+    p.classList.remove("menu-open");
+    var b = p.querySelector("[data-menu-btn]");
+    if (b) b.setAttribute("aria-expanded", "false");
+  }
+
+  function wireMenu(header) {
+    var pill = header.querySelector(".pill");
+    var btn = header.querySelector("[data-menu-btn]");
+    var panel = header.querySelector(".navmenu");
+    if (!pill || !btn || !panel) return;
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var open = pill.classList.toggle("menu-open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      // the panel transitions visibility, so it cannot take focus until that finishes
+      if (open) setTimeout(function () {
+        var first = panel.querySelector("a");
+        if (first && pill.classList.contains("menu-open")) first.focus();
+      }, 180);
+    });
+    // clicks inside the drawer must not reach the document-level closer
+    panel.addEventListener("click", function (e) { e.stopPropagation(); });
+  }
+
   function render() {
     var header = mount(headerHTML(), "site-header", ".pillbar", "prepend");
     mount(footerHTML(), "site-footer", "footer", "append");
     wireLang(header);
+    wireMenu(header);
   }
 
   function init() {
@@ -170,6 +217,23 @@
     document.addEventListener("click", function () {
       var l = document.querySelector(".pill .lang.open");
       if (l) { l.classList.remove("open"); var b = l.querySelector("[data-lang-btn]"); if (b) b.setAttribute("aria-expanded", "false"); }
+      closeMenu();
+    });
+    // Escape closes the drawer and returns focus to the button that opened it
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape") return;
+      var open = document.querySelector(".pill.menu-open");
+      if (open) {
+        var b = open.querySelector("[data-menu-btn]");
+        closeMenu();
+        if (b) b.focus();
+      }
+      var l = document.querySelector(".pill .lang.open");
+      if (l) { l.classList.remove("open"); var lb = l.querySelector("[data-lang-btn]"); if (lb) { lb.setAttribute("aria-expanded", "false"); lb.focus(); } }
+    });
+    // a drawer left open while the window grows would strand an invisible menu
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 860) closeMenu();
     });
     // re-render header/footer when the language changes
     window.addEventListener("ddslangchange", render);
