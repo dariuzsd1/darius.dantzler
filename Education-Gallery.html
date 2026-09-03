@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gallery · Darius Dantzler</title>
 <meta name="description" content="Darius Dantzler, early-career professional in space security, sustainability, and policy. Master's in Space Studies at ISU Strasbourg. Portfolio, experience, and personal notes.">
+<meta name="robots" content="noindex">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Darius Dantzler">
@@ -87,7 +88,6 @@ figcaption{margin-top:9px;font-family:var(--dds-font-mono);font-size:.66rem;text
     <div class="banner" id="flag"><img class="banner-watermark" id="flagWm" src="" alt="" aria-hidden="true"><span class="banner-shimmer" aria-hidden="true"></span><img class="banner-logo" id="flagLogo" src="" alt=""></div>
     <h1 class="gl-title" id="glTitle"></h1>
     <p class="gl-sub" id="glSub"></p>
-    <span class="gl-note"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg><span data-i18n="gl.drop">Drop your photos onto any tile to fill it</span></span>
   </header>
 
   <main class="container">
@@ -119,8 +119,9 @@ const SCHOOLS = {
 };
 
 const T=(k,d)=>(window.ddsI18n&&window.ddsI18n.t(k))||d;
-const key = (new URLSearchParams(location.search).get('school')||'isu').toLowerCase();
-const s = SCHOOLS[key] || SCHOOLS.isu;
+const rawKey = (new URLSearchParams(location.search).get('school')||'isu').toLowerCase();
+const key = Object.prototype.hasOwnProperty.call(SCHOOLS, rawKey) ? rawKey : 'isu';
+const s = SCHOOLS[key];
 
 function paintGallery(){
   const gallery = T('gl.gallery','Gallery');

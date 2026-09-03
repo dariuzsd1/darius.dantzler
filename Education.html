@@ -262,10 +262,10 @@ education.forEach(e=>{
           '<span class="txt-more" data-i18n="ed.moredetail">'+T('ed.moredetail','More detail')+'</span><span class="txt-less" data-i18n="ed.less">'+T('ed.less','Less')+'</span>'+
           '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>'+
         '</button>'+
-        '<a class="gallery-btn" href="Education-Gallery.html?school='+e.gallery+'">'+
+        (e.galleryReady ? '<a class="gallery-btn" href="Education-Gallery.html?school='+e.gallery+'">'+
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="15" rx="2"/><circle cx="8.5" cy="9" r="1.4" fill="currentColor" stroke="none"/><path d="M4 18l5-5 4 4 3-3 4 4"/></svg>'+
           '<span data-i18n="ed.gallery">'+T('ed.gallery','Photo gallery')+'</span>'+
-        '</a>'+
+        '</a>' : '')+
       '</div>'+
       '<div class="pl-detail" id="d-'+e.id+'">'+secs+'</div>'+
     '</div>';

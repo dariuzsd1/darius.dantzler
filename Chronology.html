@@ -4,410 +4,185 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chronology · Darius Dantzler</title>
-<meta name="description" content="Darius Dantzler, early-career professional in space security, sustainability, and policy. Master's in Space Studies at ISU Strasbourg. Portfolio, experience, and personal notes.">
+<meta name="description" content="The chronology page is being rebuilt. The timeline is half written and the photographs are not in yet.">
+<meta name="robots" content="noindex">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Darius Dantzler">
 <meta property="og:title" content="Chronology · Darius Dantzler">
-<meta property="og:description" content="Darius Dantzler, early-career professional in space security, sustainability, and policy. Master's in Space Studies at ISU Strasbourg. Portfolio, experience, and personal notes.">
+<meta property="og:description" content="The chronology page is being rebuilt.">
 <meta property="og:image" content="assets/og-cover.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="styles.css">
 <style>
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
 html,body{margin:0;padding:0}
 body{background:var(--dds-color-bone);color:var(--dds-color-ink);font-family:var(--dds-font-sans);-webkit-font-smoothing:antialiased}
 a{color:var(--dds-color-ink);text-decoration:none}
-a:hover{color:var(--dds-color-ink)}
 
-/* soft warm vignette */
 .vignette{position:fixed;inset:0;z-index:0;pointer-events:none}
 .vignette::before{content:"";position:absolute;inset:0;background:
   radial-gradient(120% 90% at 50% 0%, rgba(242,194,48,.05), transparent 55%),
   radial-gradient(140% 120% at 50% 42%, rgba(245,243,236,0) 55%, rgba(20,20,20,.05) 100%),
   radial-gradient(80% 60% at 85% 15%, rgba(193,39,45,.015), transparent 60%)}
-
-/* floating pill header (shared identity) */
-.pillbar{position:fixed;top:18px;left:0;right:0;z-index:50;display:flex;justify-content:center;padding:0 20px;pointer-events:none}
-.pill{pointer-events:auto;width:100%;max-width:1120px;display:flex;align-items:center;gap:22px;padding:11px 14px 11px 24px;border-radius:999px;border:1px solid rgba(20,20,20,.12);background:rgba(248,246,240,.82);backdrop-filter:saturate(140%) blur(14px);-webkit-backdrop-filter:saturate(140%) blur(14px);box-shadow:0 1px 1px rgba(20,20,20,.03),0 8px 26px rgba(20,20,20,.09)}
-.brand{font-family:var(--dds-font-serif);font-weight:600;font-size:1.02rem;letter-spacing:-.01em;white-space:nowrap;padding-right:4px}
-.navlinks{display:flex;align-items:center;gap:20px;margin-left:auto}
-.navlink{font-family:var(--dds-font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(20,20,20,.6);border-bottom:2px solid transparent;padding:2px 0;transition:color .15s,border-color .15s;white-space:nowrap}
-.navlink:hover{color:var(--dds-color-ink)}
-.navlink.active{color:var(--dds-color-ink);border-bottom-color:var(--dds-color-accent)}
-.pill-tools{display:flex;align-items:center;gap:6px;padding-left:14px;margin-left:2px;border-left:1px solid rgba(20,20,20,.12)}
-.icobtn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:999px;border:1px solid transparent;color:rgba(20,20,20,.7);background:transparent;cursor:pointer;transition:background .15s,color .15s}
-.icobtn:hover{background:rgba(20,20,20,.06);color:var(--dds-color-ink)}
-.icobtn svg{width:18px;height:18px;display:block}
-.lang{position:relative}
-.lang-menu{position:absolute;top:calc(100% + 12px);right:0;min-width:172px;background:var(--dds-color-bone);border:1px solid rgba(20,20,20,.14);border-radius:14px;box-shadow:0 10px 30px rgba(20,20,20,.14);padding:6px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .16s,transform .16s,visibility .16s}
-.lang.open .lang-menu{opacity:1;visibility:visible;transform:translateY(0)}
-.lang-head{font-family:var(--dds-font-mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.45);padding:8px 10px 6px}
-.lang-item{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;text-align:left;background:transparent;border:0;cursor:pointer;padding:9px 10px;border-radius:9px;font-family:var(--dds-font-sans);font-size:.9rem;color:var(--dds-color-ink);transition:background .12s}
-.lang-item:hover{background:rgba(20,20,20,.06)}
-.lang-item .code{font-family:var(--dds-font-mono);font-size:.66rem;color:rgba(20,20,20,.5)}
-.lang-item[aria-checked="true"] .code{color:var(--dds-color-ink)}
-.lang-item .tick{width:14px;height:14px;color:var(--dds-color-accent);opacity:0}
-.lang-item[aria-checked="true"] .tick{opacity:1}
-
 .wrap{position:relative;z-index:1}
-.container{max-width:900px;margin:0 auto;padding:0 24px}
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
 
-/* intro */
-.chrono-head{padding-top:148px;padding-bottom:20px}
+.wip-head{padding-top:150px}
 .crumb{display:inline-flex;align-items:center;gap:8px;font-family:var(--dds-font-mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.5);margin-bottom:22px}
 .crumb a{color:rgba(20,20,20,.5);border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
 .crumb a:hover{color:var(--dds-color-ink);border-bottom-color:var(--dds-color-accent)}
-.backbtn{display:inline-flex;align-items:center;gap:8px;margin-bottom:22px;font-family:var(--dds-font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(20,20,20,.6);border:1px solid rgba(20,20,20,.18);border-radius:999px;padding:8px 15px 8px 12px;background:rgba(248,246,240,.6);transition:background .15s,color .15s,border-color .15s}
+.kick{background:var(--dds-color-accent);color:var(--dds-color-ink);padding:3px 8px;border-radius:3px}
+
+.wip-main{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,460px);gap:56px;align-items:center;padding:8px 0 90px}
+h1{font-family:var(--dds-font-serif);font-weight:600;letter-spacing:-.02em;line-height:1.06;font-size:clamp(2.1rem,4.6vw,3.2rem);margin:0;text-wrap:balance}
+.dek{font-size:1.1rem;line-height:1.62;color:rgba(20,20,20,.78);max-width:52ch;margin:20px 0 0}
+
+.waiting{margin:32px 0 0;padding:20px 22px;border:1px solid rgba(20,20,20,.14);border-radius:8px;background:rgba(255,255,255,.42)}
+.waiting-t{font-family:var(--dds-font-mono);font-size:.64rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(20,20,20,.5);margin-bottom:12px}
+.waiting ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.waiting li{display:grid;grid-template-columns:16px 1fr;gap:11px;align-items:start;font-size:.95rem;color:rgba(20,20,20,.8)}
+.waiting li span:first-child{color:var(--dds-color-accent);font-weight:700;line-height:1.4}
+
+.backbtn{display:inline-flex;align-items:center;gap:9px;margin-top:30px;padding:.72rem 1.1rem;border:1px solid rgba(20,20,20,.2);border-radius:999px;font-family:var(--dds-font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;transition:background .15s,color .15s,border-color .15s}
 .backbtn:hover{background:var(--dds-color-ink);color:var(--dds-color-bone);border-color:var(--dds-color-ink)}
+.backbtn:focus-visible{outline:2px solid var(--dds-color-accent);outline-offset:3px}
 .backbtn svg{width:15px;height:15px}
-.chrono-head .kick{display:inline-block;font-family:var(--dds-font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;background:var(--dds-color-accent);color:var(--dds-color-ink);padding:5px 11px;border:1px solid rgba(20,20,20,.2)}
-.chrono-head h1{font-family:var(--dds-font-serif);font-weight:600;letter-spacing:-.01em;font-size:clamp(2.6rem,6vw,4rem);line-height:1.05;margin:18px 0 0}
-.chrono-head .dek{margin-top:14px;font-size:1.16rem;line-height:1.55;color:rgba(20,20,20,.7);max-width:600px}
-.scrollcue{margin-top:34px;display:flex;align-items:center;gap:10px;font-family:var(--dds-font-mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.45)}
-.scrollcue .ln{width:46px;height:1px;background:rgba(20,20,20,.3)}
 
-/* fixed year rail */
-.rail{position:fixed;left:30px;top:50%;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;gap:0;padding-left:2px}
-.rail::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:rgba(20,20,20,.18)}
-.rail button{position:relative;display:flex;align-items:center;gap:12px;background:transparent;border:0;cursor:pointer;padding:9px 0;font-family:var(--dds-font-mono);font-size:.64rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(20,20,20,.4);transition:color .18s}
-.rail .dot{width:11px;height:11px;border-radius:999px;border:1.5px solid rgba(20,20,20,.3);background:var(--dds-color-bone);flex-shrink:0;transition:all .18s;z-index:1}
-.rail .lbl{opacity:0;transform:translateX(-4px);transition:opacity .18s,transform .18s}
-.rail button:hover{color:var(--dds-color-ink)}
-.rail button:hover .lbl{opacity:1;transform:translateX(0)}
-.rail button.active{color:var(--dds-color-ink)}
-.rail button.active .lbl{opacity:1;transform:translateX(0)}
-.rail button.active .dot{background:var(--dds-color-accent);border-color:var(--dds-color-ink);transform:scale(1.15)}
+/* ---- construction scene ---- */
+.scene{width:100%;height:auto;display:block;overflow:visible}
+.scene .ink{stroke:rgba(20,20,20,.75);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.scene .thin{stroke:rgba(20,20,20,.35);stroke-width:1.5;fill:none;stroke-linecap:round}
+.scene .gold{fill:var(--dds-color-accent)}
+.scene .fill-soft{fill:rgba(20,20,20,.09)}
+.scene .ground{stroke:rgba(20,20,20,.28);stroke-width:2;stroke-linecap:round}
+.scene g{transform-box:view-box}
 
-/* timeline chapters */
-.timeline .container{max-width:1060px}
-.timeline{padding:26px 0 20px}
-.chapter{position:relative;padding:84px 0;border-top:1px solid rgba(20,20,20,.09)}
-.chapter:first-child{border-top:0}
-.chapter-inner{display:flex;flex-direction:column;gap:52px}
-.cap{width:100%}
-.cap .inner{max-width:620px}
-.chapter.right .cap{display:flex;justify-content:flex-end}
-.chapter.right .cap .inner{text-align:right}
-.c-year{font-family:var(--dds-font-mono);font-size:.8rem;text-transform:uppercase;letter-spacing:.14em;color:var(--dds-color-ink);display:inline-block;padding:5px 12px;background:var(--dds-color-accent);border:1px solid rgba(20,20,20,.2)}
-.c-title{font-family:var(--dds-font-serif);font-weight:600;letter-spacing:-.01em;font-size:clamp(2rem,4.4vw,3.1rem);line-height:1.08;margin:20px 0 0}
-.c-place{margin-top:12px;font-family:var(--dds-font-mono);font-size:.76rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(20,20,20,.55)}
-.c-body{margin-top:18px;font-size:1.12rem;line-height:1.62;color:rgba(20,20,20,.86)}
+#jib{transform-origin:72px 62px;animation:swing 6s ease-in-out infinite}
+#cable{transform-origin:178px 62px;animation:paycable 6s ease-in-out infinite}
+#hookblock{animation:hoist 6s ease-in-out infinite}
+#arm{transform-origin:412px 178px;animation:hammer 1.1s ease-in-out infinite}
+.blk{opacity:0;animation:pop .45s ease-out forwards}
+.blk.b1{animation-delay:.15s}
+.blk.b2{animation-delay:.35s}
+.blk.b3{animation-delay:.55s}
+.blk.b4{animation-delay:.75s}
+.puff{opacity:0;animation:puff 1.1s ease-out infinite}
+.puff.p2{animation-delay:.4s}
 
-/* photo strip */
-.stripwrap{position:relative}
-.strip{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x proximity;scroll-behavior:smooth;padding:2px 2px 4px;margin:0;list-style:none;-webkit-overflow-scrolling:touch;scrollbar-width:none;cursor:grab;touch-action:pan-y}
-.strip::-webkit-scrollbar{display:none}
-.strip.dragging{cursor:grabbing;scroll-behavior:auto;scroll-snap-type:none}
-.shot{flex:0 0 auto;width:clamp(230px,30vw,320px);scroll-snap-align:start;margin:0}
-.shot .ph{position:relative;aspect-ratio:4/3;overflow:hidden;border:1px solid rgba(20,20,20,.14);background:repeating-linear-gradient(135deg,rgba(20,20,20,.05) 0 12px,rgba(20,20,20,.02) 12px 24px)}
-.shot .ph span{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);font-family:var(--dds-font-mono);font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.42);border:1px dashed rgba(20,20,20,.22);padding:4px 10px;border-radius:4px;background:rgba(245,243,236,.72);white-space:nowrap}
-.shot img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
-.shot figcaption{margin-top:14px;font-size:.96rem;line-height:1.5;color:rgba(20,20,20,.72)}
-.shot .cap-n{display:block;margin-bottom:6px;font-family:var(--dds-font-mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.4)}
-.strip-ctrls{display:flex;align-items:center;gap:12px;margin-top:22px}
-.chapter.right .strip-ctrls{justify-content:flex-end}
-.strip-btn{width:42px;height:42px;border-radius:999px;border:1px solid rgba(20,20,20,.18);background:rgba(248,246,240,.7);color:var(--dds-color-ink);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:background .14s,color .14s,border-color .14s,opacity .14s}
-.strip-btn:hover{background:var(--dds-color-ink);color:var(--dds-color-bone);border-color:var(--dds-color-ink)}
-.strip-btn:disabled{opacity:.3;cursor:default}
-.strip-btn:disabled:hover{background:rgba(248,246,240,.7);color:var(--dds-color-ink);border-color:rgba(20,20,20,.18)}
-.strip-btn svg{width:18px;height:18px}
-.strip-hint{font-family:var(--dds-font-mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.4)}
+@keyframes swing{0%,100%{transform:rotate(-1.4deg)}50%{transform:rotate(1.4deg)}}
+@keyframes paycable{0%,100%{transform:scaleY(1)}44%,60%{transform:scaleY(2.46)}}
+@keyframes hoist{0%,100%{transform:translateY(0)}44%,60%{transform:translateY(82px)}}
+@keyframes pop{from{opacity:0;transform:translateY(-7px)}to{opacity:1;transform:translateY(0)}}
+@keyframes hammer{0%,100%{transform:rotate(6deg)}50%{transform:rotate(-32deg)}}
+@keyframes puff{0%{opacity:0;transform:translate(0,0) scale(.5)}25%{opacity:.45}100%{opacity:0;transform:translate(-12px,-16px) scale(1.4)}}
 
-/* closing */
-.chrono-foot{border-top:1px solid rgba(20,20,20,.15);margin-top:10px}
-.chrono-foot .inner{max-width:1120px;margin:0 auto;padding:34px 24px 60px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:var(--dds-font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(20,20,20,.55)}
-.chrono-foot a{color:rgba(20,20,20,.55);border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
-.chrono-foot a:hover{color:var(--dds-color-ink);border-bottom-color:var(--dds-color-accent)}
-
-@media(max-width:1180px){.rail{display:none}}
-@media(max-width:860px){.navlinks{display:none}}
-@media(max-width:640px){
-  .chapter{padding:56px 0}
-  .chapter-inner{gap:36px}
-  .chapter.right .cap{justify-content:flex-start}
-  .chapter.right .cap .inner{text-align:left}
-  .chapter.right .strip-ctrls{justify-content:flex-start}
-  .shot{width:78vw}
-  .chrono-head{padding-top:120px}
+@media (prefers-reduced-motion:reduce){
+  #jib,#cable,#hookblock,#arm,.puff{animation:none}
+  .blk{opacity:1;animation:none}
+  .puff{display:none}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media(max-width:900px){
+  .wip-main{grid-template-columns:1fr;gap:36px}
+  .wip-head{padding-top:120px}
+}
 </style>
 </head>
 <body>
 <div class="vignette"></div>
-
-<!-- shared pill header -->
-<div class="pillbar">
-  <nav class="pill" aria-label="Main">
-    <a class="brand" href="index.html">Darius Dantzler</a>
-    <div class="navlinks">
-      <a class="navlink" href="index.html">Home</a>
-      <a class="navlink" href="Experience.html">Experience</a>
-      <a class="navlink" href="Education.html">Education</a>
-      <a class="navlink" href="Projects.html">Projects</a>
-      <a class="navlink active" href="Personal.html">Personal</a>
-      <a class="navlink" href="Contact.html">Contact</a>
-    </div>
-    <div class="pill-tools">
-      <a class="icobtn" href="https://github.com/dariuzsd1" target="_blank" rel="noopener" aria-label="GitHub">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.2.8-.5v-1.8c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5Z"/></svg>
-      </a>
-      <div class="lang" id="lang">
-        <button class="icobtn" id="langBtn" aria-label="Language" aria-haspopup="true" aria-expanded="false">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3Z"/></svg>
-        </button>
-        <div class="lang-menu" role="menu" aria-label="Language">
-          <div class="lang-head">Language</div>
-          <button class="lang-item" role="menuitemradio" aria-checked="true" data-lang="en"><span>English</span><span class="code">EN</span><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></button>
-          <button class="lang-item" role="menuitemradio" aria-checked="false" data-lang="de"><span>Deutsch</span><span class="code">DE</span><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></button>
-          <button class="lang-item" role="menuitemradio" aria-checked="false" data-lang="it"><span>Italiano</span><span class="code">IT</span><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></button>
-          <button class="lang-item" role="menuitemradio" aria-checked="false" data-lang="fr"><span>Français</span><span class="code">FR</span><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></button>
-        </div>
-      </div>
-    </div>
-  </nav>
-</div>
-
-<!-- fixed year rail -->
-<nav class="rail" id="rail" aria-label="Timeline">
-  <button data-to="c1"><span class="dot"></span><span class="lbl" data-i18n="rail.early">Early</span></button>
-  <button data-to="c2"><span class="dot"></span><span class="lbl">2023</span></button>
-  <button data-to="c3"><span class="dot"></span><span class="lbl">2023&ndash;25</span></button>
-  <button data-to="c4"><span class="dot"></span><span class="lbl">2024</span></button>
-  <button data-to="c5"><span class="dot"></span><span class="lbl">2025</span></button>
-  <button data-to="c6"><span class="dot"></span><span class="lbl">2026</span></button>
-  <button data-to="c7"><span class="dot"></span><span class="lbl" data-i18n="rail.next">Next</span></button>
-</nav>
+<div id="site-header"></div>
 
 <div class="wrap">
-  <header class="chrono-head container">
-    <div class="crumb"><a href="Personal.html" data-i18n="crumb.personal">Personal</a> <span>/</span> <span class="kick" data-i18n="card.chrono.title">Chronology</span></div>
-    <a class="backbtn" href="Personal.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg><span data-i18n="back.personal">Back to Personal</span></a>
-    <h1 data-i18n="chrono.title">The story so far</h1>
-    <p class="dek" data-i18n="chrono.dek">A walk through the milestones, in order. Where I've lived, what I studied, and the work that pointed me toward space. Scroll to move through it.</p>
-    <div class="scrollcue"><span class="ln"></span><span data-i18n="chrono.scrollcue">Scroll to begin</span></div>
+  <header class="wip-head container">
+    <div class="crumb"><a href="Personal.html" data-i18n="crumb.personal">Personal</a> <span>/</span> <span class="kick" data-i18n="card.chronology.title">Chronology</span></div>
   </header>
 
-  <main class="timeline">
-    <section class="chapter" id="c1" data-rail="0">
-      <div class="chapter-inner container">
-        <div class="cap"><div class="inner">
-          <span class="c-year" data-i18n="ch.y1">Before all this</span>
-          <h2 class="c-title" data-i18n="ch.t1">The early years</h2>
-          <div class="c-place">Placeholder · your origin</div>
-          <p class="c-body" data-i18n="ch.b1">Placeholder for the beginning. Where you grew up, the people who shaped you, and the first thing that made you look up. (Replace this with your own words.)</p>
-        </div></div>
-        <div class="stripwrap">
-          <ul class="strip">
-            <li class="shot"><figure><div class="ph"><span>Photo · drop</span></div><figcaption><span class="cap-n">01</span>Caption placeholder. A line about this photo.</figcaption></figure></li>
-            <li class="shot"><figure><div class="ph"><span>Photo · drop</span></div><figcaption><span class="cap-n">02</span>Caption placeholder. Another moment worth keeping.</figcaption></figure></li>
-          </ul>
-          <div class="strip-ctrls">
-            <button class="strip-btn prev" aria-label="Previous photos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
-            <button class="strip-btn next" aria-label="More photos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
-            <span class="strip-hint" data-i18n="chrono.drag">Drag or swipe</span>
-          </div>
-        </div>
-      </div>
-    </section>
+  <div class="container wip-main">
+    <div>
+      <h1>The story so far is still being written</h1>
+      <p class="dek">This page went up before it was ready. Five chapters are written and the rest is scaffolding, so I have taken it down rather than show you notes I left for myself. It comes back when it reads like something worth your time.</p>
 
-    <section class="chapter right" id="c2" data-rail="1">
-      <div class="chapter-inner container">
-        <div class="cap"><div class="inner">
-          <span class="c-year" data-i18n="ch.y2">Through 2023</span>
-          <h2 class="c-title" data-i18n="ch.t2">Political science, then law</h2>
-          <div class="c-place">University of Maryland Global Campus · Stuttgart, Germany</div>
-          <p class="c-body" data-i18n="ch.b2">A B.S. in Political Science and Business Law. This is where an interest in how rules get made, and who they protect, turned into something I wanted to build a career on.</p>
-        </div></div>
-        <div class="stripwrap">
-          <ul class="strip">
-            <li class="shot"><figure><div class="ph"><span>Photo · drop</span></div><figcaption><span class="cap-n">01</span>Caption placeholder. Campus, class, or the city.</figcaption></figure></li>
-            <li class="shot"><figure><div class="ph"><span>Photo · drop</span></div><figcaption><span class="cap-n">02</span>Caption placeholder. A line about this photo.</figcaption></figure></li>
-            <li class="shot"><figure><div class="ph"><span>Photo · drop</span></div><figcaption><span class="cap-n">03</span>Caption placeholder. Something you want remembered.</figcaption></figure></li>
-          </ul>
-          <div class="strip-ctrls">
-            <button class="strip-btn prev" aria-label="Previous photos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
-            <button class="strip-btn next" aria-label="More photos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
-            <span class="strip-hint" data-i18n="chrono.drag">Drag or swipe</span>
-          </div>
-        </div>
+      <div class="waiting">
+        <div class="waiting-t">What it is waiting on</div>
+        <ul>
+          <li><span>→</span><span>The opening chapter, on where this all started</span></li>
+          <li><span>→</span><span>The closing chapter, on where it is heading</span></li>
+          <li><span>→</span><span>Photographs, because a timeline told in captions is not a timeline</span></li>
+        </ul>
       </div>
-    </section>
 
-    <section class="chapter" id="c3" data-rail="2">
-      <div class="chapter-inner container">
-        <div class="cap"><div class="inner">
-          <span class="c-year">2023&ndash;2025</span>
-          <h2 class="c-title" data-i18n="ch.t3">Running the operation</h2>
-          <div class="c-place">U.S. Army, Child &amp; Youth Services · Stuttgart, Germany</div>
-          <p class="c-body" data-i18n="ch.b3">Program Assistant for a 20-person team. The job that taught me a good system saves more time than any amount of individual effort, and that the boring work is usually the work that matters.</p>
-        </div></div>
-        <div class="stripwrap">
-          <ul class="strip">
-            <li class="shot"><figure><div class="ph"><span>Photo · drop</span></div><figcaption><span class="cap-n">01</span>Caption placeholder. A line about this photo.</figcaption></figure></li>
-            <li class="shot"><figure><div class="ph"><span>Photo · drop</span></div><figcaption><span class="cap-n">02</span>Caption placeholder. The team, the space, the day.</figcaption></figure></li>
-            <li class="shot"><figure><div class="ph"><span>Photo · drop</span></div><figcaption><span class="cap-n">03</span>Caption placeholder. Another moment worth keeping.</figcaption></figure></li>
-            <li class="shot"><figure><div class="ph"><span>Photo · drop</span></div><figcaption><span class="cap-n">04</span>Caption placeholder. A line about this photo.</figcaption></figure></li>
-          </ul>
-          <div class="strip-ctrls">
-            <button class="strip-btn prev" aria-label="Previous photos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
-            <button class="strip-btn next" aria-label="More photos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
-            <span class="strip-hint" data-i18n="chrono.drag">Drag or swipe</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="chapter right" id="c4" data-rail="3">
-      <div class="chapter-inner container">
-        <div class="cap"><div class="inner">
-          <span class="c-year">2024</span>
-          <h2 class="c-title" data-i18n="ch.t4">Inside the command</h2>
-          <div class="c-place">U.S. European Command (USEUCOM) · Stuttgart, Germany</div>
-          <p class="c-body" data-i18n="ch.b4">Internships across three directorates and a Chiefs of Mission planning role. Where I learned how policy actually moves through a command, from congressional engagement to operational law to interagency coordination.</p>
-        </div></div>
-        <div class="stripwrap">
-          <ul class="strip">
-            <li class="shot"><figure><div class="ph"><span>Photo · drop</span></div><figcaption><span class="cap-n">01</span>Caption placeholder. A line about this photo.</figcaption></figure></li>
-            <li class="shot"><figure><div class="ph"><span>Photo · drop</span></div><figcaption><span class="cap-n">02</span>Caption placeholder. A moment from the command.</figcaption></figure></li>
-            <li class="shot"><figure><div class="ph"><span>Photo · drop</span></div><figcaption><span class="cap-n">03</span>Caption placeholder. Something worth remembering.</figcaption></figure></li>
-          </ul>
-          <div class="strip-ctrls">
-            <button class="strip-btn prev" aria-label="Previous photos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
-            <button class="strip-btn next" aria-label="More photos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
-            <span class="strip-hint" data-i18n="chrono.drag">Drag or swipe</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="chapter" id="c5" data-rail="4">
-      <div class="chapter-inner container">
-        <div class="cap"><div class="inner">
-          <span class="c-year">2025&ndash;2027</span>
-          <h2 class="c-title" data-i18n="ch.t5">Into space</h2>
-          <div class="c-place">International Space University · Strasbourg, France</div>
-          <p class="c-body" data-i18n="ch.b5">A Master's in Space Studies (Business, Policy &amp; Entrepreneurship). The pivot from how power works on the ground to how it will work in orbit, and who gets a say in the rules up there.</p>
-        </div></div>
-        <div class="stripwrap">
-          <ul class="strip">
-            <li class="shot"><figure><div class="ph"><span>Photo · drop</span></div><figcaption><span class="cap-n">01</span>Caption placeholder. Strasbourg, ISU, the campus.</figcaption></figure></li>
-            <li class="shot"><figure><div class="ph"><span>Photo · drop</span></div><figcaption><span class="cap-n">02</span>Caption placeholder. A line about this photo.</figcaption></figure></li>
-            <li class="shot"><figure><div class="ph"><span>Photo · drop</span></div><figcaption><span class="cap-n">03</span>Caption placeholder. Cohort, class, or a trip.</figcaption></figure></li>
-            <li class="shot"><figure><div class="ph"><span>Photo · drop</span></div><figcaption><span class="cap-n">04</span>Caption placeholder. Another moment worth keeping.</figcaption></figure></li>
-            <li class="shot"><figure><div class="ph"><span>Photo · drop</span></div><figcaption><span class="cap-n">05</span>Caption placeholder. A line about this photo.</figcaption></figure></li>
-          </ul>
-          <div class="strip-ctrls">
-            <button class="strip-btn prev" aria-label="Previous photos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
-            <button class="strip-btn next" aria-label="More photos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
-            <span class="strip-hint" data-i18n="chrono.drag">Drag or swipe</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="chapter right" id="c6" data-rail="5">
-      <div class="chapter-inner container">
-        <div class="cap"><div class="inner">
-          <span class="c-year" data-i18n="ch.y6">2026&ndash;present</span>
-          <h2 class="c-title" data-i18n="ch.t6">Building in Europe</h2>
-          <div class="c-place">European Space Hub · France</div>
-          <p class="c-body" data-i18n="ch.b6">Managing intern operations and finances at a European space and aviation innovation platform, and standing up a new branch in France. Proof that I would rather build the thing than wait to be asked.</p>
-        </div></div>
-        <div class="stripwrap">
-          <ul class="strip">
-            <li class="shot"><figure><div class="ph"><span>Photo · drop</span></div><figcaption><span class="cap-n">01</span>Caption placeholder. A line about this photo.</figcaption></figure></li>
-            <li class="shot"><figure><div class="ph"><span>Photo · drop</span></div><figcaption><span class="cap-n">02</span>Caption placeholder. The work, the team, the place.</figcaption></figure></li>
-          </ul>
-          <div class="strip-ctrls">
-            <button class="strip-btn prev" aria-label="Previous photos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
-            <button class="strip-btn next" aria-label="More photos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
-            <span class="strip-hint" data-i18n="chrono.drag">Drag or swipe</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="chapter" id="c7" data-rail="6">
-      <div class="chapter-inner container">
-        <div class="cap"><div class="inner">
-          <span class="c-year" data-i18n="ch.y7">What's next</span>
-          <h2 class="c-title" data-i18n="ch.t7">The room where it's decided</h2>
-          <div class="c-place">Space security, sustainability &amp; policy</div>
-          <p class="c-body" data-i18n="ch.b7">Placeholder for where this is heading. The roles, fellowships, and collaborations at the intersection of space security, sustainability, and policy. (Yours to write as it happens.)</p>
-        </div></div>
-        <div class="stripwrap">
-          <ul class="strip">
-            <li class="shot"><figure><div class="ph"><span>Photo · drop</span></div><figcaption><span class="cap-n">01</span>Caption placeholder. To be written as it happens.</figcaption></figure></li>
-            <li class="shot"><figure><div class="ph"><span>Photo · drop</span></div><figcaption><span class="cap-n">02</span>Caption placeholder. A line about this photo.</figcaption></figure></li>
-          </ul>
-          <div class="strip-ctrls">
-            <button class="strip-btn prev" aria-label="Previous photos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
-            <button class="strip-btn next" aria-label="More photos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
-            <span class="strip-hint" data-i18n="chrono.drag">Drag or swipe</span>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="chrono-foot">
-    <div class="inner">
-      <span>Darius Dantzler · Chronology</span>
-      <a href="Personal.html" data-i18n="back.personal">Back to Personal</a>
+      <a class="backbtn" href="Personal.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg><span data-i18n="back.personal">Back to Personal</span></a>
     </div>
-  </footer>
+
+    <svg class="scene" viewBox="0 0 440 290" role="img" aria-label="An illustration of a small crew building a web page, with a crane lowering a block onto a stack of materials.">
+      <line class="ground" x1="18" y1="252" x2="422" y2="252"/>
+
+      <!-- the page being built -->
+      <rect class="thin" x="228" y="104" width="172" height="148" rx="4"/>
+      <rect class="gold blk b1" x="240" y="116" width="148" height="15" rx="2"/>
+      <rect class="fill-soft blk b2" x="240" y="142" width="148" height="11" rx="2"/>
+      <rect class="fill-soft blk b3" x="240" y="161" width="118" height="11" rx="2"/>
+      <rect class="fill-soft blk b4" x="240" y="180" width="134" height="11" rx="2"/>
+      <rect class="thin" x="240" y="199" width="86" height="11" rx="2"/>
+
+      <!-- crane mast -->
+      <line class="ink" x1="64" y1="252" x2="64" y2="62"/>
+      <line class="ink" x1="80" y1="252" x2="80" y2="62"/>
+      <path class="thin" d="M64 236 L80 214 M64 214 L80 192 M64 192 L80 170 M64 170 L80 148 M64 148 L80 126 M64 126 L80 104 M64 104 L80 82"/>
+      <path class="ink" d="M54 252 L90 252"/>
+
+      <!-- jib, counterweight, cable and hook -->
+      <g id="jib">
+        <line class="ink" x1="44" y1="62" x2="200" y2="62"/>
+        <rect class="fill-soft" x="42" y="52" width="22" height="20" rx="2"/>
+        <line class="ink" x1="72" y1="62" x2="72" y2="38"/>
+        <path class="thin" d="M72 38 L140 62 M72 38 L192 62 M72 38 L48 62"/>
+        <line class="thin" id="cable" x1="178" y1="62" x2="178" y2="118"/>
+        <g id="hookblock">
+          <rect class="gold" x="160" y="118" width="36" height="26" rx="3"/>
+          <line class="thin" x1="160" y1="131" x2="196" y2="131"/>
+        </g>
+      </g>
+
+      <!-- delivered material waiting on the ground -->
+      <rect class="fill-soft" x="158" y="226" width="40" height="26" rx="3"/>
+      <line class="thin" x1="158" y1="239" x2="198" y2="239"/>
+
+      <!-- figure reading the plans -->
+      <g>
+        <circle class="ink" cx="116" cy="206" r="9"/>
+        <path class="gold" d="M104 202 q12 -13 24 0 z"/>
+        <line class="ink" x1="116" y1="215" x2="116" y2="236"/>
+        <line class="ink" x1="116" y1="236" x2="109" y2="252"/>
+        <line class="ink" x1="116" y1="236" x2="124" y2="252"/>
+        <line class="ink" x1="116" y1="221" x2="132" y2="228"/>
+        <rect class="thin" x="130" y="219" width="20" height="15" rx="2"/>
+      </g>
+
+      <!-- scaffold against the page, with a figure working on it -->
+      <line class="thin" x1="402" y1="252" x2="402" y2="150"/>
+      <line class="thin" x1="424" y1="252" x2="424" y2="150"/>
+      <line class="thin" x1="402" y1="206" x2="424" y2="206"/>
+      <line class="ink" x1="396" y1="206" x2="430" y2="206"/>
+      <g>
+        <circle class="ink" cx="412" cy="176" r="8"/>
+        <path class="gold" d="M401 172 q11 -12 22 0 z"/>
+        <line class="ink" x1="412" y1="184" x2="412" y2="200"/>
+        <line class="ink" x1="412" y1="200" x2="406" y2="206"/>
+        <line class="ink" x1="412" y1="200" x2="419" y2="206"/>
+        <g id="arm">
+          <line class="ink" x1="412" y1="188" x2="398" y2="180"/>
+          <rect x="388" y="173" width="12" height="7" rx="1.5" fill="rgba(20,20,20,.75)"/>
+        </g>
+        <circle class="puff" cx="386" cy="172" r="4" fill="rgba(20,20,20,.35)"/>
+        <circle class="puff p2" cx="390" cy="176" r="3" fill="rgba(20,20,20,.3)"/>
+      </g>
+    </svg>
+  </div>
 </div>
 
-<script>
-// language dropdown
-const lang=document.getElementById('lang'), langBtn=document.getElementById('langBtn');
-langBtn.addEventListener('click',e=>{e.stopPropagation();const open=lang.classList.toggle('open');langBtn.setAttribute('aria-expanded',open);});
-document.addEventListener('click',()=>{lang.classList.remove('open');langBtn.setAttribute('aria-expanded','false');});
-lang.querySelectorAll('.lang-item').forEach(it=>it.addEventListener('click',e=>{e.stopPropagation();lang.querySelectorAll('.lang-item').forEach(x=>x.setAttribute('aria-checked','false'));it.setAttribute('aria-checked','true');lang.classList.remove('open');langBtn.setAttribute('aria-expanded','false');}));
+<div id="site-footer"></div>
 
-// rail: click to scroll + active on scroll
-const railBtns=[...document.querySelectorAll('#rail button')];
-const chapters=[...document.querySelectorAll('.chapter')];
-railBtns.forEach(b=>b.addEventListener('click',()=>document.getElementById(b.dataset.to).scrollIntoView({behavior:'smooth',block:'start'})));
-const io=new IntersectionObserver(entries=>{
-  entries.forEach(en=>{
-    if(en.isIntersecting){
-      const i=chapters.indexOf(en.target);
-      railBtns.forEach((b,j)=>b.classList.toggle('active',j===i));
-    }
-  });
-},{rootMargin:'-45% 0px -45% 0px',threshold:0});
-chapters.forEach(c=>io.observe(c));
-
-// photo strips: arrows + drag/swipe, any photo count
-document.querySelectorAll('.stripwrap').forEach(wrap=>{
-  const strip=wrap.querySelector('.strip');
-  const prev=wrap.querySelector('.prev'), next=wrap.querySelector('.next');
-  const ctrls=wrap.querySelector('.strip-ctrls');
-  const step=()=>{const s=strip.querySelector('.shot');return s?s.getBoundingClientRect().width+22:300;};
-  const update=()=>{
-    const overflow=strip.scrollWidth-strip.clientWidth>4;
-    ctrls.style.display=overflow?'':'none';
-    prev.disabled=strip.scrollLeft<=2;
-    next.disabled=strip.scrollLeft>=strip.scrollWidth-strip.clientWidth-2;
-  };
-  prev.addEventListener('click',()=>strip.scrollBy({left:-step(),behavior:'smooth'}));
-  next.addEventListener('click',()=>strip.scrollBy({left:step(),behavior:'smooth'}));
-  strip.addEventListener('scroll',update,{passive:true});
-  let down=false,startX=0,startS=0,moved=false;
-  strip.addEventListener('pointerdown',e=>{down=true;moved=false;startX=e.clientX;startS=strip.scrollLeft;strip.setPointerCapture(e.pointerId);strip.classList.add('dragging');});
-  strip.addEventListener('pointermove',e=>{if(!down)return;const dx=e.clientX-startX;if(Math.abs(dx)>4)moved=true;strip.scrollLeft=startS-dx;});
-  const end=()=>{if(!down)return;down=false;strip.classList.remove('dragging');};
-  strip.addEventListener('pointerup',end);
-  strip.addEventListener('pointercancel',end);
-  strip.addEventListener('click',e=>{if(moved){e.preventDefault();e.stopPropagation();}},true);
-  window.addEventListener('resize',update);
-  update();
-});
-</script>
 <script src="i18n.js"></script>
 <script src="site-chrome.js"></script>
 </body>
