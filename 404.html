@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found · Darius Dantzler</title>
+<meta name="description" content="That page does not exist. Here is the way back.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="styles.css">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--dds-color-bone);color:var(--dds-color-ink);font-family:var(--dds-font-sans);-webkit-font-smoothing:antialiased;min-height:100vh}
+a{color:var(--dds-color-ink);text-decoration:none}
+
+.vignette{position:fixed;inset:0;z-index:0;pointer-events:none}
+.vignette::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(120% 90% at 50% 0%, rgba(242,194,48,.05), transparent 55%),
+  radial-gradient(140% 120% at 50% 42%, rgba(245,243,236,0) 55%, rgba(20,20,20,.05) 100%),
+  radial-gradient(80% 60% at 85% 15%, rgba(193,39,45,.015), transparent 60%)}
+.wrap{position:relative;z-index:1}
+.container{max-width:820px;margin:0 auto;padding:0 24px}
+
+.nf{padding:170px 0 110px}
+.code{font-family:var(--dds-font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;color:rgba(20,20,20,.45)}
+h1{font-family:var(--dds-font-serif);font-weight:600;letter-spacing:-.02em;line-height:1.05;font-size:clamp(2.2rem,5vw,3.4rem);margin:16px 0 0;text-wrap:balance}
+.dek{font-size:1.1rem;line-height:1.62;color:rgba(20,20,20,.75);max-width:50ch;margin:18px 0 0}
+
+.ways{list-style:none;margin:38px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;background:rgba(20,20,20,.14);border:1px solid rgba(20,20,20,.14);border-radius:8px;overflow:hidden;max-width:680px}
+.ways li{background:var(--dds-color-bone)}
+.ways a{display:block;padding:16px 18px;transition:background .14s}
+.ways a:hover{background:rgba(242,194,48,.16)}
+.ways a:focus-visible{outline:2px solid var(--dds-color-accent);outline-offset:-2px}
+.w-l{font-family:var(--dds-font-mono);font-size:.64rem;text-transform:uppercase;letter-spacing:.09em;color:rgba(20,20,20,.5);display:block;margin-bottom:5px}
+.w-t{font-size:.98rem;color:var(--dds-color-ink)}
+@media(max-width:600px){.nf{padding:130px 0 80px}}
+</style>
+</head>
+<body>
+<div class="vignette"></div>
+<div id="site-header"></div>
+
+<div class="wrap">
+  <section class="container nf">
+    <div class="code">Error 404</div>
+    <h1>That page does not exist</h1>
+    <p class="dek">Either the link is old or I moved something. A few places worth trying instead.</p>
+
+    <ul class="ways">
+      <li><a href="index.html"><span class="w-l">Start here</span><span class="w-t">Home</span></a></li>
+      <li><a href="Experience.html"><span class="w-l">The record</span><span class="w-t">Experience</span></a></li>
+      <li><a href="Projects.html"><span class="w-l">What I build</span><span class="w-t">Projects</span></a></li>
+      <li><a href="Contact.html"><span class="w-l">Get in touch</span><span class="w-t">Contact</span></a></li>
+    </ul>
+  </section>
+</div>
+
+<div id="site-footer"></div>
+
+<script src="i18n.js"></script>
+<script src="site-chrome.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Under construction until the real content lands
+Disallow: /Chronology.html
+Disallow: /Quotes.html
+
+# Unlinked, and every tile in it is still empty
+Disallow: /Education-Gallery.html
+
+Sitemap: https://darius-dantzler.vercel.app/sitemap.xml
