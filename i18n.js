@@ -11,8 +11,8 @@
       "tagline": "Space Security, Sustainability & Policy",
       "home.viewcv": "View CV",
       "home.lede": "I'm working toward a career at the intersection of space security, sustainability, and policy, the work that decides which capabilities get built, who gets to use them, and under what rules.",
-      "home.body": "I'm completing a Master's in Space Studies (Space Business, Policy & Entrepreneurship) at the International Space University in Strasbourg, building on a background in political science and business law. Four internships across the U.S. European Command gave me high-level working knowledge of policy, security, and international relations.",
-      "home.quote": "\u201cI want to make space more accessible, enabling those who can do in space to be able to do in space.\u201d",
+      "home.body": "I hold a Master's in Space Studies (Space Business, Policy & Entrepreneurship) from the International Space University, completed in June 2026, on top of a background in political science and business law. Four internships across the U.S. European Command gave me high-level working knowledge of policy, security, and international relations.",
+      "home.quote": "\u201cI want to make space more accessible, enabling those who <em>can</em> do in space to be <em>able</em> to do in space.\u201d", "facts.degree.l": "Degree", "facts.degree.v": "M.S. Space Studies, ISU (2026)", "facts.based.l": "Based", "facts.based.v": "Stuttgart, Germany", "facts.status.l": "Status", "facts.status.v": "U.S. citizen, open to relocation", "facts.avail.l": "Available", "facts.avail.v": "Now",
       "crumb.home": "Home", "crumb.personal": "Personal", "open": "Open",
       "personal.title": "The person behind the work",
       "personal.dek": "A slower read. The timeline, the hobbies, the music, the films, and the lines I keep coming back to. Same me, off the clock.",
@@ -44,8 +44,8 @@
       "tagline": "Weltraumsicherheit, Nachhaltigkeit & Politik",
       "home.viewcv": "Lebenslauf ansehen",
       "home.lede": "Ich strebe eine Laufbahn an der Schnittstelle von Weltraumsicherheit, Nachhaltigkeit und Politik an, also dort, wo entschieden wird, welche F\u00e4higkeiten gebaut werden, wer sie nutzen darf und nach welchen Regeln.",
-      "home.body": "Ich schlie\u00dfe gerade einen Master in Space Studies (Space Business, Policy & Entrepreneurship) an der International Space University in Stra\u00dfburg ab, aufbauend auf einem Hintergrund in Politikwissenschaft und Wirtschaftsrecht. Vier Praktika beim U.S. European Command haben mir fundierte Kenntnisse in Politik, Sicherheit und internationalen Beziehungen vermittelt.",
-      "home.quote": "\u201eIch m\u00f6chte den Weltraum zug\u00e4nglicher machen und denjenigen, die im Weltraum etwas leisten k\u00f6nnen, erm\u00f6glichen, dies auch zu tun.\u201c",
+      "home.body": "Ich habe einen Master in Space Studies (Space Business, Policy & Entrepreneurship) der International Space University, abgeschlossen im Juni 2026, aufbauend auf einem Hintergrund in Politikwissenschaft und Wirtschaftsrecht. Vier Praktika beim U.S. European Command haben mir fundierte Kenntnisse in Politik, Sicherheit und internationalen Beziehungen vermittelt.",
+      "home.quote": "\u201eIch m\u00f6chte den Weltraum zug\u00e4nglicher machen und denjenigen, die im Weltraum etwas leisten <em>k\u00f6nnen</em>, erm\u00f6glichen, dies auch zu <em>tun</em>.\u201c", "facts.degree.l": "Abschluss", "facts.degree.v": "M.S. Space Studies, ISU (2026)", "facts.based.l": "Standort", "facts.based.v": "Stuttgart, Deutschland", "facts.status.l": "Status", "facts.status.v": "US-Staatsb\u00fcrger, umzugsbereit", "facts.avail.l": "Verf\u00fcgbar", "facts.avail.v": "Ab sofort",
       "crumb.home": "Start", "crumb.personal": "Pers\u00f6nliches", "open": "\u00d6ffnen",
       "personal.title": "Der Mensch hinter der Arbeit",
       "personal.dek": "Zum langsamen Lesen. Die Zeitleiste, die Hobbys, die Musik, die Filme und die S\u00e4tze, zu denen ich immer wieder zur\u00fcckkehre. Derselbe Mensch, nach Feierabend.",
@@ -100,8 +100,8 @@
       "tagline": "S\u00e9curit\u00e9 spatiale, durabilit\u00e9 et politique",
       "home.viewcv": "Voir le CV",
       "home.lede": "Je m'oriente vers une carri\u00e8re \u00e0 l'intersection de la s\u00e9curit\u00e9 spatiale, de la durabilit\u00e9 et de la politique, l\u00e0 o\u00f9 se d\u00e9cide quelles capacit\u00e9s sont d\u00e9velopp\u00e9es, qui peut les utiliser et selon quelles r\u00e8gles.",
-      "home.body": "Je termine un master en \u00e9tudes spatiales (Space Business, Policy & Entrepreneurship) \u00e0 l'International Space University de Strasbourg, en m'appuyant sur une formation en science politique et en droit des affaires. Quatre stages au sein du U.S. European Command m'ont donn\u00e9 une solide connaissance pratique de la politique, de la s\u00e9curit\u00e9 et des relations internationales.",
-      "home.quote": "\u00ab\u00a0Je veux rendre l'espace plus accessible, permettre \u00e0 celles et ceux qui peuvent agir dans l'espace de pouvoir le faire.\u00a0\u00bb",
+      "home.body": "Je suis titulaire d'un master en \u00e9tudes spatiales (Space Business, Policy & Entrepreneurship) de l'International Space University, obtenu en juin 2026, en m'appuyant sur une formation en science politique et en droit des affaires. Quatre stages au sein du U.S. European Command m'ont donn\u00e9 une solide connaissance pratique de la politique, de la s\u00e9curit\u00e9 et des relations internationales.",
+      "home.quote": "\u00ab\u00a0Je veux rendre l'espace plus accessible, permettre \u00e0 celles et ceux qui <em>peuvent</em> agir dans l'espace de <em>pouvoir</em> le faire.\u00a0\u00bb", "facts.degree.l": "Dipl\u00f4me", "facts.degree.v": "M.S. Space Studies, ISU (2026)", "facts.based.l": "Bas\u00e9 \u00e0", "facts.based.v": "Stuttgart, Allemagne", "facts.status.l": "Statut", "facts.status.v": "Citoyen am\u00e9ricain, mobile", "facts.avail.l": "Disponible", "facts.avail.v": "Imm\u00e9diatement",
       "crumb.home": "Accueil", "crumb.personal": "Personnel", "open": "Ouvrir",
       "personal.title": "La personne derri\u00e8re le travail",
       "personal.dek": "Une lecture plus lente. La chronologie, les loisirs, la musique, les films et les phrases qui me reviennent sans cesse. Le m\u00eame moi, en dehors du travail.",
@@ -156,8 +156,8 @@
       "tagline": "Seguridad espacial, sostenibilidad y pol\u00edtica",
       "home.viewcv": "Ver CV",
       "home.lede": "Me encamino hacia una carrera en la intersecci\u00f3n de la seguridad espacial, la sostenibilidad y la pol\u00edtica, el \u00e1mbito donde se decide qu\u00e9 capacidades se construyen, qui\u00e9n puede usarlas y bajo qu\u00e9 reglas.",
-      "home.body": "Estoy terminando un m\u00e1ster en Estudios Espaciales (Space Business, Policy & Entrepreneurship) en la International Space University de Estrasburgo, sobre una base de ciencia pol\u00edtica y derecho mercantil. Cuatro pr\u00e1cticas en el U.S. European Command me dieron un s\u00f3lido conocimiento pr\u00e1ctico de pol\u00edtica, seguridad y relaciones internacionales.",
-      "home.quote": "\u00abQuiero hacer el espacio m\u00e1s accesible, permitir que quienes pueden actuar en el espacio puedan hacerlo.\u00bb",
+      "home.body": "Tengo un m\u00e1ster en Estudios Espaciales (Space Business, Policy & Entrepreneurship) por la International Space University, finalizado en junio de 2026, sobre una base de ciencia pol\u00edtica y derecho mercantil. Cuatro pr\u00e1cticas en el U.S. European Command me dieron un s\u00f3lido conocimiento pr\u00e1ctico de pol\u00edtica, seguridad y relaciones internacionales.",
+      "home.quote": "\u00abQuiero hacer el espacio m\u00e1s accesible, permitir que quienes <em>pueden</em> actuar en el espacio <em>puedan</em> hacerlo.\u00bb", "facts.degree.l": "Titulaci\u00f3n", "facts.degree.v": "M.S. Space Studies, ISU (2026)", "facts.based.l": "Ubicaci\u00f3n", "facts.based.v": "Stuttgart, Alemania", "facts.status.l": "Situaci\u00f3n", "facts.status.v": "Ciudadano estadounidense, dispuesto a mudarse", "facts.avail.l": "Disponible", "facts.avail.v": "De inmediato",
       "crumb.home": "Inicio", "crumb.personal": "Personal", "open": "Abrir",
       "personal.title": "La persona detr\u00e1s del trabajo",
       "personal.dek": "Una lectura m\u00e1s pausada. La cronolog\u00eda, las aficiones, la m\u00fasica, las pel\u00edculas y las frases a las que siempre vuelvo. El mismo yo, fuera del trabajo.",
@@ -223,9 +223,12 @@
     var scope = root || document;
     scope.querySelectorAll("[data-i18n]").forEach(function (el) {
       var key = el.getAttribute("data-i18n");
-      if (ORIG[key] == null) ORIG[key] = el.textContent; // snapshot original before first swap
+      // data-i18n-html keeps inline markup (e.g. <em>) that textContent would flatten.
+      // Values come from the static DICT below, never from user input.
+      var asHTML = el.hasAttribute("data-i18n-html");
+      if (ORIG[key] == null) ORIG[key] = asHTML ? el.innerHTML : el.textContent;
       var v = t(key);
-      if (v != null) el.textContent = v;
+      if (v != null) { if (asHTML) el.innerHTML = v; else el.textContent = v; }
     });
     document.documentElement.lang = LANG;
   }
