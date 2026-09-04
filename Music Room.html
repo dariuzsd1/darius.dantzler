@@ -150,7 +150,7 @@ a:hover{color:var(--dds-color-ink)}
 .album-sleeve{position:absolute;inset:0;z-index:2;border:1px solid rgba(20,20,20,.72);border-radius:6px;overflow:hidden;background:var(--dds-color-bone);box-shadow:0 10px 26px rgba(20,20,20,.14)}
 .album-sleeve img{width:100%;height:100%;object-fit:cover;display:block}
 .album-sleeve::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14),inset 3px 0 8px rgba(20,20,20,.14);pointer-events:none}
-.album-stage:hover .album-disc,.album-stage.open .album-disc{transform:translateY(-40%) rotate(8deg)}
+.album-stage:hover .album-disc,.album-stage:focus-visible .album-disc,.album-stage.open .album-disc{transform:translateY(-40%) rotate(8deg)}
 .album-meta{margin-top:15px}
 .album-title{font-family:var(--dds-font-serif);font-weight:600;font-size:1.08rem;line-height:1.2;letter-spacing:-.01em}
 .album-artist{font-family:var(--dds-font-sans);font-size:.92rem;color:rgba(20,20,20,.62);margin-top:3px}
@@ -184,36 +184,7 @@ a:hover{color:var(--dds-color-ink)}
 <body>
 <div class="vignette"></div>
 
-<div class="pillbar">
-  <nav class="pill" aria-label="Main">
-    <a class="brand" href="index.html">Darius Dantzler</a>
-    <div class="navlinks">
-      <a class="navlink" href="index.html">Home</a>
-      <a class="navlink" href="Experience.html">Experience</a>
-      <a class="navlink" href="Education.html">Education</a>
-      <a class="navlink" href="Projects.html">Projects</a>
-      <a class="navlink active" href="Personal.html">Personal</a>
-      <a class="navlink" href="Contact.html">Contact</a>
-    </div>
-    <div class="pill-tools">
-      <a class="icobtn" href="https://github.com/dariuzsd1" target="_blank" rel="noopener" aria-label="GitHub">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.2.8-.5v-1.8c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5Z"/></svg>
-      </a>
-      <div class="lang" id="lang">
-        <button class="icobtn" id="langBtn" aria-label="Language" aria-haspopup="true" aria-expanded="false">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3Z"/></svg>
-        </button>
-        <div class="lang-menu" role="menu" aria-label="Language">
-          <div class="lang-head">Language</div>
-          <button class="lang-item" role="menuitemradio" aria-checked="true" data-lang="en"><span>English</span><span class="code">EN</span><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></button>
-          <button class="lang-item" role="menuitemradio" aria-checked="false" data-lang="de"><span>Deutsch</span><span class="code">DE</span><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></button>
-          <button class="lang-item" role="menuitemradio" aria-checked="false" data-lang="it"><span>Italiano</span><span class="code">IT</span><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></button>
-          <button class="lang-item" role="menuitemradio" aria-checked="false" data-lang="fr"><span>Français</span><span class="code">FR</span><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></button>
-        </div>
-      </div>
-    </div>
-  </nav>
-</div>
+<div id="site-header"></div>
 
 <div class="wrap">
   <header class="sr-head container">
@@ -267,11 +238,6 @@ a:hover{color:var(--dds-color-ink)}
 <audio id="audio" preload="none"></audio>
 
 <script>
-/* ---------- language dropdown (shared) ---------- */
-const lang=document.getElementById('lang'), langBtn=document.getElementById('langBtn');
-langBtn.addEventListener('click',e=>{e.stopPropagation();const open=lang.classList.toggle('open');langBtn.setAttribute('aria-expanded',open);});
-document.addEventListener('click',()=>{lang.classList.remove('open');langBtn.setAttribute('aria-expanded','false');});
-lang.querySelectorAll('.lang-item').forEach(it=>it.addEventListener('click',e=>{e.stopPropagation();lang.querySelectorAll('.lang-item').forEach(x=>x.setAttribute('aria-checked','false'));it.setAttribute('aria-checked','true');lang.classList.remove('open');langBtn.setAttribute('aria-expanded','false');}));
 
 /* ---------- small helpers ---------- */
 const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
@@ -325,11 +291,12 @@ function makeCode(entry){
   return img;
 }
 function spotLink(entry, label){
-  const a=document.createElement('a'); a.className='spot-link'; a.href=realUrl(entry.spotify_url)?entry.spotify_url:'#';
-  a.target='_blank'; a.rel='noopener'; a.innerHTML=SPOT_ICON+'<span>'+esc(label)+'</span>';
+  if(!realUrl(entry.spotify_url)) return null;   // no link beats a link to '#'
+  const a=document.createElement('a'); a.className='spot-link'; a.href=entry.spotify_url;
+  a.target='_blank'; a.rel='noopener noreferrer'; a.innerHTML=SPOT_ICON+'<span>'+esc(label)+'</span>';
   a.setAttribute('aria-label',label+' on Spotify'); return a;
 }
-function spotRow(entry, label){ const d=document.createElement('div'); d.className='spot'; d.append(makeCode(entry), spotLink(entry,label)); return d; }
+function spotRow(entry, label){ const d=document.createElement('div'); d.className='spot'; d.appendChild(makeCode(entry)); const l=spotLink(entry,label); if(l) d.appendChild(l); return d; }
 function coverImg(cls, src, alt, i, type){
   const img=document.createElement('img'); img.className=cls; img.alt=alt; img.loading='lazy';
   probeInto(img, [src], artPlaceholder(i,type));
@@ -354,7 +321,7 @@ function playSong(entry, el){
   current={entry,el}; el.classList.add('playing');
   audio.src=entry.preview||''; setProg(el,0);
   const p=audio.play();
-  if(p&&p.then) p.then(()=>{ cancelAnimationFrame(simRAF); }).catch(()=>{ simStart=performance.now(); sim(); });
+  if(p&&p.then) p.then(()=>{ cancelAnimationFrame(simRAF); simRAF=null; }).catch(()=>{ stopPlay(); });
   else { simStart=performance.now(); sim(); }
 }
 audio.addEventListener('timeupdate',()=>{ if(!current) return; const d=isFinite(audio.duration)&&audio.duration>0?Math.min(audio.duration,CLIP):CLIP; if(audio.currentTime>=CLIP){ stopPlay(); return; } setProg(current.el,audio.currentTime/d); });
@@ -401,7 +368,6 @@ function renderSongs(list){
 function renderAlbums(list){
   const grid=document.getElementById('grid-albums'); grid.innerHTML='';
   if(!list||!list.length){ grid.innerHTML='<div class="empty">'+esc(T('mr.empty.albums','No albums yet. Add entries to music.manifest.json.'))+'</div>'; return; }
-  const canHover=window.matchMedia('(hover:hover)').matches;
   list.forEach((e,i)=>{
     const al=document.createElement('div'); al.className='album';
     const stage=document.createElement('button'); stage.type='button'; stage.className='album-stage';
@@ -414,7 +380,7 @@ function renderAlbums(list){
     const sleeve=document.createElement('div'); sleeve.className='album-sleeve';
     sleeve.appendChild(coverImg('', e.cover, e.title+' album cover', i, 'album'));
     stage.append(disc,sleeve);
-    stage.addEventListener('click',()=>{ if(!canHover) stage.classList.toggle('open'); });
+    stage.addEventListener('click',()=>{ stage.classList.toggle('open'); });
     const meta=document.createElement('div'); meta.className='album-meta';
     meta.innerHTML='<div class="album-title">'+esc(e.title)+'</div><div class="album-artist">'+esc(e.artist)+'</div>';
     al.append(stage,meta,spotRow(e,T('mr.openalbum','Open album')));
@@ -447,6 +413,7 @@ function setCount(key,n){ const el=document.querySelector('[data-count="'+key+'"
 
 let mrData={songs:[],albums:[],artists:[]};
 function renderAll(){
+  stopPlay();   // the grid is about to be wiped; don't orphan a playing clip
   const songs=mrData.songs||[], albums=mrData.albums||[], artists=mrData.artists||[];
   renderSongs(songs); renderAlbums(albums); renderArtists(artists);
   setCount('songs',songs.length); setCount('albums',albums.length); setCount('artists',artists.length);
@@ -463,9 +430,14 @@ async function boot(){
   renderAll();
 }
 window.addEventListener('ddslangchange', renderAll);
+let crateEl=null, crateUpdate=null;
 function initCrateFade(){
   const crate=document.getElementById('grid-songs'), scroll=crate&&crate.closest('.crate-scroll');
   if(!crate||!scroll) return;
+  if(crateUpdate){   // called again on every language change
+    if(crateEl) crateEl.removeEventListener('scroll',crateUpdate);
+    window.removeEventListener('resize',crateUpdate);
+  }
   const update=()=>{
     const scrollable=crate.scrollHeight-crate.clientHeight>4;
     const atEnd=crate.scrollTop+crate.clientHeight>=crate.scrollHeight-4;
@@ -473,6 +445,7 @@ function initCrateFade(){
   };
   crate.addEventListener('scroll',update,{passive:true});
   window.addEventListener('resize',update);
+  crateEl=crate; crateUpdate=update;
   update();
 }
 boot();

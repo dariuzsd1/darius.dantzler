@@ -30,7 +30,7 @@ a:hover{color:var(--dds-color-ink)}
 .rule{height:1px;width:100%;background:rgba(20,20,20,.15)}
 
 .hero{position:relative;padding-top:150px;padding-bottom:64px}
-.shimmer{position:absolute;top:60px;left:50%;transform:translateX(-50%);width:min(1180px,120vw);height:560px;z-index:0;pointer-events:none;filter:blur(46px);opacity:.55;background:radial-gradient(38% 60% at 22% 40%, rgba(242,194,48,.30), transparent 70%),radial-gradient(34% 55% at 74% 30%, rgba(193,39,45,.10), transparent 72%),radial-gradient(40% 60% at 50% 78%, rgba(242,194,48,.14), transparent 72%);background-size:180% 180%;animation:drift 18s ease-in-out infinite}
+.shimmer{position:absolute;top:60px;left:50%;transform:translateX(-50%);width:min(1180px,100vw);height:560px;z-index:0;pointer-events:none;filter:blur(46px);opacity:.55;background:radial-gradient(38% 60% at 22% 40%, rgba(242,194,48,.30), transparent 70%),radial-gradient(34% 55% at 74% 30%, rgba(193,39,45,.10), transparent 72%),radial-gradient(40% 60% at 50% 78%, rgba(242,194,48,.14), transparent 72%);background-size:180% 180%;animation:drift 18s ease-in-out infinite}
 @keyframes drift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 @media (prefers-reduced-motion:reduce){.shimmer{animation:none}}
 .hero-inner{position:relative;z-index:1}
@@ -191,8 +191,29 @@ tweaks.querySelector('.tw-switch[data-tw=shimmer]').addEventListener('click',()=
 applyTweaks();
 // cv modal
 const cvModal=document.getElementById('cvModal');
-function openCV(){cvModal.classList.add('open');cvModal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
-function closeCV(){cvModal.classList.remove('open');cvModal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+let cvReturnFocus=null;
+function cvStops(){ return [...cvModal.querySelectorAll('a[href],button:not([disabled])')].filter(el=>el.offsetParent!==null); }
+function openCV(){
+  cvReturnFocus=document.activeElement;
+  cvModal.classList.add('open');cvModal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+  const s=cvStops(); if(s.length) s[0].focus();
+}
+function closeCV(){
+  // guard: Escape fires document-wide, and an unguarded close used to clear
+  // body overflow even when nothing was open
+  if(!cvModal.classList.contains('open')) return;
+  cvModal.classList.remove('open');cvModal.setAttribute('aria-hidden','true');document.body.style.overflow='';
+  if(cvReturnFocus&&cvReturnFocus.focus) cvReturnFocus.focus();
+  cvReturnFocus=null;
+}
+// keep Tab inside the dialog while it is open
+cvModal.addEventListener('keydown',e=>{
+  if(e.key!=='Tab') return;
+  const s=cvStops(); if(!s.length) return;
+  const first=s[0], last=s[s.length-1];
+  if(e.shiftKey&&document.activeElement===first){ e.preventDefault(); last.focus(); }
+  else if(!e.shiftKey&&document.activeElement===last){ e.preventDefault(); first.focus(); }
+});
 document.querySelectorAll('[data-cv-open]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();openCV();}));
 document.querySelectorAll('[data-cv-close]').forEach(el=>el.addEventListener('click',closeCV));
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCV();});

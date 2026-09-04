@@ -83,7 +83,7 @@ a:hover{color:var(--dds-color-ink)}
 .item .meta{align-self:flex-start;white-space:nowrap;font-family:var(--dds-font-mono);font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.62);background:rgba(20,20,20,.03);border:1px solid rgba(20,20,20,.3);border-radius:999px;padding:3px 11px}
 .card{position:relative;width:100%;aspect-ratio:2/3;perspective:1400px;cursor:pointer;background:transparent;border:0;padding:0;text-align:left;font:inherit;color:inherit}
 .card-face-wrap{position:relative;width:100%;height:100%;transition:transform .6s cubic-bezier(.4,.15,.2,1);transform-style:preserve-3d}
-.card:hover .card-face-wrap,.card.flipped .card-face-wrap{transform:rotateY(180deg)}
+.card:hover .card-face-wrap,.card:focus-visible .card-face-wrap,.card.flipped .card-face-wrap{transform:rotateY(180deg)}
 .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;border:1px solid rgba(20,20,20,.16);border-radius:4px}
 .face.front{background:repeating-linear-gradient(135deg,rgba(20,20,20,.06) 0 12px,rgba(20,20,20,.02) 12px 24px)}
 .face.front img{width:100%;height:100%;object-fit:cover;display:block}
@@ -92,7 +92,7 @@ a:hover{color:var(--dds-color-ink)}
 .face.front::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);pointer-events:none}
 .corner{position:absolute;top:9px;right:9px;z-index:2;width:26px;height:26px;border-radius:999px;background:rgba(245,243,236,.85);border:1px solid rgba(20,20,20,.18);display:flex;align-items:center;justify-content:center;color:rgba(20,20,20,.6);transition:opacity .2s}
 .corner svg{width:13px;height:13px}
-.card.flipped .corner,.card:hover .corner{opacity:0}
+.card.flipped .corner,.card:hover .corner,.card:focus-visible .corner{opacity:0}
 .face.back{transform:rotateY(180deg);background:var(--dds-color-ink);color:var(--dds-color-bone);padding:18px 16px;display:flex;flex-direction:column}
 .face.back .bk-kick{flex:0 0 auto;font-family:var(--dds-font-mono);font-size:.58rem;text-transform:uppercase;letter-spacing:.09em;color:var(--dds-color-accent)}
 .face.back p{flex:1 1 auto;min-height:0;overflow-y:auto;margin:10px 0 0;font-size:.9rem;line-height:1.52;color:rgba(245,243,236,.9);scrollbar-width:thin;scrollbar-color:rgba(245,243,236,.4) transparent;-webkit-overflow-scrolling:touch}
@@ -116,36 +116,7 @@ a:hover{color:var(--dds-color-ink)}
 <body>
 <div class="vignette"></div>
 
-<div class="pillbar">
-  <nav class="pill" aria-label="Main">
-    <a class="brand" href="index.html">Darius Dantzler</a>
-    <div class="navlinks">
-      <a class="navlink" href="index.html">Home</a>
-      <a class="navlink" href="Experience.html">Experience</a>
-      <a class="navlink" href="Education.html">Education</a>
-      <a class="navlink" href="Projects.html">Projects</a>
-      <a class="navlink active" href="Personal.html">Personal</a>
-      <a class="navlink" href="Contact.html">Contact</a>
-    </div>
-    <div class="pill-tools">
-      <a class="icobtn" href="https://github.com/dariuzsd1" target="_blank" rel="noopener" aria-label="GitHub">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.2.8-.5v-1.8c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5Z"/></svg>
-      </a>
-      <div class="lang" id="lang">
-        <button class="icobtn" id="langBtn" aria-label="Language" aria-haspopup="true" aria-expanded="false">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3Z"/></svg>
-        </button>
-        <div class="lang-menu" role="menu" aria-label="Language">
-          <div class="lang-head">Language</div>
-          <button class="lang-item" role="menuitemradio" aria-checked="true" data-lang="en"><span>English</span><span class="code">EN</span><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></button>
-          <button class="lang-item" role="menuitemradio" aria-checked="false" data-lang="de"><span>Deutsch</span><span class="code">DE</span><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></button>
-          <button class="lang-item" role="menuitemradio" aria-checked="false" data-lang="it"><span>Italiano</span><span class="code">IT</span><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></button>
-          <button class="lang-item" role="menuitemradio" aria-checked="false" data-lang="fr"><span>Français</span><span class="code">FR</span><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></button>
-        </div>
-      </div>
-    </div>
-  </nav>
-</div>
+<div id="site-header"></div>
 
 <div class="wrap">
   <header class="sr-head container">
@@ -905,17 +876,9 @@ a:hover{color:var(--dds-color-ink)}
 </div>
 
 <script>
-// language dropdown
-const lang=document.getElementById('lang'), langBtn=document.getElementById('langBtn');
-langBtn.addEventListener('click',e=>{e.stopPropagation();const open=lang.classList.toggle('open');langBtn.setAttribute('aria-expanded',open);});
-document.addEventListener('click',()=>{lang.classList.remove('open');langBtn.setAttribute('aria-expanded','false');});
-lang.querySelectorAll('.lang-item').forEach(it=>it.addEventListener('click',e=>{e.stopPropagation();lang.querySelectorAll('.lang-item').forEach(x=>x.setAttribute('aria-checked','false'));it.setAttribute('aria-checked','true');lang.classList.remove('open');langBtn.setAttribute('aria-expanded','false');}));
-
 // tap-to-flip fallback for touch (hover handles the rest)
-const canHover=window.matchMedia('(hover:hover)').matches;
 document.querySelectorAll('.card').forEach(card=>{
   card.addEventListener('click',()=>{
-    if(canHover) return; // hover already flips on pointer devices
     const on=card.classList.toggle('flipped');
     card.setAttribute('aria-pressed',on);
   });

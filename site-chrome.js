@@ -81,6 +81,9 @@
     + '.sf-social a:focus-visible{outline:2px solid var(--dds-color-accent);outline-offset:2px}'
     + '.sf-social svg{width:18px;height:18px;display:block}'
     + '.site-foot-meta{max-width:1120px;margin:0 auto;padding:14px 24px 46px;font-family:var(--dds-font-mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(20,20,20,.42);border-top:1px solid rgba(20,20,20,.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}'
+    + '.dds-skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--dds-color-ink);color:var(--dds-color-bone);padding:13px 20px;border-radius:0 0 10px 0;font-family:var(--dds-font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em}'
+    + '.dds-skip:focus{left:0}'
+    + '[tabindex="-1"]:focus{outline:none}'
     + '.pill .burger{display:none}'
     + '.pill .burger .bg-x{display:none}'
     + '.pill.menu-open .burger .bg-bars{display:none}'
@@ -200,11 +203,32 @@
     panel.addEventListener("click", function (e) { e.stopPropagation(); });
   }
 
+  /* Every page opens with a fixed header of six links plus icon buttons.
+     Without this a keyboard user tabs through all of them on every load.
+     The target is the page's <main> where one exists, otherwise the .wrap
+     container every page shares, which also gets the main landmark. */
+  function wireSkip() {
+    var target = document.querySelector("main") || document.querySelector(".wrap");
+    if (!target) return;
+    if (!target.id) target.id = "dds-main";
+    target.setAttribute("tabindex", "-1");
+    if (target.tagName !== "MAIN" && !target.getAttribute("role")) target.setAttribute("role", "main");
+    var link = document.querySelector(".dds-skip");
+    if (!link) {
+      link = document.createElement("a");
+      link.className = "dds-skip";
+      document.body.insertBefore(link, document.body.firstChild);
+    }
+    link.href = "#" + target.id;
+    link.textContent = T("skip", "Skip to content");
+  }
+
   function render() {
     var header = mount(headerHTML(), "site-header", ".pillbar", "prepend");
     mount(footerHTML(), "site-footer", "footer", "append");
     wireLang(header);
     wireMenu(header);
+    wireSkip();
   }
 
   function init() {
