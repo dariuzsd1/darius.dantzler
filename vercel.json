@@ -58,12 +58,27 @@
       "permanent": true
     },
     {
+      "source": "/Music%20Room.html",
+      "destination": "/Music-Room.html",
+      "permanent": true
+    },
+    {
       "source": "/Screening Room.html",
       "destination": "/Screening-Room.html",
       "permanent": true
     },
     {
+      "source": "/Screening%20Room.html",
+      "destination": "/Screening-Room.html",
+      "permanent": true
+    },
+    {
       "source": "/Personal Effects.html",
+      "destination": "/Personal-Effects.html",
+      "permanent": true
+    },
+    {
+      "source": "/Personal%20Effects.html",
       "destination": "/Personal-Effects.html",
       "permanent": true
     },
