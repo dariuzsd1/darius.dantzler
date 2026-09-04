@@ -75,9 +75,9 @@ window.PROJECTS = [
   {
     id: "intern-reimbursement-tracker",
     title: "Intern Reimbursement Tracker",
-    subtitle: "An internal reimbursement and stipend management app for a research organization\u2019s ~30 interns, with role-based access for interns, a treasurer, and a boss.",
+    subtitle: "An internal reimbursement and stipend management app for European Space Hub\u2019s ~30 students, with role-based access for interns, a treasurer, and a boss.",
     role: "Treasurer and product owner",
-    dates: "Since July 2026",
+    dates: "Since June 2026",
     year: 2026.7,
     status: "in-progress",
     hero: false,
