@@ -1,5 +1,5 @@
 /* ============================================================
-   PROJECTS — single source of truth.
+   PROJECTS: single source of truth.
    Both the timeline (Projects.html) and the project sub-page
    (Project.html) read from this one array.
 
@@ -13,16 +13,16 @@
      subtitle:  one-line description
      role:      your role
      dates:     free text (e.g. "Since June 2026")
-     year:      numeric sort key — timeline orders by this, then by
+     year:      numeric sort key. Timeline orders by this, then by
                 the array's own order for same-year items
      status:    "in-progress" | "shipped" | "concept"
      hero:      true on the ONE flagship project (rendered larger)
      image:     "placeholder.jpg" -> a generated placeholder is used
-     problem:   short paragraph — the gap it addressed
-     approach:  paragraph (or \n-split lines) — what was actually done
+     problem:   short paragraph: the gap it addressed
+     approach:  paragraph (or \n-split lines): what was actually done
      tools:     array of tag strings (tools + skills)
      highlights:array of 2–4 evidence bullets (numbers/impact first)
-     links:     array of { label, url } — section hidden when empty
+     links:     array of { label, url }. Section hidden when empty
      placeholder:true  -> kept in the array to stress-test layout,
                           NOT rendered on the live site
    }
@@ -31,20 +31,20 @@ window.PROJECTS = [
   {
     id: "t1d-supply-hub",
     title: "T1D Supply Hub",
-    subtitle: "Supply logistics and inventory management for people with Type 1 Diabetes — tracking refill eligibility and site rotation, not glucose or dosing.",
-    role: "Solo developer — product, design, and engineering",
+    subtitle: "Supply logistics and inventory management for people with Type 1 Diabetes, tracking refill eligibility and site rotation, not glucose or dosing.",
+    role: "Solo developer: product, design, and engineering",
     dates: "Since June 2026",
     year: 2026.6,
     status: "in-progress",
     hero: true,
     image: "placeholder.jpg",
-    problem: "Existing diabetes apps focus on glucose and dosing and ignore supply logistics — the gap between days of supply left and the date insurance actually allows a refill.",
+    problem: "Existing diabetes apps focus on glucose and dosing and ignore supply logistics, the gap between days of supply left and the date insurance actually allows a refill.",
     approach: "Designed and built the app end to end, solo. That included a 103-item medical supply catalog cross-referenced against the FDA Device UDI API and EUDAMED, and a strict rule that no computed value is ever shown without real backing data.",
     tools: ["React", "FDA UDI API", "EUDAMED", "Product design", "Solo build"],
     highlights: [
       "103-item supply catalog matched against two regulatory device databases (FDA UDI, EUDAMED)",
       "Five structured audits produced a tracked list of 7 critical and 9 medium issues",
-      "Defined the \u201Ccoverage gap\u201D concept — the space between supply on hand and insurance refill eligibility"
+      "Defined the \u201Ccoverage gap\u201D concept, the space between supply on hand and insurance refill eligibility"
     ],
     links: [
       { label: "Live app", url: "https://t1-d-52t5.vercel.app/" }
@@ -83,7 +83,7 @@ window.PROJECTS = [
     hero: false,
     image: "placeholder.jpg",
     problem: "An informal reimbursement process lacked role separation, audit trails, and safeguards against duplicate payments.",
-    approach: "Specified and directed the build of role-based access, a four-eyes stipend approval flow, and immutable paid records — choosing standard Postgres over OrioleDB for stability, given the financial data involved.",
+    approach: "Specified and directed the build of role-based access, a four-eyes stipend approval flow, and immutable paid records, choosing standard Postgres over OrioleDB for stability, given the financial data involved.",
     tools: ["Postgres", "Role-based access", "Product ownership", "Financial workflows"],
     highlights: [
       "Role-based access across three permission levels",

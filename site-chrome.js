@@ -1,4 +1,4 @@
-/* site-chrome.js — single source for the pill header + footer across the portfolio.
+/* site-chrome.js: single source for the pill header + footer across the portfolio.
    Load it as the LAST script on any page, AFTER i18n.js:
      <script src="i18n.js"></script>
      <script src="site-chrome.js"></script>
@@ -26,8 +26,8 @@
     "education.html": "education", "education-gallery.html": "education",
     "projects.html": "projects", "project.html": "projects",
     "personal.html": "personal", "chronology.html": "personal",
-    "personal effects.html": "personal", "music room.html": "personal",
-    "screening room.html": "personal", "quotes.html": "personal",
+    "personal-effects.html": "personal", "music-room.html": "personal",
+    "screening-room.html": "personal", "quotes.html": "personal",
     "contact.html": "contact"
   };
 

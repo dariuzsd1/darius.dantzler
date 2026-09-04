@@ -88,7 +88,7 @@ a:hover{color:var(--dds-color-ink)}
 .tools{display:flex;flex-wrap:wrap;gap:9px}
 .toolpill{font-family:var(--dds-font-mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(20,20,20,.75);border:1px solid rgba(20,20,20,.3);border-radius:999px;padding:6px 13px;white-space:nowrap}
 
-/* highlights — evidence */
+/* highlights: evidence */
 .hl{display:grid;gap:12px}
 .hl-item{position:relative;display:flex;gap:14px;align-items:flex-start;background:#faf8f1;border:1px solid rgba(20,20,20,.16);border-radius:12px;padding:15px 18px 15px 16px}
 .hl-item::before{content:"";position:absolute;left:0;top:12px;bottom:12px;width:3px;border-radius:3px;background:var(--dds-color-accent)}
@@ -133,7 +133,7 @@ const STATUS = window.PROJECT_STATUS;
 const STATUS_COLOR = { "in-progress":"#f2c230", "shipped":"#17693a", "concept":"#8a8a86" };
 function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
-/* placeholder hero band (bone/ink/yellow only) — distinct motif per project */
+/* placeholder hero band (bone/ink/yellow only), distinct motif per project */
 function bandMotif(id){
   if(id==="t1d-supply-hub") // medical cross + supply boxes
     return '<g transform="translate(450 115)"><rect x="-16" y="-52" width="32" height="104" rx="6" fill="#f2c230"/><rect x="-52" y="-16" width="104" height="32" rx="6" fill="#f2c230"/></g>'

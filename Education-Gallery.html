@@ -98,16 +98,16 @@ figcaption{margin-top:9px;font-family:var(--dds-font-mono);font-size:.66rem;text
 const SCHOOLS = {
   isu: { name:"International Space University", brand:"#14315f", logo:"assets/edu/isu-wordmark-t.png", medallion:"assets/edu/isu-patch.png",
     sub:"Strasbourg, France. 2025 to 2026.",
-    slots:["Factory 2026 — NodeSpace pitch","NodeSpace team","Robotics competition","Lunar habitat simulation","Intercultural event","'Why Space Matters' podcast"] },
+    slots:["Factory 2026: NodeSpace pitch","NodeSpace team","Robotics competition","Lunar habitat simulation","Intercultural event","'Why Space Matters' podcast"] },
   umgc: { name:"University of Maryland Global Campus", brand:"#c8102e", logo:"assets/edu/umgc-wordmark-t.png", medallion:"assets/edu/umgc-seal.png",
-    sub:"Stuttgart, Germany — 2019 to 2023.",
+    sub:"Stuttgart, Germany. 2019 to 2023.",
     slots:["Campus in Stuttgart","Commencement","Thesis presentation","Study group","Around campus","Graduation day"] },
   nsliy: { name:"NSLI for Youth", brand:"#00a3c4", logo:"assets/edu/nsliy-t.png", medallion:"",
-    sub:"U.S. Department of State — Russian immersion, Moscow, 2019.",
+    sub:"U.S. Department of State. Russian immersion, Moscow, 2019.",
     slots:["Arrival in Moscow","Language class","Host program group","Around the city","Program certificate","Farewell"] },
   stcharles: { name:"St. Charles High School", brand:"#17693a", logo:"assets/edu/stcharles-crest-t.png", medallion:"",
-    sub:"Waldorf, Maryland — 2015 to 2019.",
-    slots:["Model United Nations","Mock Trial","We the People — Congress visit","Graduation","With classmates","Awards night"] }
+    sub:"Waldorf, Maryland. 2015 to 2019.",
+    slots:["Model United Nations","Mock Trial","We the People: Congress visit","Graduation","With classmates","Awards night"] }
 };
 
 const T=(k,d)=>(window.ddsI18n&&window.ddsI18n.t(k))||d;
@@ -119,7 +119,7 @@ function paintGallery(){
   const gallery = T('gl.gallery','Gallery');
   document.title = s.name + " · " + gallery;
   document.getElementById('crumbName').textContent = s.name;
-  document.getElementById('glTitle').textContent = s.name + " — " + gallery;
+  document.getElementById('glTitle').textContent = s.name + " · " + gallery;
   document.getElementById('glSub').textContent = s.sub;
 }
 paintGallery();
