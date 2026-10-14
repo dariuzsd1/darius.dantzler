@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Personal Effects · Darius Dantzler</title>
-<meta name="description" content="The hobbies and small obsessions behind the work, told in pictures.">
+<meta name="description" content="The games and interests Darius Dantzler keeps coming back to.">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://darius-dantzler.vercel.app/Personal-Effects.html">
 <meta property="og:site_name" content="Darius Dantzler">
 <meta property="og:title" content="Personal Effects · Darius Dantzler">
-<meta property="og:description" content="The hobbies and small obsessions behind the work, told in pictures.">
+<meta property="og:description" content="The games and interests Darius Dantzler keeps coming back to.">
 <meta property="og:image" content="https://darius-dantzler.vercel.app/assets/og-cover.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -94,6 +94,9 @@ a:hover{color:var(--dds-color-ink)}
 .cap .cap-text{font-family:var(--dds-font-sans);font-size:.82rem;line-height:1.4;color:rgba(245,243,236,.72);margin-top:6px}
 .tile.featured .cap .cap-text{font-size:.9rem}
 .tile:hover .cap,.tile:focus-visible .cap,.tile.show .cap{transform:translateY(0)}
+.tile.static{cursor:default}
+.tile.static:hover{transform:none;box-shadow:none}
+.tile.static .cap{transform:none}
 
 @media(max-width:820px){.bento{grid-template-columns:repeat(3,1fr);grid-auto-rows:180px}}
 @media(max-width:560px){
@@ -126,7 +129,7 @@ a:hover{color:var(--dds-color-ink)}
     <div class="crumb"><a href="Personal.html" data-i18n="crumb.personal">Personal</a> <span>/</span> <span class="kick" data-i18n="card.effects.title">Personal Effects</span></div>
     <a class="backbtn" href="Personal.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg><span data-i18n="back.personal">Back to Personal</span></a>
     <h1 data-i18n="effects.title">The stuff, off the clock</h1>
-    <p class="dek" data-i18n="effects.dek">The hobbies and small obsessions, told in pictures. Hover or tap a tile to read the line behind it.</p>
+    <p class="dek" data-i18n="effects.dek">What I do when I am not working.</p>
   </header>
 
   <main class="container" id="pe-root"></main>
@@ -141,35 +144,30 @@ a:hover{color:var(--dds-color-ink)}
 
 <script>
 
-/* ================= DATA (placeholder items, still to be replaced with the real ones) =================
+/* ================= DATA (real interests and games; photos and one-line captions still to come) =================
    Shape: [{ id, label, items:[{ id, title, image, caption, size:"standard"|"featured" }] }]
-   image "placeholder.jpg" (or missing) falls back to a generated bone/ink/yellow tile.
-   ~2:1 standard-to-featured mix per section. */
+   image "placeholder.jpg" (or missing) falls back to a generated bone/ink/yellow tile,
+   and the tile shows its title at rest because there is nothing behind it to reveal.
+   Add a real image and the tile becomes a button with the hover/tap reveal again.
+   caption is optional; leave it out rather than invent one. */
 const personalEffects = [
   {
     id:"hobbies", label:"hobbies",
     items:[
-      { id:"h1", title:"Film photography", image:"placeholder.jpg", caption:"Shooting on a beat-up 35mm and hoping the light was right.", size:"featured" },
-      { id:"h2", title:"Bread", image:"placeholder.jpg", caption:"Two years of sourdough and still learning the dough.", size:"standard" },
-      { id:"h3", title:"Trail running", image:"placeholder.jpg", caption:"Early mileage before the city wakes up.", size:"standard" },
-      { id:"h4", title:"Vinyl", image:"placeholder.jpg", caption:"Slowly outgrowing the shelf it lives on.", size:"standard" },
-      { id:"h5", title:"Woodworking", image:"placeholder.jpg", caption:"Small joinery projects, mostly for the house.", size:"featured" },
-      { id:"h6", title:"Chess", image:"placeholder.jpg", caption:"Better at openings than at endgames.", size:"standard" },
-      { id:"h7", title:"Cycling", image:"placeholder.jpg", caption:"Long weekend loops out past the ridge.", size:"standard" },
-      { id:"h8", title:"Sketching", image:"placeholder.jpg", caption:"A pocket notebook that never quite fills up.", size:"featured" }
+      { id:"h1", title:"Film & TV", image:"placeholder.jpg", size:"standard" },
+      { id:"h2", title:"Time with friends", image:"placeholder.jpg", size:"standard" },
+      { id:"h3", title:"History", image:"placeholder.jpg", size:"standard" },
+      { id:"h4", title:"Politics", image:"placeholder.jpg", size:"standard" }
     ]
   },
   {
     id:"games", label:"games",
     items:[
-      { id:"g1", title:"Outer Wilds", image:"placeholder.jpg", caption:"The one I wish I could play again for the first time.", size:"featured" },
-      { id:"g2", title:"Hollow Knight", image:"placeholder.jpg", caption:"Beautiful, brutal, and somehow calming.", size:"standard" },
-      { id:"g3", title:"Tetris", image:"placeholder.jpg", caption:"The forever game. Still on the phone.", size:"standard" },
-      { id:"g4", title:"Disco Elysium", image:"placeholder.jpg", caption:"More novel than game, and I mean that fondly.", size:"featured" },
-      { id:"g5", title:"Celeste", image:"placeholder.jpg", caption:"A platformer that turned out to be about a lot more.", size:"standard" },
-      { id:"g6", title:"Chess.com", image:"placeholder.jpg", caption:"The late-night blitz habit I can't shake.", size:"standard" },
-      { id:"g7", title:"Journey", image:"placeholder.jpg", caption:"Ninety wordless minutes I think about often.", size:"standard" },
-      { id:"g8", title:"Stardew Valley", image:"placeholder.jpg", caption:"Rainy-day comfort food, in game form.", size:"featured" }
+      { id:"g1", title:"Halo", image:"placeholder.jpg", size:"featured" },
+      { id:"g2", title:"Assassin\u2019s Creed", image:"placeholder.jpg", size:"standard" },
+      { id:"g3", title:"Europa Universalis IV", image:"placeholder.jpg", size:"standard" },
+      { id:"g4", title:"Victoria 3", image:"placeholder.jpg", size:"standard" },
+      { id:"g5", title:"Little Nightmares", image:"placeholder.jpg", size:"standard" }
     ]
   }
 ];
@@ -228,9 +226,12 @@ function renderWall(section){
   grid.className='bento';
 
   section.items.forEach((e,idx)=>{
-    const tile=document.createElement('button');
-    tile.type='button';
-    tile.className='tile'+(e.size==='featured'?' featured':'');
+    // With no real photo the caption is the only thing saying what the tile
+    // is, so it sits visible and the tile is not a button: nothing to reveal.
+    const hasPhoto = !!e.image && e.image !== 'placeholder.jpg';
+    const tile=document.createElement(hasPhoto?'button':'div');
+    if(hasPhoto) tile.type='button';
+    tile.className='tile'+(e.size==='featured'?' featured':'')+(hasPhoto?'':' static');
 
     tile.innerHTML=
       '<img alt="" src="'+imgFor(section.id,e,idx)+'">'+
@@ -243,7 +244,7 @@ function renderWall(section){
     const img=tile.querySelector('img');
     img.addEventListener('error',function(){ this.onerror=null; this.src=placeholderArt(section.id, idx); });
 
-    tile.addEventListener('click',ev=>{
+    if(hasPhoto) tile.addEventListener('click',ev=>{
       ev.stopPropagation();
       const on=tile.classList.toggle('show');
       if(on){ openTiles.add(tile); } else { openTiles.delete(tile); }
