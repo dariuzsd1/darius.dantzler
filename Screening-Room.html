@@ -105,6 +105,35 @@ a:hover{color:var(--dds-color-ink)}
 .sr-foot a{color:rgba(20,20,20,.55);border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
 .sr-foot a:hover{color:var(--dds-color-ink);border-bottom-color:var(--dds-color-accent)}
 
+/* "Seen it" ticks + share link (temporary test, switch with SEEN_ON in the script at the bottom) */
+.seen-panel{margin-top:26px;max-width:600px;border:1px solid rgba(20,20,20,.16);border-radius:14px;background:rgba(248,246,240,.7);padding:16px 18px}
+.seen-panel[hidden],.their-banner[hidden],.their-tag[hidden]{display:none}
+.sp-lede{margin:0;font-size:.98rem;line-height:1.5;color:rgba(20,20,20,.75)}
+.sp-row{margin-top:12px;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.sp-count{margin-right:auto;font-family:var(--dds-font-mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.07em;color:rgba(20,20,20,.55)}
+.sp-name{font:inherit;font-size:.9rem;width:200px;max-width:100%;padding:8px 13px;border:1px solid rgba(20,20,20,.22);border-radius:999px;background:var(--dds-color-bone);color:var(--dds-color-ink)}
+.sp-copy{font-family:var(--dds-font-mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;padding:9px 16px;border-radius:999px;border:1px solid var(--dds-color-ink);background:var(--dds-color-ink);color:var(--dds-color-bone);cursor:pointer;transition:background .15s,color .15s}
+.sp-copy:hover{background:transparent;color:var(--dds-color-ink)}
+.sp-note{margin:10px 0 0;min-height:1em;font-family:var(--dds-font-mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(20,20,20,.55);overflow-wrap:anywhere}
+.sp-note:empty{display:none}
+.their-banner{margin-top:14px;max-width:600px;display:flex;align-items:center;flex-wrap:wrap;gap:12px;padding:12px 16px;border-radius:14px;background:var(--dds-color-ink);color:var(--dds-color-bone);font-size:.95rem;line-height:1.45}
+.their-banner b{color:var(--dds-color-accent);font-weight:600}
+.their-banner button{margin-left:auto;font-family:var(--dds-font-mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;padding:6px 12px;border-radius:999px;border:1px solid rgba(245,243,236,.4);background:transparent;color:var(--dds-color-bone);cursor:pointer}
+.their-banner button:hover{border-color:var(--dds-color-bone)}
+.seen-row{display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+.seen{display:inline-flex;align-items:center;gap:8px;font-family:var(--dds-font-mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;color:rgba(20,20,20,.75);background:transparent;border:1px solid rgba(20,20,20,.3);border-radius:999px;padding:5px 12px 5px 7px;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.seen:hover{border-color:var(--dds-color-ink);color:var(--dds-color-ink)}
+.seen .box{width:15px;height:15px;border:1.5px solid currentColor;border-radius:4px;display:inline-flex;align-items:center;justify-content:center}
+.seen .box svg{width:11px;height:11px;opacity:0}
+.seen[aria-pressed="true"]{background:var(--dds-color-ink);border-color:var(--dds-color-ink);color:var(--dds-color-bone)}
+.seen[aria-pressed="true"] .box{background:var(--dds-color-accent);border-color:var(--dds-color-accent);color:var(--dds-color-ink)}
+.seen[aria-pressed="true"] .box svg{opacity:1}
+.seen .n{padding-left:8px;border-left:1px solid rgba(128,128,128,.5)}
+.seen .n:empty{display:none}
+.seen:disabled{cursor:progress}
+.their-tag{max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:var(--dds-font-mono);font-size:.6rem;text-transform:uppercase;letter-spacing:.07em;background:var(--dds-color-accent);color:var(--dds-color-ink);border:1px solid rgba(20,20,20,.2);border-radius:999px;padding:3px 9px}
+.seen:focus-visible,.sp-copy:focus-visible,.sp-name:focus-visible,.their-banner button:focus-visible{outline:2px solid var(--dds-color-accent);outline-offset:2px}
+
 @media(max-width:860px){.navlinks{display:none}}
 @media(max-width:560px){
   .sr-head{padding-top:120px}
@@ -125,6 +154,16 @@ a:hover{color:var(--dds-color-ink)}
     <h1 data-i18n="sr.title">Films and shows worth your time</h1>
     <p class="dek" data-i18n="sr.dek">A running shelf of what I keep coming back to, favorites first within each group. Flip any poster for a line or two on why it made the list.</p>
     <div class="hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg><span data-i18n="sr.hint">Hover to flip · tap on touch</span></div>
+    <div class="their-banner" id="their-banner" hidden><span id="their-text"></span><button type="button" id="their-clear" data-i18n="sr.theirs.clear">Clear</button></div>
+    <div class="seen-panel" id="seen-panel" hidden>
+      <p class="sp-lede" data-i18n="sr.share.lede">Seen any of these? Tick them, then send me your link and we'll find our common ground.</p>
+      <div class="sp-row">
+        <span class="sp-count" id="sp-count"></span>
+        <input class="sp-name" id="sp-name" type="text" maxlength="24" autocomplete="off" spellcheck="false">
+        <button class="sp-copy" id="sp-copy" type="button" data-i18n="sr.share.copy">Copy my link</button>
+      </div>
+      <p class="sp-note" id="sp-note" role="status" aria-live="polite"></p>
+    </div>
   </header>
 
   <main class="container">
@@ -886,5 +925,151 @@ document.querySelectorAll('.card').forEach(card=>{
 </script>
 <script src="i18n.js"></script>
 <script src="site-chrome.js"></script>
+<script>
+// "Seen it" ticks with live counts (api/seen.mjs) and a share link that carries your ticks in the URL hash.
+// Temporary test: set SEEN_ON to false to hide all of it.
+(function () {
+  const SEEN_ON = true;
+  if (!SEEN_ON) return;
+
+  const $ = id => document.getElementById(id);
+  const t = (key, vars) => {
+    let s = (window.ddsI18n && ddsI18n.t(key)) || key;
+    for (const k in vars) s = s.replace('{' + k + '}', vars[k]);
+    return s;
+  };
+  const store = {
+    get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+    set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} },
+  };
+
+  // Every card, keyed by its poster slug. Share links index into the alphabetical list, so reordering the page never breaks them.
+  const items = {};
+  document.querySelectorAll('main .item').forEach(item => {
+    const m = /posters\/([a-z0-9-]+)\.jpg/.exec(item.querySelector('img').getAttribute('src'));
+    if (m) items[m[1]] = item;
+  });
+  const ALL = Object.keys(items).sort();
+  const TOTAL = ALL.length;
+
+  let mine = new Set();
+  try { mine = new Set(JSON.parse(store.get('ddsSeen') || '[]').filter(s => items[s])); } catch (e) {}
+  let counts = null;     // null until the API answers; counts stay hidden without it
+  let canPost = false;
+  const saveMine = () => store.set('ddsSeen', JSON.stringify([...mine]));
+
+  const encode = set => ALL.reduce((b, s, i) => set.has(s) ? b | (1n << BigInt(i)) : b, 0n).toString(36);
+  function decode(str) {
+    if (!/^[0-9a-z]{1,12}$/.test(str)) return null;
+    let b = 0n;
+    for (const ch of str) b = b * 36n + BigInt(parseInt(ch, 36));
+    return new Set(ALL.filter((s, i) => (b >> BigInt(i)) & 1n));
+  }
+
+  // Their picks, if this page was opened from someone's share link.
+  const params = new URLSearchParams(location.hash.slice(1));
+  let theirs = params.has('picks') ? decode(params.get('picks')) : null;
+  const theirName = (params.get('from') || '').trim().slice(0, 24);
+
+  const check = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>';
+  const buttons = {}, tags = {};
+  ALL.forEach(slug => {
+    const row = document.createElement('div');
+    row.className = 'seen-row';
+    row.innerHTML = '<button class="seen" type="button" aria-pressed="false"><span class="box">' + check + '</span><span data-i18n="sr.seen">Seen it</span><span class="n"></span></button><span class="their-tag" hidden></span>';
+    items[slug].appendChild(row);
+    buttons[slug] = row.querySelector('.seen');
+    tags[slug] = row.querySelector('.their-tag');
+    buttons[slug].addEventListener('click', () => toggle(slug));
+  });
+  if (window.ddsI18n) ddsI18n.apply(document.querySelector('main'));
+
+  function renderOne(slug) {
+    const b = buttons[slug];
+    b.setAttribute('aria-pressed', mine.has(slug));
+    b.querySelector('.n').textContent = counts ? String(counts[slug] || 0) : '';
+    const tag = tags[slug];
+    tag.hidden = !(theirs && theirs.has(slug));
+    tag.textContent = '✓ ' + (theirName || t('sr.friend'));
+  }
+  function renderSummary() {
+    $('sp-count').textContent = t('sr.share.count', { n: mine.size, total: TOTAL });
+    $('sp-name').placeholder = t('sr.share.name');
+    $('sp-name').setAttribute('aria-label', t('sr.share.name'));
+    if (theirs) {
+      const name = theirName || t('sr.friend');
+      const both = [...theirs].filter(s => mine.has(s)).length;
+      const text = $('their-text');
+      text.textContent = '';
+      const b = document.createElement('b');
+      b.textContent = name;
+      text.append(b, ' ' + t('sr.theirs.banner', { n: theirs.size, total: TOTAL }) + (mine.size ? ' ' + t('sr.theirs.both', { n: both }) : ''));
+    }
+    $('their-banner').hidden = !theirs;
+  }
+  function renderAll() { ALL.forEach(renderOne); renderSummary(); }
+  const note = msg => { $('sp-note').textContent = msg || ''; };
+
+  async function toggle(slug) {
+    const b = buttons[slug];
+    if (b.disabled) return;
+    const on = !mine.has(slug);
+    const before = counts && counts[slug];
+    on ? mine.add(slug) : mine.delete(slug);
+    if (canPost) counts[slug] = Math.max(0, (before || 0) + (on ? 1 : -1));
+    saveMine(); renderOne(slug); renderSummary();
+    if (!canPost) return;
+    b.disabled = true;
+    try {
+      const r = await fetch('/api/seen', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ slug, on }) });
+      if (!r.ok) throw r.status;
+      counts[slug] = (await r.json()).count;
+      note('');
+    } catch (status) {
+      on ? mine.delete(slug) : mine.add(slug);
+      counts[slug] = before || 0;
+      saveMine();
+      note(t(status === 429 ? 'sr.slow' : 'sr.failed'));
+    } finally {
+      b.disabled = false;
+      renderOne(slug); renderSummary();
+    }
+  }
+
+  const savedName = store.get('ddsSeenName');
+  if (savedName) $('sp-name').value = savedName;
+  $('sp-name').addEventListener('input', e => store.set('ddsSeenName', e.target.value.trim()));
+
+  $('sp-copy').addEventListener('click', async () => {
+    const p = new URLSearchParams({ picks: encode(mine) });
+    const name = $('sp-name').value.trim().slice(0, 24);
+    if (name) p.set('from', name);
+    const url = location.origin + location.pathname + '#' + p;
+    try { await navigator.clipboard.writeText(url); note(t('sr.share.copied')); }
+    catch (e) { note(url); }
+  });
+
+  $('their-clear').addEventListener('click', () => {
+    theirs = null;
+    history.replaceState(null, '', location.pathname + location.search);
+    renderAll();
+  });
+
+  window.addEventListener('ddslangchange', renderAll);
+  $('seen-panel').hidden = false;
+  renderAll();
+
+  // Live counts. The server's record of your ticks wins over this device's copy.
+  fetch('/api/seen', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : Promise.reject(r.status))
+    .then(d => {
+      counts = d.counts || {};
+      canPost = !!d.canVote;
+      if (canPost) { mine = new Set((d.mine || []).filter(s => items[s])); saveMine(); }
+      renderAll();
+    })
+    .catch(() => {});
+})();
+</script>
 </body>
 </html>
