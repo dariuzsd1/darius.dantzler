@@ -33,8 +33,17 @@ redis.call('EXPIRE', KEYS[1], ${YEAR})
 if changed == 1 then redis.call('HINCRBY', KEYS[2], ARGV[1], ARGV[2] == '1' and 1 or -1) end
 return tonumber(redis.call('HGET', KEYS[2], ARGV[1]) or '0')`;
 
-const REDIS_URL = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
-const REDIS_TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
+// Vercel names the keys after the prefix chosen when connecting (KV_, UPSTASH_REDIS_, STORAGE_, ...), so take whichever pair exists.
+function findRedis() {
+  for (const key of Object.keys(process.env)) {
+    const m = /^(.*)_REST_(?:API_)?URL$/.exec(key);
+    if (!m || !/^https?:\/\//.test(process.env[key])) continue;
+    const token = process.env[m[1] + '_REST_API_TOKEN'] || process.env[m[1] + '_REST_TOKEN'];
+    if (token) return [process.env[key], token];
+  }
+  return [];
+}
+const [REDIS_URL, REDIS_TOKEN] = findRedis();
 
 async function redis(commands) {
   const res = await fetch(REDIS_URL + '/pipeline', {
