@@ -79,18 +79,20 @@ a:hover{color:var(--dds-color-ink)}
 .grp-count{font-family:var(--dds-font-mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.45)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(212px,1fr));gap:38px 30px;padding:6px 0 40px}
 .item{display:flex;flex-direction:column;gap:9px}
-.item .title{box-sizing:border-box;height:63px;font-family:var(--dds-font-serif);font-weight:600;font-size:1.02rem;line-height:1.22;letter-spacing:-.01em;color:var(--dds-color-ink);background:rgba(20,20,20,.05);border:1.5px solid rgba(20,20,20,.82);border-radius:5px;padding:9px 12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.item .title{box-sizing:border-box;height:63px;font-family:var(--dds-font-serif);font-weight:600;font-size:1.02rem;line-height:1.22;letter-spacing:-.01em;color:var(--dds-color-ink);background:rgba(20,20,20,.05);border:1.5px solid rgba(20,20,20,.82);border-radius:5px;padding:9px 12px;display:flex;align-items:center;overflow:hidden}
+.item .title span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .item .meta{align-self:flex-start;white-space:nowrap;font-family:var(--dds-font-mono);font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(20,20,20,.62);background:rgba(20,20,20,.03);border:1px solid rgba(20,20,20,.3);border-radius:999px;padding:3px 11px}
 .card{position:relative;width:100%;aspect-ratio:2/3;perspective:1400px;cursor:pointer;background:transparent;border:0;padding:0;text-align:left;font:inherit;color:inherit}
 .card-face-wrap{position:relative;width:100%;height:100%;transition:transform .6s cubic-bezier(.4,.15,.2,1);transform-style:preserve-3d}
 .card:hover .card-face-wrap,.card:focus-visible .card-face-wrap,.card.flipped .card-face-wrap{transform:rotateY(180deg)}
-.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;border:1px solid rgba(20,20,20,.16);border-radius:4px}
-.face.front{background:repeating-linear-gradient(135deg,rgba(20,20,20,.06) 0 12px,rgba(20,20,20,.02) 12px 24px)}
-.face.front img{width:100%;height:100%;object-fit:cover;display:block}
-.face.front .drop{position:absolute;inset:0;display:none;align-items:center;justify-content:center}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;border:1.5px solid var(--dds-color-ink);border-radius:5px;box-shadow:4px 4px 0 var(--dds-color-brief-red)}
+/* poster frame in the site palette: ink border, accent-yellow mat, ink line around the art, brief-red offset shadow */
+.face.front{background:var(--dds-color-accent);padding:6px}
+.face.front img{width:100%;height:100%;object-fit:cover;display:block;border-radius:2px}
+.face.front .drop{position:absolute;inset:6px;border-radius:2px;background:repeating-linear-gradient(135deg,rgba(20,20,20,.06) 0 12px,rgba(20,20,20,.02) 12px 24px);display:none;align-items:center;justify-content:center}
 .face.front .drop span{font-family:var(--dds-font-mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;color:rgba(20,20,20,.42);border:1px dashed rgba(20,20,20,.24);padding:5px 11px;border-radius:4px;background:rgba(245,243,236,.7)}
-.face.front::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);pointer-events:none}
-.corner{position:absolute;top:9px;right:9px;z-index:2;width:26px;height:26px;border-radius:999px;background:rgba(245,243,236,.85);border:1px solid rgba(20,20,20,.18);display:flex;align-items:center;justify-content:center;color:rgba(20,20,20,.6);transition:opacity .2s}
+.face.front::after{content:"";position:absolute;inset:6px;border-radius:2px;box-shadow:inset 0 0 0 1.5px var(--dds-color-ink);pointer-events:none}
+.corner{position:absolute;top:14px;right:14px;z-index:2;width:26px;height:26px;border-radius:999px;background:rgba(245,243,236,.85);border:1px solid rgba(20,20,20,.18);display:flex;align-items:center;justify-content:center;color:rgba(20,20,20,.6);transition:opacity .2s}
 .corner svg{width:13px;height:13px}
 .card.flipped .corner,.card:hover .corner,.card:focus-visible .corner{opacity:0}
 .face.back{transform:rotateY(180deg);background:var(--dds-color-ink);color:var(--dds-color-bone);padding:18px 16px;display:flex;flex-direction:column}
@@ -174,7 +176,7 @@ a:hover{color:var(--dds-color-ink)}
       </div>
       <div class="grid">
       <div class="item">
-        <div class="title">Three Billboards Outside Ebbing, Missouri</div>
+        <div class="title"><span>Three Billboards Outside Ebbing, Missouri</span></div>
         <div class="meta">Film · 2017</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -190,7 +192,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Guardians of the Galaxy Vol. 3</div>
+        <div class="title"><span>Guardians of the Galaxy Vol. 3</span></div>
         <div class="meta">Film · 2023</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -206,7 +208,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Treasure Planet</div>
+        <div class="title"><span>Treasure Planet</span></div>
         <div class="meta">Film · 2002</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -222,7 +224,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Beasts of No Nation</div>
+        <div class="title"><span>Beasts of No Nation</span></div>
         <div class="meta">Film · 2015</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -238,7 +240,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Mudbound</div>
+        <div class="title"><span>Mudbound</span></div>
         <div class="meta">Film · 2017</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -254,7 +256,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">First They Killed My Father</div>
+        <div class="title"><span>First They Killed My Father</span></div>
         <div class="meta">Film · 2017</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -270,7 +272,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Interstellar</div>
+        <div class="title"><span>Interstellar</span></div>
         <div class="meta">Film · 2014</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -286,7 +288,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">City of God</div>
+        <div class="title"><span>City of God</span></div>
         <div class="meta">Film · 2002</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -302,7 +304,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Spider-Man: Across the Spider-Verse</div>
+        <div class="title"><span>Spider-Man: Across the Spider-Verse</span></div>
         <div class="meta">Film · 2023</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -318,7 +320,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">WALL-E</div>
+        <div class="title"><span>WALL-E</span></div>
         <div class="meta">Film · 2008</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -334,7 +336,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Jojo Rabbit</div>
+        <div class="title"><span>Jojo Rabbit</span></div>
         <div class="meta">Film · 2019</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -350,7 +352,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Good Will Hunting</div>
+        <div class="title"><span>Good Will Hunting</span></div>
         <div class="meta">Film · 1997</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -366,7 +368,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Toy Story 3</div>
+        <div class="title"><span>Toy Story 3</span></div>
         <div class="meta">Film · 2010</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -382,7 +384,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Coco</div>
+        <div class="title"><span>Coco</span></div>
         <div class="meta">Film · 2017</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -398,7 +400,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Project Hail Mary</div>
+        <div class="title"><span>Project Hail Mary</span></div>
         <div class="meta">Film · 2026</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -414,7 +416,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Come and See</div>
+        <div class="title"><span>Come and See</span></div>
         <div class="meta">Film · 1985</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -430,7 +432,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">No Country for Old Men</div>
+        <div class="title"><span>No Country for Old Men</span></div>
         <div class="meta">Film · 2007</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -446,7 +448,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">The Wild Robot</div>
+        <div class="title"><span>The Wild Robot</span></div>
         <div class="meta">Film · 2024</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -462,7 +464,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Pirates of the Caribbean: The Curse of the Black Pearl</div>
+        <div class="title"><span>Pirates of the Caribbean: The Curse of the Black Pearl</span></div>
         <div class="meta">Film · 2003</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -487,7 +489,7 @@ a:hover{color:var(--dds-color-ink)}
       </div>
       <div class="grid">
       <div class="item">
-        <div class="title">Breaking Bad</div>
+        <div class="title"><span>Breaking Bad</span></div>
         <div class="meta">Series · 2008</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -503,7 +505,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Chernobyl</div>
+        <div class="title"><span>Chernobyl</span></div>
         <div class="meta">Series · 2019</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -519,7 +521,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Avatar: The Last Airbender</div>
+        <div class="title"><span>Avatar: The Last Airbender</span></div>
         <div class="meta">Series · 2005</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -535,7 +537,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Game of Thrones</div>
+        <div class="title"><span>Game of Thrones</span></div>
         <div class="meta">Series · 2011</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -551,7 +553,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Rick and Morty</div>
+        <div class="title"><span>Rick and Morty</span></div>
         <div class="meta">Series · 2013</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -567,7 +569,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Better Call Saul</div>
+        <div class="title"><span>Better Call Saul</span></div>
         <div class="meta">Series · 2015</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -583,7 +585,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">The Office</div>
+        <div class="title"><span>The Office</span></div>
         <div class="meta">Series · 2005</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -599,7 +601,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Arcane</div>
+        <div class="title"><span>Arcane</span></div>
         <div class="meta">Series · 2021</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -615,7 +617,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">BoJack Horseman</div>
+        <div class="title"><span>BoJack Horseman</span></div>
         <div class="meta">Series · 2014</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -631,7 +633,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Vinland Saga</div>
+        <div class="title"><span>Vinland Saga</span></div>
         <div class="meta">Series · 2019</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -647,7 +649,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Narcos</div>
+        <div class="title"><span>Narcos</span></div>
         <div class="meta">Series · 2015</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -663,7 +665,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">South Park</div>
+        <div class="title"><span>South Park</span></div>
         <div class="meta">Series · 1997</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -679,7 +681,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Ted Lasso</div>
+        <div class="title"><span>Ted Lasso</span></div>
         <div class="meta">Series · 2020</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -695,7 +697,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Black Mirror</div>
+        <div class="title"><span>Black Mirror</span></div>
         <div class="meta">Series · 2011</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -711,7 +713,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Invincible</div>
+        <div class="title"><span>Invincible</span></div>
         <div class="meta">Series · 2021</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -727,7 +729,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Blue Eye Samurai</div>
+        <div class="title"><span>Blue Eye Samurai</span></div>
         <div class="meta">Series · 2023</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -743,7 +745,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">The Marvelous Mrs. Maisel</div>
+        <div class="title"><span>The Marvelous Mrs. Maisel</span></div>
         <div class="meta">Series · 2017</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -759,7 +761,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Severance</div>
+        <div class="title"><span>Severance</span></div>
         <div class="meta">Series · 2022</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -775,7 +777,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Parks and Recreation</div>
+        <div class="title"><span>Parks and Recreation</span></div>
         <div class="meta">Series · 2009</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -791,7 +793,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">House of Cards</div>
+        <div class="title"><span>House of Cards</span></div>
         <div class="meta">Series · 2013</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -807,7 +809,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Mindhunter</div>
+        <div class="title"><span>Mindhunter</span></div>
         <div class="meta">Series · 2017</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -823,7 +825,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Regular Show</div>
+        <div class="title"><span>Regular Show</span></div>
         <div class="meta">Series · 2010</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -839,7 +841,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">The Boys</div>
+        <div class="title"><span>The Boys</span></div>
         <div class="meta">Series · 2019</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -855,7 +857,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">The Boondocks</div>
+        <div class="title"><span>The Boondocks</span></div>
         <div class="meta">Series · 2005</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -871,7 +873,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">The Expanse</div>
+        <div class="title"><span>The Expanse</span></div>
         <div class="meta">Series · 2015</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
@@ -887,7 +889,7 @@ a:hover{color:var(--dds-color-ink)}
         </button>
       </div>
       <div class="item">
-        <div class="title">Shōgun</div>
+        <div class="title"><span>Shōgun</span></div>
         <div class="meta">Series · 2024</div>
         <button class="card" type="button" aria-pressed="false">
           <div class="card-face-wrap">
